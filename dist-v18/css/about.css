@@ -1,0 +1,50 @@
+/* ============================================
+   Page: ABOUT / 个人介绍（直接展示整图）
+   ============================================ */
+
+.page-about {
+  min-height: 100vh;
+  background: #0a1424;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.about-stage {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(40px, 6vh, 100px) clamp(16px, 4vw, 60px);
+  z-index: 2;
+}
+
+.about-full-image {
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  user-select: none;
+  -webkit-user-drag: none;
+  border-radius: 4px;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5);
+}
+
+@media (max-width: 900px) {
+  .about-stage {
+    height: 100vh;
+    padding: 80px 12px 40px;
+  }
+}
+
+@media (max-width: 600px) {
+  .about-stage {
+    padding: 70px 8px 24px;
+  }
+}

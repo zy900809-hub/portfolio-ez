@@ -1,0 +1,1588 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>钟艺 · EZ | PERSONAL PORTFOLIO 2026</title>
+  <meta name="description" content="钟艺-EZ 个人作品集 · 视觉设计 / 包装设计 / 插画设计 / 商业设计" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Noto+Sans+SC:wght@300;400;500;700;900&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/main.css?v=17" />
+  <link rel="stylesheet" href="css/home.css?v=17" />
+  <link rel="stylesheet" href="css/about.css?v=17" />
+  <link rel="stylesheet" href="css/works.css?v=17" />
+  <link rel="stylesheet" href="css/thanks.css?v=17" />
+
+  <!-- Favicon (inline SVG) -->
+  <link rel="icon" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><polygon points='10,50 50,10 90,50 50,90' fill='%231e6cff'/></svg>" />
+
+  <!-- Critical inline styles to guarantee layout before external CSS loads -->
+  <style>
+    .works-chapter__grid--two {
+      display: flex !important;
+      flex-wrap: wrap;
+      gap: 32px;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+    .works-chapter__grid--two .proj--big { flex: 1 1 45%; min-width: 320px; }
+    .works-grid {
+      display: flex !important;
+      flex-wrap: wrap;
+      gap: 20px;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+    .works-grid .g-item { flex: 1 1 calc(33.33% - 14px); min-width: 280px; }
+    .works-header {
+      display: grid !important;
+      grid-template-columns: 1.4fr 1fr;
+      gap: 60px;
+      align-items: start;
+      max-width: 2400px;
+      width: 100%;
+      margin: 0 auto 60px;
+      padding: 0 24px;
+      box-sizing: border-box;
+    }
+    .works-header__title { min-width: 0; }
+    .works-header__meta { min-width: 0; align-self: end; justify-self: end; text-align: right; }
+    /* VLT 黄底 + 柠檬片飘浮 */
+    .page-works { background: #FFD93D !important; }
+    .works-section-lemon {
+      position: absolute;
+      pointer-events: none;
+      opacity: 0.85;
+      filter: drop-shadow(0 8px 16px rgba(180,130,0,0.18));
+    }
+    .works-section-lemon--1 { top: 460px; right: 4%; width: 120px; transform: rotate(15deg); animation: lemonFloat 6s ease-in-out infinite; }
+    .works-section-lemon--2 { top: 60px; right: 42%; width: 70px; transform: rotate(-20deg); animation: lemonFloat 7s ease-in-out infinite reverse; opacity: 0.7; }
+    .works-section-lemon--3 { bottom: 280px; left: 8%; width: 140px; transform: rotate(-12deg); animation: lemonFloat 6.5s ease-in-out infinite; opacity: 0.85; }
+    .works-section-lemon--4 { bottom: 220px; right: 12%; width: 95px; transform: rotate(22deg); animation: lemonFloat 7.5s ease-in-out infinite reverse; opacity: 0.75; }
+    @keyframes lemonFloat {
+      0%, 100% { transform: rotate(-15deg) translate(0, 0); }
+      50%      { transform: rotate(-12deg) translate(8px, -12px); }
+    }
+    /* Chapter 2 前一屏全屏主视觉 */
+    .page-hero {
+      position: relative;
+      width: 100vw;
+      max-width: none;
+      margin: 0;
+      margin-left: calc(50% - 50vw);
+      height: 100vh;
+      overflow: hidden;
+      background: #000;
+    }
+    .page-hero img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+      user-select: none;
+      -webkit-user-drag: none;
+      pointer-events: none;
+    }
+    /* Chapter 2: 漂浮动效柠檬GIF + 音波波纹扩散 */
+    .chapter2-floats {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-160%, -50%);
+      width: 420px;
+      pointer-events: none;
+      animation: ch2Drift 7s ease-in-out infinite;
+      z-index: 3;
+    }
+    .chapter2-floats__gif {
+      width: 100%;
+      height: auto;
+      display: block;
+      position: relative;
+      z-index: 2;
+      user-select: none;
+      -webkit-user-drag: none;
+      filter: drop-shadow(0 12px 24px rgba(0,0,0,0.25));
+    }
+    /* 音波波纹: 3 层叠加,从 GIF 中心向外扩散 + 淡出 */
+    .chapter2-floats__sound {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 78%;
+      height: 78%;
+      transform: translate(-50%, -50%) rotate(-6deg);
+      transform-origin: 50% 50%;
+      pointer-events: none;
+      user-select: none;
+      -webkit-user-drag: none;
+      opacity: 0;
+      animation: ch2Ripple 2.4s ease-out infinite;
+    }
+    .chapter2-floats__sound--1 { animation-delay: 0s; }
+    .chapter2-floats__sound--2 { animation-delay: 0.8s; }
+    .chapter2-floats__sound--3 { animation-delay: 1.6s; }
+    @keyframes ch2Drift {
+      0%, 100% { transform: translate(-160%, -50%) rotate(0deg); }
+      50%      { transform: translate(calc(-160% - 14px), calc(-50% + 18px)) rotate(-4deg); }
+    }
+    @keyframes ch2Ripple {
+      0%   { transform: translate(-50%, -50%) rotate(-6deg) scale(0.45); opacity: 0; }
+      15%  { opacity: 0.85; }
+      100% { transform: translate(-50%, -50%) rotate(-6deg) scale(1.6); opacity: 0; }
+    }
+
+    /* === Chapter 2: 9 张 AISONG 卡片漂浮动效 === */
+    .aisong-cards {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      z-index: 2;
+    }
+    .aisong-card-wrap {
+      position: absolute;
+      pointer-events: auto;
+    }
+    .aisong-card {
+      border-radius: 18px;
+      overflow: hidden;
+      background: #fff;
+      border: 2px solid rgba(255, 255, 255, 0.85);
+      box-shadow:
+        0 16px 40px rgba(0, 0, 0, 0.32),
+        0 2px 8px rgba(0, 0, 0, 0.18);
+      animation: aisongFloat 5.5s ease-in-out infinite;
+      animation-delay: var(--delay, 0s);
+      will-change: transform;
+    }
+    .aisong-card img {
+      width: 100%;
+      height: auto;
+      display: block;
+      user-select: none;
+      -webkit-user-drag: none;
+      pointer-events: none;
+    }
+    @keyframes aisongFloat {
+      0%, 100% { transform: translateY(0); }
+      50%      { transform: translateY(-14px); }
+    }
+
+    /* === Chapter 2: 柠檬片漂浮装饰(避开 9 张卡片和手机图) === */
+    .aisong-lemon-float {
+      position: absolute;
+      z-index: 4;
+      pointer-events: none;
+      filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.28));
+    }
+    .aisong-lemon-float__anim {
+      animation: lemonFloat 6s ease-in-out infinite;
+      will-change: transform;
+    }
+    .aisong-lemon-float__img {
+      width: 100%;
+      height: auto;
+      display: block;
+      user-select: none;
+      -webkit-user-drag: none;
+    }
+    @keyframes lemonFloat {
+      0%, 100% { transform: translateY(0) rotate(0deg); }
+      50%      { transform: translateY(-18px) rotate(2deg); }
+    }
+
+    /* === Chapter 2b: 礼盒&周边主体(3 张礼盒 + ziti 字体图) === */
+    .giftbox-stage {
+      position: relative;
+      width: 100%;
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 32px var(--pad-x) 80px;
+      min-height: 130vh;
+      box-sizing: border-box;
+    }
+    .giftbox-card {
+      position: absolute;
+      border-radius: 18px;
+      overflow: hidden;
+      background: #fff;
+      border: 3px solid rgba(255, 255, 255, 0.9);
+      box-shadow:
+        0 24px 60px rgba(0, 0, 0, 0.42),
+        0 4px 12px rgba(0, 0, 0, 0.22);
+      z-index: 4;
+      transition: transform 0.4s var(--ease-out);
+      animation: cardFloat 5.5s ease-in-out infinite;
+    }
+    .giftbox-card:hover {
+      transform: scale(1.04) rotate(0deg) !important;
+    }
+    .giftbox-card img {
+      width: 100%;
+      height: auto;
+      display: block;
+      user-select: none;
+      -webkit-user-drag: none;
+    }
+    .giftbox-card--1 {
+      top: 22%;
+      left: 14%;
+      width: 450px;
+      transform: rotate(-3deg);
+      animation-delay: 0s;
+    }
+    .giftbox-card--2 {
+      top: 42%;
+      left: 16%;
+      width: 450px;
+      transform: rotate(3deg);
+      animation-delay: 0.6s;
+    }
+    .giftbox-card--3 {
+      top: 60%;
+      left: 14%;
+      width: 450px;
+      transform: rotate(2deg);
+      animation-delay: 0.3s;
+      z-index: 3;
+    }
+    @keyframes cardFloat {
+      0%, 100% { margin-top: 0; }
+      50%      { margin-top: -12px; }
+    }
+    .giftbox-ziti {
+      position: absolute;
+      top: 20%;
+      left: 0;
+      width: 760px;
+      z-index: 2;
+      filter: drop-shadow(0 12px 28px rgba(0, 0, 0, 0.3));
+      animation: zitiFloat 5.5s ease-in-out infinite;
+    }
+    .giftbox-ziti img {
+      width: 100%;
+      height: auto;
+      display: block;
+      user-select: none;
+      -webkit-user-drag: none;
+    }
+    @keyframes zitiFloat {
+      0%, 100% { transform: translateY(0) rotate(-2deg); }
+      50%      { transform: translateY(-16px) rotate(2deg); }
+    }
+
+    /* === Chapter 2b: 周边(7 张漂浮图,3-2-2 靠右排版) === */
+    .merch-item {
+      position: absolute;
+      border-radius: 14px;
+      overflow: hidden;
+      background: transparent;
+      filter: drop-shadow(0 12px 28px rgba(0, 0, 0, 0.32));
+      z-index: 5;
+      animation: cardFloat 5.5s ease-in-out infinite;
+      animation-delay: var(--delay, 0s);
+      will-change: transform;
+    }
+    .merch-item img {
+      width: 100%;
+      height: auto;
+      display: block;
+      user-select: none;
+      -webkit-user-drag: none;
+    }
+    /* === Chapter 2b: 中间大柠檬片(漂浮在中间空白处) === */
+    .giftbox-lemon-center {
+      position: absolute;
+      top: 22%;
+      left: 38%;
+      width: 220px;
+      z-index: 3;
+      pointer-events: none;
+      filter: drop-shadow(0 14px 30px rgba(0, 0, 0, 0.32));
+      animation: lemonFloatCenter 6s ease-in-out infinite;
+    }
+    .giftbox-lemon-center img {
+      width: 100%;
+      height: auto;
+      display: block;
+      user-select: none;
+      -webkit-user-drag: none;
+    }
+    @keyframes lemonFloatCenter {
+      0%, 100% { transform: translateY(0) rotate(-8deg); }
+      50%      { transform: translateY(-18px) rotate(-4deg); }
+    }
+    /* === Chapter 2b: 柠檬片(从左下角移到中间红框位置) === */
+    .giftbox-lemon-leftbottom {
+      position: absolute;
+      top: 64%;
+      left: 50%;
+      width: 180px;
+      z-index: 3;
+      pointer-events: none;
+      filter: drop-shadow(0 14px 30px rgba(0, 0, 0, 0.32));
+      animation: lemonFloatLeft 6.5s ease-in-out infinite;
+    }
+    .giftbox-lemon-leftbottom img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transform: scaleX(-1);
+      user-select: none;
+      -webkit-user-drag: none;
+    }
+    @keyframes lemonFloatLeft {
+      0%, 100% { transform: translateY(0) rotate(-10deg); }
+      50%      { transform: translateY(-16px) rotate(-6deg); }
+    }
+    /* Row 1: 3 张(图1-3) 顶部一行 */
+    .merch-item--1 { top: 9%;  right: 460px; width: 200px; transform: rotate(-3deg); --delay: 0s; }
+    .merch-item--2 { top: 12%; right: 230px; width: 200px; transform: rotate(2deg);  --delay: 0.4s; }
+    .merch-item--3 { top: 10%; right: 4%;    width: 110px; transform: rotate(-2deg); --delay: 0.8s; }
+    /* Row 2: 2 张(图4-5) 中间一行 */
+    .merch-item--4 { top: 33%; right: 4%;    width: 220px; transform: rotate(2deg);  --delay: 0.2s; }
+    .merch-item--5 { top: 36%; right: 380px; width: 220px; transform: rotate(-3deg); --delay: 0.6s; }
+    /* Row 3: 2 张(图6-7) 底部一行 */
+    .merch-item--6 { top: 57%; right: 4%;    width: 220px; transform: rotate(-2deg); --delay: 0.4s; }
+    .merch-item--7 { top: 60%; right: 380px; width: 220px; transform: rotate(3deg);  --delay: 1.0s; }
+
+    /* === Chapter 2c: VLT 满屏海报(来涩就现在) === */
+    .works-chapter--vlt-banner {
+      position: relative;
+      width: 100vw;
+      max-width: 100%;
+      margin: 0;
+      padding: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      overflow: hidden;
+      background: #FFD93D;
+    }
+    .works-chapter--vlt-banner img {
+      width: 100%;
+      height: auto;
+      display: block;
+      user-select: none;
+      -webkit-user-drag: none;
+    }
+
+    /* === Chapter 4b: 维他VLT-POPUP 漂浮图 === */
+    .popup-img {
+      position: absolute;
+      z-index: 2;
+      animation: cardFloat 5.5s ease-in-out infinite;
+      animation-delay: var(--delay, 0s);
+      will-change: transform;
+    }
+    .popup-img img {
+      width: 100%;
+      height: auto;
+      display: block;
+      user-select: none;
+      -webkit-user-drag: none;
+    }
+    .popup-img--1 { top: 28%; left: 3%;  width: 45%; transform: rotate(-2deg); --delay: 0s; }
+
+    /* 柠檬片漂浮 */
+    .popup-lemon {
+      position: absolute;
+      pointer-events: none;
+      filter: drop-shadow(0 8px 18px rgba(0, 0, 0, 0.28));
+      z-index: 1;
+    }
+    .popup-lemon img {
+      width: 100%;
+      height: auto;
+      display: block;
+      user-select: none;
+      -webkit-user-drag: none;
+    }
+    .popup-lemon--1 { top: 90%; right: 6%;  width: 150px; animation: lemonFloatPopup 6s ease-in-out infinite; }
+    .popup-lemon--2 { top: 5%;  left: 48%; width: 80px;  animation: lemonFloatPopup2 6.5s ease-in-out infinite; }
+    @keyframes lemonFloatPopup {
+      0%, 100% { transform: translateY(0) rotate(-8deg); }
+      50%      { transform: translateY(-14px) rotate(-3deg); }
+    }
+    @keyframes lemonFloatPopup2 {
+      0%, 100% { transform: translateY(0) rotate(6deg); }
+      50%      { transform: translateY(-12px) rotate(10deg); }
+    }
+
+    /* 底部柠檬底纹(正片叠底 + 10% 透明度) */
+    .popup-bg-lemon {
+      position: absolute;
+      bottom: -8%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 70%;
+      max-height: 90%;
+      opacity: 0.1;
+      mix-blend-mode: multiply;
+      z-index: 0;
+      pointer-events: none;
+      user-select: none;
+      -webkit-user-drag: none;
+    }
+
+    /* === Chapter 3: 柠檬片漂浮 === */
+    .grid-lemon {
+      position: absolute;
+      pointer-events: none;
+      filter: drop-shadow(0 8px 18px rgba(0, 0, 0, 0.28));
+      z-index: 1;
+    }
+    .grid-lemon img {
+      width: 100%;
+      height: auto;
+      display: block;
+      user-select: none;
+      -webkit-user-drag: none;
+    }
+    .grid-lemon--1 { top: 8%;  left: 4%;   width: 100px; animation: gridLemonFloat 6s ease-in-out infinite; }
+    .grid-lemon--2 { top: auto; bottom: 4%; right: 4%; width: 150px; animation: gridLemonFloat2 6.5s ease-in-out infinite; }
+    @keyframes gridLemonFloat {
+      0%, 100% { transform: translateY(0) scaleX(-1) rotate(-8deg); }
+      50%      { transform: translateY(-14px) scaleX(-1) rotate(-3deg); }
+    }
+    @keyframes gridLemonFloat2 {
+      0%, 100% { transform: translateY(0) rotate(6deg); }
+      50%      { transform: translateY(-12px) rotate(10deg); }
+    }
+
+    /* 相框形式(右侧 1 个相框 + 左右切换按钮) */
+    .popup-frame {
+      position: absolute;
+      top: 26%;
+      right: 2%;
+      width: 50%;
+      z-index: 3;
+      animation: cardFloat 5.5s ease-in-out infinite;
+      --delay: 0.4s;
+    }
+    .popup-frame__inner {
+      background: #fff;
+      padding: 16px 16px 20px;
+      border-radius: 18px;
+      box-shadow:
+        0 26px 60px rgba(0, 0, 0, 0.42),
+        0 6px 14px rgba(0, 0, 0, 0.22);
+      transform: rotate(2deg);
+      transition: transform 0.4s var(--ease-out);
+    }
+    .popup-frame__stage {
+      position: relative;
+      width: 100%;
+      border-radius: 8px;
+      overflow: hidden;
+      background: #000;
+    }
+    .popup-frame__img {
+      width: 100%;
+      height: auto;
+      display: none;
+      user-select: none;
+      -webkit-user-drag: none;
+    }
+    .popup-frame__img.is-active {
+      display: block;
+    }
+    .popup-frame__arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.92);
+      border: none;
+      font-size: 22px;
+      font-weight: 700;
+      line-height: 1;
+      color: #111;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      transition: all 0.25s var(--ease-out);
+      z-index: 2;
+    }
+    .popup-frame__arrow:hover {
+      background: #fff;
+      transform: translateY(-50%) scale(1.08);
+    }
+    .popup-frame__arrow--prev { left: 10px; }
+    .popup-frame__arrow--next { right: 10px; }
+    .popup-frame__info {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 12px;
+      padding: 10px 4px 0;
+      border-top: 1px solid rgba(0, 0, 0, 0.08);
+    }
+    .popup-frame__info-name {
+      font-size: 14px;
+      font-weight: 700;
+      color: #111;
+      letter-spacing: 0.02em;
+    }
+    .popup-frame__info-tag {
+      font-size: 11px;
+      font-weight: 600;
+      color: rgba(0, 0, 0, 0.45);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-family: var(--f-display);
+    }
+
+    .banner-card__content {
+      display: flex !important;
+      flex-wrap: wrap;
+      gap: 40px;
+      align-items: flex-end;
+    }
+    .banner-card__content > h3,
+    .banner-card__content > p,
+    .banner-card__content > .btn-light { flex: 1 1 50%; }
+    .banner-tag, .banner-logos { flex: 1 1 40%; }
+    @media (max-width: 1100px) {
+      .works-chapter__grid--two .proj--big { flex: 1 1 100%; }
+      .works-grid .g-item { flex: 1 1 calc(50% - 10px); }
+    }
+    @media (max-width: 900px) {
+      .works-grid .g-item { flex: 1 1 100%; }
+    }
+  </style>
+</head>
+<body>
+  <!-- ============ Loading Screen ============ -->
+  <div class="loader" id="loader">
+    <div class="loader-inner">
+      <div class="loader-mark">◆</div>
+      <div class="loader-text">LOADING</div>
+      <div class="loader-bar"><span></span></div>
+    </div>
+  </div>
+
+  <!-- ============ Custom Cursor ============ -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-dot" id="cursorDot"></div>
+
+  <!-- ============ Top Navigation (logo + 2026 + DESIGN) ============ -->
+  <header class="top-nav" id="topNav">
+    <a href="#home" class="nav-logo" aria-label="Home">
+      <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
+        <polygon points="2,12 12,2 22,12 12,22" fill="#1e6cff" />
+      </svg>
+    </a>
+  </header>
+
+  <!-- ============ Side Navigation (left side) — icon 形式 ============ -->
+  <nav class="side-nav" id="sideNav" aria-label="Section navigation">
+    <a href="#about"  data-nav data-section="about" aria-label="About">
+      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <circle cx="12" cy="8" r="4"/>
+        <path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"/>
+      </svg>
+    </a>
+    <a href="#works"  data-nav data-section="works" aria-label="Works">
+      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <rect x="3"  y="3"  width="8" height="8" rx="1"/>
+        <rect x="13" y="3"  width="8" height="8" rx="1"/>
+        <rect x="3"  y="13" width="8" height="8" rx="1"/>
+        <rect x="13" y="13" width="8" height="8" rx="1"/>
+      </svg>
+    </a>
+    <a href="#thanks" data-nav data-section="thanks" aria-label="Thanks">
+      <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+      </svg>
+    </a>
+  </nav>
+
+  <!-- 右侧 page-indicator 已删除 -->
+
+  <main id="main">
+    <!-- ============================================ -->
+    <!-- SECTION 1: HOME / 首页                          -->
+    <!-- ============================================ -->
+    <section class="page page-home" id="home" data-theme="dark">
+      <video class="home-bg-video" src="assets/home/header-bg.mp4" autoplay loop muted playsinline aria-hidden="true"></video>
+      <div class="grid-bg" aria-hidden="true"></div>
+
+      <!-- floating decorative blocks -->
+      <div class="floating-blocks" aria-hidden="true">
+        <div class="block block-1"></div>
+        <div class="block block-2"></div>
+        <div class="block block-3"></div>
+        <div class="block block-4"></div>
+      </div>
+
+      <div class="page-home__inner">
+        <h1 class="home-title home-title--dropin" id="homeTitleStage" data-text="PERSONAL PORTFOLIO" data-split-text>
+          <span class="t-line t-line--1"><span></span></span>
+          <span class="t-line t-line--2"><span></span></span>
+        </h1>
+      </div>
+
+      <div class="page-home__categories">
+        <ul>
+          <li><span class="dot"></span>视觉设计</li>
+          <li><span class="dot"></span>包装设计</li>
+          <li><span class="dot"></span>插画设计</li>
+          <li><span class="dot"></span>商业设计</li>
+          <li><span class="dot"></span>作品整合</li>
+        </ul>
+      </div>
+
+      <div class="scroll-hint" aria-hidden="true">
+        <span>SCROLL</span>
+        <div class="line"></div>
+      </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- SECTION 2: ABOUT / 个人介绍（直接展示设计图）    -->
+    <!-- ============================================ -->
+    <section class="page page-about" id="about" data-theme="dark">
+      <div class="about-stage">
+        <img
+          src="assets/img/about-full.png"
+          alt="钟艺-EZ 个人介绍"
+          class="about-full-image"
+          draggable="false"
+        />
+      </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- SECTION 3: WORKS / 作品展示                    -->
+    <!-- ============================================ -->
+    <section class="page page-works" id="works" data-theme="light" style="position: relative;">
+      <div class="grid-bg" aria-hidden="true"></div>
+
+      <!-- 柠檬片飘浮点缀(扁平椭圆 + 8 瓣 + 果肉纹理,引自 assets/img/lemon-slice.svg) -->
+      <img src="assets/img/lemon-a.png" class="works-section-lemon works-section-lemon--1" alt="" aria-hidden="true">
+      <img src="assets/img/lemon-b.png" class="works-section-lemon works-section-lemon--2" alt="" aria-hidden="true">
+
+      <!-- === Works Header === -->
+      <div class="works-header">
+        <div class="works-header__title">
+          <h2 class="big-title">
+            <span class="t-line"><span>SELECTED</span></span>
+            <span class="t-line"><span>WORKS</span></span>
+          </h2>
+        </div>
+        <div class="works-header__meta">
+          <p class="lead">12 件精选作品 · 视觉 / 包装 / 插画 / 品牌</p>
+          <div class="filter-pills" id="filterPills">
+            <button class="pill active" data-filter="all">全部</button>
+            <button class="pill" data-filter="visual">视觉</button>
+            <button class="pill" data-filter="package">包装</button>
+            <button class="pill" data-filter="illust">插画</button>
+            <button class="pill" data-filter="brand">品牌</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- === Chapter 1: 维他VLT-Popup（叠图循环切换） === -->
+      <div class="works-chapter works-chapter--hero" id="chapter1" style="position: relative;">
+        <div class="works-chapter__sticky" id="chapter1Header" style="width: 100vw; max-width: none; left: calc(50% - 50vw); box-sizing: border-box;">
+          <div class="chapter-tag"><span>01</span> VLT POPUP</div>
+          <h3 class="chapter-title">维他VLT-Popup</h3>
+        </div>
+
+        <div class="featured-stack" id="featuredStack" style="position: relative; width: 100vw; max-width: none; left: calc(50% - 50vw); margin: 0; padding: 0;">
+          <div class="featured-stack__stage" id="stackStage" style="position: relative; width: 100%; margin: 0; padding: 0; overflow: visible !important; outline: none; border-radius: 0;">
+
+            <!-- 6 张主卡:absolute 定位 + JS 控制 transform 形成 stack 错位 -->
+            <article class="stack-card" data-index="0" style="position: absolute; top: 0; left: 0; width: 480px; height: 270px; background: #fff; border-radius: 14px; overflow: hidden; box-shadow: 0 20px 44px rgba(0,0,0,0.2), 0 4px 12px rgba(0,0,0,0.08); border: 1px solid rgba(10,20,36,0.06); will-change: transform, opacity, z-index; z-index: 10;">
+              <div style="position: relative; width: 100%; height: 100%; background: #f3f3ef; overflow: hidden;">
+                <img src="assets/works/01-kv-main.png" alt="维他茶 KV" style="width: 100%; height: 100%; object-fit: contain; background: #f3f3ef; user-select: none; -webkit-user-drag: none; pointer-events: none;" draggable="false" />
+              </div>
+              <div style="position: absolute; left: 0; right: 0; bottom: 0; padding: 12px 16px; background: linear-gradient(to top, rgba(0,0,0,0.78), transparent); color: #fff; opacity: 0; transition: opacity 0.3s ease;" class="stack-card__info">
+                <div style="font-family: var(--f-mono); font-size: 9px; letter-spacing: 0.18em; color: rgba(255,255,255,0.6); text-transform: uppercase; margin-bottom: 2px;">01 / 06 · KV</div>
+                <h4 style="font-size: 13px; font-weight: 700; margin: 0 0 2px; color: #ffffff; line-height: 1.3;">维他茶 mega KV</h4>
+                <p style="font-size: 10px; color: rgba(255,255,255,0.7); margin: 0; line-height: 1.5;">本「涩」就现在 · 0糖新上市</p>
+              </div>
+            
+            <span class="stack-caption-title" style="display:none;">维他茶 mega KV</span></article>
+
+            <article class="stack-card" data-index="1" style="position: absolute; top: 0; left: 0; width: 480px; height: 270px; background: #fff; border-radius: 14px; overflow: hidden; box-shadow: 0 20px 44px rgba(0,0,0,0.2), 0 4px 12px rgba(0,0,0,0.08); border: 1px solid rgba(10,20,36,0.06); will-change: transform, opacity, z-index; z-index: 9;">
+              <div style="position: relative; width: 100%; height: 100%; background: #f3f3ef; overflow: hidden;">
+                <img src="assets/works/02-dp-side.png" alt="蓬车侧视" style="width: 100%; height: 100%; object-fit: contain; background: #f3f3ef; user-select: none; -webkit-user-drag: none; pointer-events: none;" draggable="false" />
+              </div>
+              <div style="position: absolute; left: 0; right: 0; bottom: 0; padding: 12px 16px; background: linear-gradient(to top, rgba(0,0,0,0.78), transparent); color: #fff; opacity: 0; transition: opacity 0.3s ease;" class="stack-card__info">
+                <div style="font-family: var(--f-mono); font-size: 9px; letter-spacing: 0.18em; color: rgba(255,255,255,0.6); text-transform: uppercase; margin-bottom: 2px;">02 / 06 · DP</div>
+                <h4 style="font-size: 13px; font-weight: 700; margin: 0 0 2px; color: #ffffff; line-height: 1.3;">蓬车 DP · 侧视</h4>
+                <p style="font-size: 10px; color: rgba(255,255,255,0.7); margin: 0; line-height: 1.5;">街角快闪 · 概念稿</p>
+              </div>
+            
+            <span class="stack-caption-title" style="display:none;">蓬车 DP · 侧视</span></article>
+
+            <article class="stack-card" data-index="2" style="position: absolute; top: 0; left: 0; width: 480px; height: 270px; background: #fff; border-radius: 14px; overflow: hidden; box-shadow: 0 20px 44px rgba(0,0,0,0.2), 0 4px 12px rgba(0,0,0,0.08); border: 1px solid rgba(10,20,36,0.06); will-change: transform, opacity, z-index; z-index: 8;">
+              <div style="position: relative; width: 100%; height: 100%; background: #f3f3ef; overflow: hidden;">
+                <img src="assets/works/03-dp-back.png" alt="蓬车后视" style="width: 100%; height: 100%; object-fit: contain; background: #f3f3ef; user-select: none; -webkit-user-drag: none; pointer-events: none;" draggable="false" />
+              </div>
+              <div style="position: absolute; left: 0; right: 0; bottom: 0; padding: 12px 16px; background: linear-gradient(to top, rgba(0,0,0,0.78), transparent); color: #fff; opacity: 0; transition: opacity 0.3s ease;" class="stack-card__info">
+                <div style="font-family: var(--f-mono); font-size: 9px; letter-spacing: 0.18em; color: rgba(255,255,255,0.6); text-transform: uppercase; margin-bottom: 2px;">03 / 06 · DP</div>
+                <h4 style="font-size: 13px; font-weight: 700; margin: 0 0 2px; color: #ffffff; line-height: 1.3;">蓬车 DP · 后视</h4>
+                <p style="font-size: 10px; color: rgba(255,255,255,0.7); margin: 0; line-height: 1.5;">操作台面 · 概念稿</p>
+              </div>
+            
+            <span class="stack-caption-title" style="display:none;">蓬车 DP · 后视</span></article>
+
+            <article class="stack-card" data-index="3" style="position: absolute; top: 0; left: 0; width: 480px; height: 270px; background: #fff; border-radius: 14px; overflow: hidden; box-shadow: 0 20px 44px rgba(0,0,0,0.2), 0 4px 12px rgba(0,0,0,0.08); border: 1px solid rgba(10,20,36,0.06); will-change: transform, opacity, z-index; z-index: 7;">
+              <div style="position: relative; width: 100%; height: 100%; background: #f3f3ef; overflow: hidden;">
+                <img src="assets/works/04-truck-front.png" alt="蓬车主视终稿" style="width: 100%; height: 100%; object-fit: contain; background: #f3f3ef; user-select: none; -webkit-user-drag: none; pointer-events: none;" draggable="false" />
+              </div>
+              <div style="position: absolute; left: 0; right: 0; bottom: 0; padding: 12px 16px; background: linear-gradient(to top, rgba(0,0,0,0.78), transparent); color: #fff; opacity: 0; transition: opacity 0.3s ease;" class="stack-card__info">
+                <div style="font-family: var(--f-mono); font-size: 9px; letter-spacing: 0.18em; color: rgba(255,255,255,0.6); text-transform: uppercase; margin-bottom: 2px;">04 / 06 · DP</div>
+                <h4 style="font-size: 13px; font-weight: 700; margin: 0 0 2px; color: #ffffff; line-height: 1.3;">蓬车 · 主视终稿</h4>
+                <p style="font-size: 10px; color: rgba(255,255,255,0.7); margin: 0; line-height: 1.5;">正面视觉 · 定稿</p>
+              </div>
+            
+            <span class="stack-caption-title" style="display:none;">蓬车 · 主视终稿</span></article>
+
+            <article class="stack-card" data-index="4" style="position: absolute; top: 0; left: 0; width: 480px; height: 270px; background: #fff; border-radius: 14px; overflow: hidden; box-shadow: 0 20px 44px rgba(0,0,0,0.2), 0 4px 12px rgba(0,0,0,0.08); border: 1px solid rgba(10,20,36,0.06); will-change: transform, opacity, z-index; z-index: 6;">
+              <div style="position: relative; width: 100%; height: 100%; background: #f3f3ef; overflow: hidden;">
+                <img src="assets/works/05-dp-final-side.png" alt="蓬车终稿侧视" style="width: 100%; height: 100%; object-fit: contain; background: #f3f3ef; user-select: none; -webkit-user-drag: none; pointer-events: none;" draggable="false" />
+              </div>
+              <div style="position: absolute; left: 0; right: 0; bottom: 0; padding: 12px 16px; background: linear-gradient(to top, rgba(0,0,0,0.78), transparent); color: #fff; opacity: 0; transition: opacity 0.3s ease;" class="stack-card__info">
+                <div style="font-family: var(--f-mono); font-size: 9px; letter-spacing: 0.18em; color: rgba(255,255,255,0.6); text-transform: uppercase; margin-bottom: 2px;">05 / 06 · DP</div>
+                <h4 style="font-size: 13px; font-weight: 700; margin: 0 0 2px; color: #ffffff; line-height: 1.3;">蓬车终稿 · 侧视</h4>
+                <p style="font-size: 10px; color: rgba(255,255,255,0.7); margin: 0; line-height: 1.5;">侧面延展 · 定稿</p>
+              </div>
+            
+            <span class="stack-caption-title" style="display:none;">蓬车终稿 · 侧视</span></article>
+
+            <article class="stack-card" data-index="5" style="position: absolute; top: 0; left: 0; width: 480px; height: 270px; background: #fff; border-radius: 14px; overflow: hidden; box-shadow: 0 20px 44px rgba(0,0,0,0.2), 0 4px 12px rgba(0,0,0,0.08); border: 1px solid rgba(10,20,36,0.06); will-change: transform, opacity, z-index; z-index: 5;">
+              <div style="position: relative; width: 100%; height: 100%; background: #f3f3ef; overflow: hidden;">
+                <img src="assets/works/06-dp-final-back.png" alt="蓬车终稿后视" style="width: 100%; height: 100%; object-fit: contain; background: #f3f3ef; user-select: none; -webkit-user-drag: none; pointer-events: none;" draggable="false" />
+              </div>
+              <div style="position: absolute; left: 0; right: 0; bottom: 0; padding: 12px 16px; background: linear-gradient(to top, rgba(0,0,0,0.78), transparent); color: #fff; opacity: 0; transition: opacity 0.3s ease;" class="stack-card__info">
+                <div style="font-family: var(--f-mono); font-size: 9px; letter-spacing: 0.18em; color: rgba(255,255,255,0.6); text-transform: uppercase; margin-bottom: 2px;">06 / 06 · DP</div>
+                <h4 style="font-size: 13px; font-weight: 700; margin: 0 0 2px; color: #ffffff; line-height: 1.3;">蓬车终稿 · 后视</h4>
+                <p style="font-size: 10px; color: rgba(255,255,255,0.7); margin: 0; line-height: 1.5;">操作台 · 定稿</p>
+              </div>
+            
+            <span class="stack-caption-title" style="display:none;">蓬车终稿 · 后视</span></article>
+          </div>
+        </div>
+
+        <!-- 指示器 + 翻页 + 当前卡 caption (移出 stage 容器,绝对定位在 stack 下方) -->
+        <div class="stack-controls" style="display: flex; justify-content: center; align-items: center; gap: 20px; margin-top: 28px;">
+          <button id="stackPrev" aria-label="上一张" style="width: 44px; height: 44px; border-radius: 50%; background: #fff; border: 1px solid rgba(10,20,36,0.1); display: inline-flex; align-items: center; justify-content: center; color: #0a1424; box-shadow: 0 2px 8px rgba(0,0,0,0.06); cursor: pointer; transition: transform 0.2s ease, background 0.2s ease;">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6L9 12l6 6"/></svg>
+          </button>
+          <div id="stackCaption" style="min-width: 240px; text-align: center; font-family: var(--f-mono); font-size: 11px; letter-spacing: 0.15em; color: rgba(10,20,36,0.7); text-transform: uppercase;">
+            <span id="stackCaptionIndex">01 / 06</span>
+            <span style="margin: 0 8px; color: rgba(10,20,36,0.25);">·</span>
+            <span id="stackCaptionTitle" style="font-weight: 600; color: #0a1424;">维他茶 mega KV</span>
+          </div>
+          <div id="stackDots" style="display: flex; gap: 8px; align-items: center;">
+            <button class="stack-dot" data-index="0" aria-label="第 1 张" style="width: 28px; height: 6px; border-radius: 3px; background: #0a1424; border: 0; padding: 0; cursor: pointer; transition: width 0.35s ease, background 0.35s ease;"></button>
+            <button class="stack-dot" data-index="1" aria-label="第 2 张" style="width: 6px; height: 6px; border-radius: 50%; background: rgba(10,20,36,0.18); border: 0; padding: 0; cursor: pointer; transition: width 0.35s ease, background 0.35s ease;"></button>
+            <button class="stack-dot" data-index="2" aria-label="第 3 张" style="width: 6px; height: 6px; border-radius: 50%; background: rgba(10,20,36,0.18); border: 0; padding: 0; cursor: pointer; transition: width 0.35s ease, background 0.35s ease;"></button>
+            <button class="stack-dot" data-index="3" aria-label="第 4 张" style="width: 6px; height: 6px; border-radius: 50%; background: rgba(10,20,36,0.18); border: 0; padding: 0; cursor: pointer; transition: width 0.35s ease, background 0.35s ease;"></button>
+            <button class="stack-dot" data-index="4" aria-label="第 5 张" style="width: 6px; height: 6px; border-radius: 50%; background: rgba(10,20,36,0.18); border: 0; padding: 0; cursor: pointer; transition: width 0.35s ease, background 0.35s ease;"></button>
+            <button class="stack-dot" data-index="5" aria-label="第 6 张" style="width: 6px; height: 6px; border-radius: 50%; background: rgba(10,20,36,0.18); border: 0; padding: 0; cursor: pointer; transition: width 0.35s ease, background 0.35s ease;"></button>
+          </div>
+          <button id="stackNext" aria-label="下一张" style="width: 44px; height: 44px; border-radius: 50%; background: #0a1424; border: 1px solid #0a1424; display: inline-flex; align-items: center; justify-content: center; color: #ffffff; box-shadow: 0 4px 14px rgba(10,20,36,0.18); cursor: pointer; transition: transform 0.2s ease, background 0.2s ease;">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
+          </button>
+          </div>
+        </div>
+
+        <!-- 01 板块底部柠檬片装饰 -->
+        <img src="assets/img/lemon-c.png" class="works-section-lemon works-section-lemon--3" alt="" aria-hidden="true">
+        <img src="assets/img/lemon-d.png" class="works-section-lemon works-section-lemon--4" alt="" aria-hidden="true">
+      </div>
+
+      <!-- === Chapter 2 前一屏: 全屏主视觉 === -->
+      <section class="page-hero" id="chapter2Hero" aria-label="维他 VLT-AISONG 主视觉">
+        <img src="assets/works/02-hero-full.jpg" alt="维他 VLT-AISONG 主视觉" />
+      </section>
+
+      <!-- === Chapter 2: 3D 浮动作品 === -->
+      <div class="works-chapter works-chapter--float" style="position: relative;">
+        <div class="works-chapter__sticky works-chapter__sticky--float" id="chapter2Header" style="width: 100vw; max-width: none; left: calc(50% - 50vw); margin: 0; box-sizing: border-box; text-align: left; padding-left: 0; padding-right: 0;">
+          <div class="chapter-tag"><span>02</span> VLT-AISONG</div>
+          <h3 class="chapter-title">维他VLT-AISONG</h3>
+        </div>
+
+        <!-- Chapter 2: 柠檬 GIF 漂浮动效 + 音波波纹扩散 -->
+        <div class="chapter2-floats" aria-hidden="true">
+          <img src="assets/img/lemon-drift.gif" alt="" class="chapter2-floats__gif" />
+          <img src="assets/img/soundwave.png" alt="" class="chapter2-floats__sound chapter2-floats__sound--1" />
+          <img src="assets/img/soundwave.png" alt="" class="chapter2-floats__sound chapter2-floats__sound--2" />
+          <img src="assets/img/soundwave.png" alt="" class="chapter2-floats__sound chapter2-floats__sound--3" />
+        </div>
+
+        <!-- Chapter 2: 2 块柠檬片漂浮装饰(避开 9 张卡片和手机图) -->
+        <div class="aisong-lemon-float" style="top: 9%; right: 5%; width: 90px; transform: rotate(-18deg); --delay: 0s;" aria-hidden="true">
+          <div class="aisong-lemon-float__anim" style="animation-delay: 0s;">
+            <img class="aisong-lemon-float__img" src="assets/img/aisong-lemon-1.png" alt="" />
+          </div>
+        </div>
+        <div class="aisong-lemon-float" style="top: 80%; left: 4%; width: 160px; transform: rotate(15deg); --delay: 0.4s;" aria-hidden="true">
+          <div class="aisong-lemon-float__anim" style="animation-delay: 0.4s;">
+            <img class="aisong-lemon-float__img" src="assets/img/aisong-lemon-2.png" alt="" />
+          </div>
+        </div>
+        <div class="aisong-cards" aria-hidden="true">
+          <!-- Chapter 2: 9 张 AISONG 卡片漂浮动效(右侧分散布局,行间有少量重叠感) -->
+          <div class="aisong-card-wrap" style="top: 8%; left: 50%; width: 150px; transform: rotate(-4deg); --delay: 0s;">
+            <div class="aisong-card"><img src="assets/works/aisong/02-aisong-01-speak.gif" alt="念出这段文字" /></div>
+          </div>
+          <div class="aisong-card-wrap" style="top: 14%; left: 65%; width: 160px; transform: rotate(3deg); --delay: 0.5s;">
+            <div class="aisong-card"><img src="assets/works/aisong/02-aisong-02-genre.gif" alt="曲风页" /></div>
+          </div>
+          <div class="aisong-card-wrap" style="top: 10%; left: 80%; width: 150px; transform: rotate(-2deg); --delay: 1.0s;">
+            <div class="aisong-card"><img src="assets/works/aisong/02-aisong-03-lyrics.jpg" alt="创作本涩歌词" /></div>
+          </div>
+          <div class="aisong-card-wrap" style="top: 36%; left: 52%; width: 160px; transform: rotate(4deg); --delay: 0.3s;">
+            <div class="aisong-card"><img src="assets/works/aisong/02-aisong-04-keywords.jpg" alt="选关键词" /></div>
+          </div>
+          <div class="aisong-card-wrap" style="top: 42%; left: 67%; width: 170px; transform: rotate(-3deg); --delay: 0.8s;">
+            <div class="aisong-card"><img src="assets/works/aisong/02-aisong-05-player.jpg" alt="定制专属播放器" /></div>
+          </div>
+          <div class="aisong-card-wrap" style="top: 38%; left: 82%; width: 150px; transform: rotate(2deg); --delay: 1.4s;">
+            <div class="aisong-card"><img src="assets/works/aisong/02-aisong-06-album.gif" alt="AISONG 专辑" /></div>
+          </div>
+          <div class="aisong-card-wrap" style="top: 64%; left: 50%; width: 160px; transform: rotate(-2deg); --delay: 0.4s;">
+            <div class="aisong-card"><img src="assets/works/aisong/02-aisong-07-vinyl.jpg" alt="复古黑胶" /></div>
+          </div>
+          <div class="aisong-card-wrap" style="top: 70%; left: 66%; width: 170px; transform: rotate(3deg); --delay: 1.0s;">
+            <div class="aisong-card"><img src="assets/works/aisong/02-aisong-08-trueraw.jpg" alt="真我本涩" /></div>
+          </div>
+          <div class="aisong-card-wrap" style="top: 66%; left: 80%; width: 150px; transform: rotate(-4deg); --delay: 1.6s;">
+            <div class="aisong-card"><img src="assets/works/aisong/02-aisong-09-steam.jpg" alt="蒸汽迷幻" /></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- === Chapter 2b: 礼盒&周边(无 chapter tag,大标题改名) === -->
+      <div class="works-chapter works-chapter--float" style="position: relative; min-height: 130vh;">
+        <div class="works-chapter__sticky works-chapter__sticky--float" id="chapter2bHeader" style="width: 100vw; max-width: none; left: calc(50% - 50vw); margin: 0; box-sizing: border-box; text-align: left; padding-left: 0; padding-right: 0;">
+          <h3 class="chapter-title">维他VLT-礼盒&周边</h3>
+        </div>
+
+        <!-- 字体元素(左对齐大标题,漂浮) -->
+        <div class="giftbox-ziti" id="giftboxZiti" aria-hidden="true">
+          <img src="assets/img/giftbox-ziti.png" alt="" />
+        </div>
+
+        <!-- 中间柠檬片(漂浮在中间空白处) -->
+        <div class="giftbox-lemon-center" aria-hidden="true">
+          <img src="assets/img/giftbox-lemon-2.png" alt="" />
+        </div>
+
+        <!-- 左下角柠檬片(水平翻转,漂浮) -->
+        <div class="giftbox-lemon-leftbottom" aria-hidden="true">
+          <img src="assets/img/giftbox-lemon-2.png" alt="" />
+        </div>
+
+        <!-- 3 张礼盒卡片(压在白色 ziti 上,上下一点点重叠,圆角浮动) -->
+        <div class="giftbox-card giftbox-card--1" aria-hidden="true">
+          <img src="assets/works/giftbox/02b-giftbox-1.jpg" alt="VLT REMIX 礼盒黑胶版" />
+        </div>
+        <div class="giftbox-card giftbox-card--2" aria-hidden="true">
+          <img src="assets/works/giftbox/02b-giftbox-2.jpg" alt="VLT REMIX 礼盒茶饮版" />
+        </div>
+        <div class="giftbox-card giftbox-card--3" aria-hidden="true">
+          <img src="assets/works/giftbox/02b-giftbox-3.jpg" alt="VLT REMIX 礼盒立体" />
+        </div>
+
+        <!-- 7 张周边漂浮图(3-2-2 靠右排版) -->
+        <div class="merch-item merch-item--1" aria-hidden="true">
+          <img src="assets/works/merch/02b-merch-1.png" alt="VLT 周边 1" />
+        </div>
+        <div class="merch-item merch-item--2" aria-hidden="true">
+          <img src="assets/works/merch/02b-merch-2.png" alt="VLT 周边 2" />
+        </div>
+        <div class="merch-item merch-item--3" aria-hidden="true">
+          <img src="assets/works/merch/02b-merch-3.png" alt="VLT 周边 3" />
+        </div>
+        <div class="merch-item merch-item--4" aria-hidden="true">
+          <img src="assets/works/merch/02b-merch-4.png" alt="VLT 周边 4" />
+        </div>
+        <div class="merch-item merch-item--5" aria-hidden="true">
+          <img src="assets/works/merch/02b-merch-5.png" alt="VLT 周边 5" />
+        </div>
+        <div class="merch-item merch-item--6" aria-hidden="true">
+          <img src="assets/works/merch/02b-merch-6.png" alt="VLT 周边 6" />
+        </div>
+        <div class="merch-item merch-item--7" aria-hidden="true">
+          <img src="assets/works/merch/02b-merch-7.png" alt="VLT 周边 7" />
+        </div>
+      </div>
+
+      <!-- === Chapter 2c: VLT 来涩就现在 满屏海报 === -->
+      <div class="works-chapter works-chapter--vlt-banner">
+        <img src="assets/works/02b-vlt-banner.jpg" alt="维他柠檬茶 来'涩'就现在" />
+      </div>
+
+      <!-- === Chapter 2d: VLT 快闪夏日快闪邀请函 满屏海报 === -->
+      <div class="works-chapter works-chapter--vlt-banner">
+        <img src="assets/works/02b-vlt-flash.jpg" alt="维他柠檬茶 夏日快闪邀请函" />
+      </div>
+
+      <!-- === Chapter 4b: 维他VLT-POPUP(简化版,黄底 + 跟 03 一样的小标题) === -->
+      <div class="works-chapter works-chapter--popup" style="position: relative; width: 100%; aspect-ratio: 16 / 9; background: #ffda3d; padding: 80px var(--pad-x); box-sizing: border-box;">
+        <!-- 底部柠檬底纹(10% 透明) -->
+        <img class="popup-bg-lemon" src="assets/img/popup-bg-lemon.png" alt="" aria-hidden="true" />
+        <div class="works-chapter__head">
+          <div class="chapter-tag"><span>03</span> VLT-Q2-POPUP</div>
+          <h3 class="chapter-title">维他VLT-POPUP</h3>
+        </div>
+
+        <!-- 左: 线稿(无卡片样式) + 右: 1 个大相框 + 左右切换按钮 -->
+        <div class="popup-img popup-img--1" aria-hidden="true">
+          <img src="assets/works/popup/04b-popup-1.png" alt="VLT 快闪店 - 线稿" />
+        </div>
+
+        <!-- 2 片柠檬漂浮装饰 -->
+        <div class="popup-lemon popup-lemon--1" aria-hidden="true">
+          <img src="assets/img/popup-lemon-1.png" alt="" />
+        </div>
+        <div class="popup-lemon popup-lemon--2" aria-hidden="true">
+          <img src="assets/img/popup-lemon-2.png" alt="" />
+        </div>
+
+        <div class="popup-frame" id="popupFrame" aria-label="VLT 快闪店图片切换">
+          <div class="popup-frame__inner">
+            <div class="popup-frame__stage">
+              <img class="popup-frame__img is-active" src="assets/works/popup/04b-popup-2.png" alt="VLT 快闪店 - City Walk" />
+              <img class="popup-frame__img" src="assets/works/popup/04b-popup-3.png" alt="VLT 快闪店 - 动感单车" />
+              <img class="popup-frame__img" src="assets/works/popup/04b-popup-4.png" alt="VLT 快闪店 - 哈啰骑行" />
+              <img class="popup-frame__img" src="assets/works/popup/04b-popup-5.png" alt="VLT 快闪店 - 扫码尝鲜" />
+              <img class="popup-frame__img" src="assets/works/popup/04b-popup-6.png" alt="VLT 快闪店 - 打卡拍照" />
+              <img class="popup-frame__img" src="assets/works/popup/04b-popup-7.png" alt="VLT 快闪店 - 哈啰全景" />
+              <button class="popup-frame__arrow popup-frame__arrow--prev" type="button" aria-label="上一张">‹</button>
+              <button class="popup-frame__arrow popup-frame__arrow--next" type="button" aria-label="下一张">›</button>
+            </div>
+            <div class="popup-frame__info">
+              <span class="popup-frame__info-name" id="popupFrameName">City Walk</span>
+              <span class="popup-frame__info-tag" id="popupFrameTag">01 / 06</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- === Chapter 3: 3x2 网格 (POPUP 线下图) === -->
+      <div class="works-chapter works-chapter--grid">
+        <!-- 2 片柠檬漂浮装饰 -->
+        <div class="grid-lemon grid-lemon--1" aria-hidden="true">
+          <img src="assets/img/popup-lemon-1.png" alt="" />
+        </div>
+        <div class="grid-lemon grid-lemon--2" aria-hidden="true">
+          <img src="assets/img/popup-lemon-2.png" alt="" />
+        </div>
+        <div class="works-chapter__head">
+          <div class="chapter-tag"><span>03</span> VLT-Q2-POPUP</div>
+          <h3 class="chapter-title">POPUP线下图</h3>
+        </div>
+        <div class="works-grid">
+          <article class="g-item" data-proj data-category="package">
+            <div class="g-item__media"><img src="assets/works/popup-real-1.jpg" alt="POPUP 现场 1" /></div>
+            <div class="g-item__meta">
+              <span class="num">01</span>
+              <h5>现场 01</h5>
+              <small>POPUP 线下</small>
+            </div>
+          </article>
+          <article class="g-item" data-proj data-category="visual">
+            <div class="g-item__media"><img src="assets/works/popup-real-2.jpg" alt="POPUP 现场 2" /></div>
+            <div class="g-item__meta">
+              <span class="num">02</span>
+              <h5>现场 02</h5>
+              <small>POPUP 线下</small>
+            </div>
+          </article>
+          <article class="g-item" data-proj data-category="brand">
+            <div class="g-item__media"><img src="assets/works/popup-real-3.jpg" alt="POPUP 现场 3" /></div>
+            <div class="g-item__meta">
+              <span class="num">03</span>
+              <h5>现场 03</h5>
+              <small>POPUP 线下</small>
+            </div>
+          </article>
+          <article class="g-item" data-proj data-category="package">
+            <div class="g-item__media"><img src="assets/works/popup-real-4.jpg" alt="POPUP 现场 4" /></div>
+            <div class="g-item__meta">
+              <span class="num">04</span>
+              <h5>现场 04</h5>
+              <small>POPUP 线下</small>
+            </div>
+          </article>
+          <article class="g-item" data-proj data-category="illust">
+            <div class="g-item__media"><img src="assets/works/popup-real-5.jpg" alt="POPUP 现场 5" /></div>
+            <div class="g-item__meta">
+              <span class="num">05</span>
+              <h5>现场 05</h5>
+              <small>POPUP 线下</small>
+            </div>
+          </article>
+          <article class="g-item" data-proj data-category="brand">
+            <div class="g-item__media"><img src="assets/works/popup-real-6.jpg" alt="POPUP 现场 6" /></div>
+            <div class="g-item__meta">
+              <span class="num">06</span>
+              <h5>现场 06</h5>
+              <small>POPUP 线下</small>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <!-- === Chapter 3b: 维他鸭屎香柠檬茶 营销总结 满屏海报 === -->
+      <div class="works-chapter works-chapter--vlt-banner">
+        <img src="assets/works/03-vlt-summary.jpg" alt="维他鸭屎香柠檬茶 营销总结" />
+      </div>
+
+      <!-- === Chapter 5: 评价卡（参考图7） === -->
+      <div class="works-chapter works-chapter--reviews">
+        <div class="works-chapter__head">
+          <div class="chapter-tag"><span>04</span> YSX-IP</div>
+          <h3 class="chapter-title big-line">
+            <span>YSX-IP设计</span>
+          </h3>
+        </div>
+
+        <div class="reviews-stage" id="reviewsStage">
+          <!-- 2 片漂浮柠檬装饰 -->
+          <div class="ip-lemon ip-lemon--1" aria-hidden="true">
+            <img src="assets/img/popup-lemon-2.png" alt="" />
+          </div>
+          <div class="ip-lemon ip-lemon--2" aria-hidden="true">
+            <img src="assets/img/popup-lemon-1.png" alt="" />
+          </div>
+
+          <!-- 3 只鸭选择器(同等大小并排) -->
+          <div class="ip-selector" id="ipSelector">
+            <button class="ip-card is-active" data-ip="轻爽鸭" type="button">
+              <span class="ip-card__num">图 1</span>
+              <img src="assets/img/ip/轻爽鸭/轻爽鸭1.gif" alt="轻爽鸭" />
+              <span class="ip-card__name">轻爽鸭</span>
+            </button>
+            <button class="ip-card" data-ip="学院鸭" type="button">
+              <span class="ip-card__num">图 2</span>
+              <img src="assets/img/ip/学院鸭/学院鸭1.gif" alt="学院鸭" />
+              <span class="ip-card__name">学院鸭</span>
+            </button>
+            <button class="ip-card" data-ip="派对鸭" type="button">
+              <span class="ip-card__num">图 3</span>
+              <img src="assets/img/ip/派对鸭/派对鸭1.gif" alt="派对鸭" />
+              <span class="ip-card__name">派对鸭</span>
+            </button>
+          </div>
+
+          <!-- 当前选择提示 -->
+          <div class="ip-current">
+            <span class="ip-current__label">当前选择</span>
+            <span class="ip-current__name" id="ipCurrentName">轻爽鸭</span>
+          </div>
+
+          <!-- 该 IP 的其他图展示区 -->
+          <div class="ip-gallery" id="ipGallery"></div>
+        </div>
+      </div>
+
+      <!-- === Chapter 5b: 复制评价卡(TRUSTED #2) === -->
+      <div class="works-chapter works-chapter--reviews">
+        <div class="works-chapter__head">
+          <h3 class="chapter-title big-line">
+            <span>YSX-IPAI延展</span>
+          </h3>
+        </div>
+
+        <div class="aiext-stage" id="aiextStage">
+          <!-- 负片柠檬装饰(左下) -->
+          <div class="aiext-lemon aiext-lemon--2" aria-hidden="true">
+            <img src="assets/img/popup-lemon-1.png" alt="" />
+          </div>
+          <!-- 左侧：AI 鸭 -->
+          <img class="ai-duck" src="assets/img/duck-base.png" alt="AI Duck" />
+          <!-- 右侧：6 张 AI 延展图(漂浮 + 圆角) -->
+          <div class="aiext-grid" aria-label="AI 延展图集">
+            <figure class="aiext-card aiext-card--1"><img src="assets/works/aiext/aiext-1.jpg" alt="AI 延展 1" /></figure>
+            <figure class="aiext-card aiext-card--2"><img src="assets/works/aiext/aiext-2.jpg" alt="AI 延展 2" /></figure>
+            <figure class="aiext-card aiext-card--3"><img src="assets/works/aiext/aiext-3.jpg" alt="AI 延展 3" /></figure>
+            <figure class="aiext-card aiext-card--4"><img src="assets/works/aiext/aiext-4.jpg" alt="AI 延展 4" /></figure>
+            <figure class="aiext-card aiext-card--5"><img src="assets/works/aiext/aiext-5.jpg" alt="AI 延展 5" /></figure>
+            <figure class="aiext-card aiext-card--6"><img src="assets/works/aiext/aiext-6.jpg" alt="AI 延展 6" /></figure>
+          </div>
+        </div>
+      </div>
+
+      <!-- === Chapter 5b 复制(第 2 屏) === -->
+      <div class="works-chapter works-chapter--reviews">
+        <div class="works-chapter__head">
+          <h3 class="chapter-title big-line">
+            <span>YSX-POPUP</span>
+          </h3>
+        </div>
+
+        <div class="aiext-stage aiext-stage--solo" id="aiextStage2">
+          <!-- 负片柠檬浮动装饰 -->
+          <div class="aiext-lemon aiext-lemon--1" aria-hidden="true">
+            <img src="assets/img/popup-lemon-2.png" alt="" />
+          </div>
+          <div class="aiext-lemon aiext-lemon--2" aria-hidden="true">
+            <img src="assets/img/popup-lemon-1.png" alt="" />
+          </div>
+          <div class="popup-grid" aria-label="YSX POPUP 图集">
+            <figure class="popup-card popup-card--left popup-card--1"><img src="assets/works/ysxpopup/ysxpopup-1.jpg" alt="YSX POPUP 1" /></figure>
+            <figure class="popup-card popup-card--right popup-card--2"><img src="assets/works/ysxpopup/ysxpopup-2.jpg" alt="YSX POPUP 2" /></figure>
+            <figure class="popup-card popup-card--left popup-card--3"><img src="assets/works/ysxpopup/ysxpopup-3.jpg" alt="YSX POPUP 3" /></figure>
+            <figure class="popup-card popup-card--right popup-card--4"><img src="assets/works/ysxpopup/ysxpopup-4.jpg" alt="YSX POPUP 4" /></figure>
+          </div>
+        </div>
+      </div>
+
+      <!-- 04b 第 1 / 第 2 屏之间：100vh 分隔 + YSX-公园前装置 标题 -->
+      <div class="aiext-divider">
+        <!-- 浮动柠檬装饰 -->
+        <div class="aiext-lemon aiext-lemon--1" aria-hidden="true">
+          <img src="assets/img/popup-lemon-2.png" alt="" />
+        </div>
+        <div class="aiext-lemon aiext-lemon--2" aria-hidden="true">
+          <img src="assets/img/popup-lemon-1.png" alt="" />
+        </div>
+        <h3 class="chapter-title big-line aiext-divider__title">
+          <span>YSX-公园前装置</span>
+        </h3>
+        <div class="gyq-grid" aria-label="公园前装置图集">
+          <figure class="gyq-card"><img src="assets/works/gongyuanqian/gongyuanqian-1.jpg" alt="公园前装置 1" /></figure>
+          <figure class="gyq-card"><img src="assets/works/gongyuanqian/gongyuanqian-2.jpg" alt="公园前装置 2" /></figure>
+          <figure class="gyq-card"><img src="assets/works/gongyuanqian/gongyuanqian-3.jpg" alt="公园前装置 3" /></figure>
+        </div>
+      </div>
+
+      <!-- === YSX-公园前装置 下方满屏海报 === -->
+      <div class="gyq-banner" aria-hidden="false">
+        <img src="assets/works/gongyuanqian/gongyuanqian-banner.jpg" alt="YSX 公园前装置海报" />
+      </div>
+
+      <!-- === 维他奶 CNY 主 KV 满屏海报 === -->
+      <div class="gyq-banner" aria-hidden="false">
+        <img src="assets/works/gongyuanqian/vlt-cny-kv.jpg" alt="维他奶 CNY 主 KV" />
+      </div>
+
+      <!-- === Chapter 6: 团队头像（参考图8） === -->
+      <div class="works-chapter works-chapter--team">
+        <div class="works-chapter__head">
+          <div class="chapter-tag"><span>05</span> CNY</div>
+          <h3 class="chapter-title">CNY-毛绒公仔</h3>
+        </div>
+
+        <div class="team-stage" id="teamStage">
+          <figure class="cny-doll cny-doll--1"><img src="assets/works/cny-doll/cny-doll-1.gif" alt="维他奶娃娃" /></figure>
+          <figure class="cny-doll cny-doll--2"><img src="assets/works/cny-doll/cny-doll-2.gif" alt="维他奶娃娃礼盒" /></figure>
+        </div>
+      </div>
+
+      <!-- === Chapter 6 复制:CNY-微信红包(无 tag) === -->
+      <div class="works-chapter works-chapter--team">
+        <div class="works-chapter__head">
+          <h3 class="chapter-title">CNY-微信红包</h3>
+        </div>
+
+        <div class="team-stage team-stage--grid" id="teamStage2">
+          <figure class="hongbao-card hongbao-card--1"><img src="assets/works/cny-hongbao/hongbao-1.jpg" alt="维他奶CNY微信红包气泡" /></figure>
+          <figure class="hongbao-card hongbao-card--2"><img src="assets/works/cny-hongbao/hongbao-2.jpg" alt="维他奶CNY微信红包" /></figure>
+          <figure class="hongbao-card hongbao-card--3"><img src="assets/works/cny-hongbao/hongbao-3.jpg" alt="维他奶CNY微信发红包页" /></figure>
+          <figure class="hongbao-card hongbao-card--4"><img src="assets/works/cny-hongbao/hongbao-4.jpg" alt="维他奶CNY微信红包详情页" /></figure>
+          <figure class="hongbao-card hongbao-card--5"><img src="assets/works/cny-hongbao/hongbao-5.jpg" alt="维他奶CNY微信红包封面故事" /></figure>
+        </div>
+      </div>
+
+      <!-- === Chapter 6 复制 2:CNY-Q3包装设计(无 tag,空容器) === -->
+      <div class="works-chapter works-chapter--team">
+        <div class="works-chapter__head">
+          <h3 class="chapter-title">CNY-Q3包装设计</h3>
+        </div>
+
+        <div class="team-stage" id="teamStage3">
+          <figure class="q3-pack q3-pack--1"><img src="assets/works/cny-q3/q3-yuanwei.gif" alt="原味正面" /></figure>
+          <figure class="q3-pack q3-pack--2"><img src="assets/works/cny-q3/q3-qiaokeli.gif" alt="巧克力正面" /></figure>
+          <figure class="q3-pack q3-pack--3"><img src="assets/works/cny-q3/q3-zu84.gif" alt="组-84" /></figure>
+          <figure class="q3-pack q3-pack--4"><img src="assets/works/cny-q3/q3-zu85.gif" alt="组-85" /></figure>
+        </div>
+      </div>
+
+      <!-- === Chapter 6 复制 3:Q4-新品KV(无 tag,空容器,标题上多 15%) === -->
+      <div class="works-chapter works-chapter--team">
+        <div class="works-chapter__head works-chapter__head--up">
+          <h3 class="chapter-title">Q4-新品KV</h3>
+        </div>
+
+        <div class="team-stage" id="teamStage4">
+          <div class="kv-carousel" aria-label="Q4 新品 KV 切换">
+            <figure class="kv-card kv-card--active"><img src="assets/works/q4-kv/kv-1.jpg" alt="Q4 新品 KV 1" /></figure>
+            <figure class="kv-card"><img src="assets/works/q4-kv/kv-2.jpg" alt="Q4 新品 KV 2" /></figure>
+            <figure class="kv-card"><img src="assets/works/q4-kv/kv-3.jpg" alt="Q4 新品 KV 3" /></figure>
+
+            <button class="kv-btn kv-btn--prev" type="button" aria-label="上一张">
+              <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
+                <path d="M15 6 L9 12 L15 18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </button>
+            <button class="kv-btn kv-btn--next" type="button" aria-label="下一张">
+              <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
+                <path d="M9 6 L15 12 L9 18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </button>
+
+            <div class="kv-dots" role="tablist" aria-label="切换指示">
+              <button class="kv-dot kv-dot--active" type="button" data-idx="0" aria-label="第 1 张"></button>
+              <button class="kv-dot" type="button" data-idx="1" aria-label="第 2 张"></button>
+              <button class="kv-dot" type="button" data-idx="2" aria-label="第 3 张"></button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- === 满屏海报(放在 06 板块之上,独立一屏) === -->
+      <div class="works-chapter works-chapter--banner">
+        <figure class="full-banner"><img src="assets/works/cny-06/25.jpg" alt="满屏海报" /></figure>
+      </div>
+
+      <!-- === Chapter 6 复制 4:06 MINIKING-毛绒公仔(从 05 复制,挪到 Q4 下方) === -->
+      <div class="works-chapter works-chapter--team">
+        <div class="works-chapter__head">
+          <div class="chapter-tag"><span>06</span> MINIKING</div>
+          <h3 class="chapter-title">粒上皇-故宫联名礼盒</h3>
+        </div>
+
+        <div class="team-stage" id="teamStage5"></div>
+      </div>
+
+      <!-- Works footer / counter -->
+      <div class="works-footer">
+        <div class="counter">
+          <div class="counter-num"><span id="projCount">12</span><small>/ 12</small></div>
+          <p>PROJECTS SHIPPED</p>
+        </div>
+        <a href="#thanks" class="link-arrow" data-nav>继续浏览 →</a>
+      </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- SECTION 4: THANKS / 结尾页                    -->
+    <!-- ============================================ -->
+    <section class="page page-thanks" id="thanks" data-theme="dark">
+      <div class="grid-bg" aria-hidden="true"></div>
+
+      <div class="floating-blocks" aria-hidden="true">
+        <div class="block block-1"></div>
+        <div class="block block-2"></div>
+        <div class="block block-3"></div>
+        <div class="block block-4"></div>
+      </div>
+
+      <div class="thanks-wrap">
+        <h2 class="thanks-title" data-split-text>
+          <span class="t-line"><span>THANKS</span></span>
+        </h2>
+        <p class="thanks-sub">FOR YOUR TIME</p>
+      </div>
+
+      <div class="thanks-footer">
+        <a href="#home" class="link-arrow" data-nav>回到首页 ↑</a>
+        <div class="contact-quick">
+          <a href="mailto:zhongyipy@163.com">zhongyipy@163.com</a>
+          <span>·</span>
+          <a href="tel:15920416950">159 2041 6950</a>
+        </div>
+        <p class="copyright">© 2026 钟艺-EZ · PERSONAL PORTFOLIO</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ Vendor JS ============ -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
+
+  <!-- App JS -->
+  <script src="js/main.js"></script>
+  <script src="js/home.js"></script>
+  <script src="js/home-dropin.js"></script>
+  <script src="js/about.js"></script>
+  <script src="js/works.js"></script>
+  <script src="js/thanks.js"></script>
+
+  <!-- ============ INLINE STACK CONTROLLER(6 张卡错位堆叠 + 循环) ============ -->
+  <script>
+  (function () {
+    function initStack() {
+      try {
+        var stage = document.getElementById('stackStage');
+        if (!stage) { console.warn('[stack] stage missing'); return; }
+        var cards = stage.querySelectorAll('.stack-card');
+        var total = cards.length;
+        if (total === 0) { console.warn('[stack] no .stack-card'); return; }
+
+        // === 错位参数(JS 动态算,根据 viewport 决定) ===
+        // 优先级: 图片 > 一切 — 卡片按原图 16:9 landscape 比例,stage 撑满 viewport
+        var STEP_Y = 4;
+        var SCALE_STEP = 0.02;
+        var OPACITY_STEP = 0.05;
+        var BASE_TOP = 8;
+        var layout = null;
+        function calcLayout() {
+          var vw = window.innerWidth;
+          var vh = window.innerHeight;
+          // === 红框参考尺寸(本次): 焦点卡 = 75% vw 宽, 16:9; stack = 83% vw, 75% vh ===
+          // 5 张错位总宽 = 8% vw, stepX = 1.6% vw
+          var targetCardW = Math.round(vw * 0.75);
+          var cardH = Math.round(targetCardW * 9 / 16);
+          // 高度上限: 视口 75%
+          var maxByH = Math.round(vh * 0.75);
+          if (cardH > maxByH) {
+            cardH = maxByH;
+            targetCardW = Math.round(cardH * 16 / 9);
+          }
+          cardH = Math.max(cardH, 320);
+          var cardW = targetCardW;
+          // 错位步进: 5*stepX ≈ 8% vw 错位总宽, stepX ≈ 1.6% vw
+          var stepX = Math.max(20, Math.round(vw * 0.016));
+          // === stage 容器拉伸到 vw 全宽 ===
+          stage.style.position = 'relative';
+          stage.style.left = '0px';
+          stage.style.right = '0px';
+          stage.style.width = vw + 'px';
+          stage.style.maxWidth = 'none';
+          stage.style.margin = '0';
+          stage.style.padding = '0';
+          stage.style.overflow = 'visible';
+          // stack 整体中心对齐 vw 中心
+          var baseLeft = Math.round(vw / 2 - cardW / 2 - 5 * stepX / 2);
+          var targetStageH = cardH + 24;  // 24px 给卡片之间的 top padding
+          // === 同步: 让 chapter1 大标题(01 VLT POPUP / 维他VLT-Popup / 6 张作品...)左缘和 stack 左缘对齐 ===
+          var headerEl = document.getElementById('chapter1Header');
+          if (headerEl) {
+            headerEl.style.paddingLeft = baseLeft + 'px';
+            headerEl.style.paddingRight = '0px';
+          }
+          // === 同步: chapter2 标题(02 FLOAT GALLERY / 视觉印象)左缘对齐 chapter1(stack 左缘) ===
+          var header2El = document.getElementById('chapter2Header');
+          if (header2El) {
+            header2El.style.paddingLeft = baseLeft + 'px';
+            header2El.style.paddingRight = '0px';
+          }
+          // === 同步: chapter2b 标题(礼盒&周边)左缘对齐 chapter1(stack 左缘) ===
+          var header2bEl = document.getElementById('chapter2bHeader');
+          if (header2bEl) {
+            header2bEl.style.paddingLeft = baseLeft + 'px';
+            header2bEl.style.paddingRight = '0px';
+          }
+          // === 同步: chapter2b 字体图左缘对齐大标题左缘 ===
+          var zitiEl = document.getElementById('giftboxZiti');
+          if (zitiEl) {
+            zitiEl.style.left = baseLeft + 'px';
+          }
+          // === 同步: 让 works-header(SELECTED WORKS + meta/pills)左缘对齐 stack,右缘撑到 viewport 右边 ===
+          // 关键: 把 works-header 撑成 100vw,左 padding = baseLeft,右 padding = 跟左边对称 ≈ baseLeft
+          var stackRight = baseLeft + cardW + 5 * stepX;   // stack 右缘 x
+          var padRight = Math.max(0, Math.round(vw - stackRight));  // stack 右缘到 viewport 右边 = 右 padding
+          var worksHeader = document.querySelector('.works-header');
+          if (worksHeader) {
+            worksHeader.style.maxWidth = 'none';
+            worksHeader.style.width = vw + 'px';
+            worksHeader.style.paddingLeft = baseLeft + 'px';
+            worksHeader.style.paddingRight = padRight + 'px';
+            worksHeader.style.boxSizing = 'border-box';
+          }
+          layout = { cardW: cardW, cardH: cardH, stepX: stepX, baseLeft: baseLeft, stageH: targetStageH };
+        }
+
+        var current = 0;        // 当前焦点索引
+        var busy = false;       // 切换中防抖
+
+        // 应用 transition(确保渲染稳定)
+        for (var t = 0; t < total; t++) {
+          cards[t].style.transition = 'transform 0.6s cubic-bezier(0.22,1,0.36,1), opacity 0.5s ease, box-shadow 0.5s ease';
+        }
+
+        function render() {
+          // 每次 render 都重新算 layout(避免 viewport 变化时用旧值)
+          calcLayout();
+          // 动态设 stage 高度 = targetStageH
+          stage.style.height = layout.stageH + 'px';
+          // 关键: 用 transform 把整个 stack 拉到 vw 0 开始
+          var stageOffsetX = -stage.getBoundingClientRect().left;
+          stage.style.transform = 'translateX(' + stageOffsetX + 'px)';
+          // DEBUG: 输出当前 viewport 实际值
+          if (window._stackDebug !== true) {
+            window._stackDebug = true;
+            console.log('[stack] vw=' + window.innerWidth + ' vh=' + window.innerHeight +
+              ' | cardW=' + layout.cardW + ' cardH=' + layout.cardH +
+              ' | stepX=' + layout.stepX + ' baseLeft=' + layout.baseLeft +
+              ' | stageLeft=' + stage.getBoundingClientRect().left +
+              ' | stageW=' + stage.getBoundingClientRect().width);
+          }
+          for (var i = 0; i < total; i++) {
+            // 关键: pos = (i - current + total) % total
+            // 当前焦点卡片 pos=0, 其他按距离递增
+            var pos = (i - current + total) % total;
+
+            var x = layout.baseLeft + pos * layout.stepX;
+            var y = BASE_TOP + pos * STEP_Y;
+            var s = 1 - pos * SCALE_STEP;
+            var o = 1 - pos * OPACITY_STEP;
+
+            var card = cards[i];
+            card.style.width = layout.cardW + 'px';
+            card.style.height = layout.cardH + 'px';
+            card.style.transform = 'translate(' + x + 'px, ' + y + 'px) scale(' + s + ')';
+            card.style.zIndex = String(total - pos);
+            card.style.opacity = String(o);
+
+            // 焦点卡片更明显的阴影
+            if (pos === 0) {
+              card.style.boxShadow = '0 24px 50px rgba(0,0,0,0.22), 0 6px 14px rgba(0,0,0,0.1)';
+            } else {
+              card.style.boxShadow = '0 14px 30px rgba(0,0,0,0.16), 0 3px 8px rgba(0,0,0,0.08)';
+            }
+            // caption 移到外部 controls,不挡图片
+            var info = card.querySelector('.stack-card__info');
+            if (info) {
+              info.style.opacity = '0';  // 卡片内的 caption 永远隐藏
+            }
+          }
+
+          // 圆点 active 状态
+          var dots = document.querySelectorAll('#stackDots .stack-dot');
+          for (var j = 0; j < dots.length; j++) {
+            if (j === current) {
+              dots[j].style.width = '28px';
+              dots[j].style.borderRadius = '3px';
+              dots[j].style.background = '#0a1424';
+            } else {
+              dots[j].style.width = '6px';
+              dots[j].style.borderRadius = '50%';
+              dots[j].style.background = 'rgba(10,20,36,0.18)';
+            }
+          }
+          // 外部 caption(在 controls 行): 显示当前卡序号和标题
+          var idxEl = document.getElementById('stackCaptionIndex');
+          var ttlEl = document.getElementById('stackCaptionTitle');
+          if (idxEl) idxEl.textContent = String(current + 1).padStart(2, '0') + ' / ' + String(total).padStart(2, '0');
+          if (ttlEl) {
+            var activeCard = cards[current];
+            var ttlNode = activeCard ? activeCard.querySelector('.stack-caption-title') : null;
+            ttlEl.textContent = ttlNode ? ttlNode.textContent : '';
+          }
+        }
+
+        function go(target) {
+          // 循环 wrap-around: 支持负数
+          target = ((target % total) + total) % total;
+          if (target === current) return;
+          current = target;
+          render();
+        }
+
+        function next() { go(current + 1); }
+        function prev() { go(current - 1); }
+
+        // 按钮
+        var prevBtn = document.getElementById('stackPrev');
+        var nextBtn = document.getElementById('stackNext');
+        if (prevBtn) prevBtn.addEventListener('click', function (e) { e.stopPropagation(); prev(); });
+        if (nextBtn) nextBtn.addEventListener('click', function (e) { e.stopPropagation(); next(); });
+
+        // 圆点
+        var dotBtns = document.querySelectorAll('#stackDots .stack-dot');
+        for (var k = 0; k < dotBtns.length; k++) {
+          (function (idx) {
+            dotBtns[k].addEventListener('click', function (e) { e.stopPropagation(); go(idx); });
+          })(k);
+        }
+
+        // 点击非焦点的卡片:让它上位
+        for (var c = 0; c < total; c++) {
+          (function (idx) {
+            cards[idx].addEventListener('click', function () {
+              if (idx !== current) go(idx);
+            });
+          })(c);
+        }
+
+        // 键盘切换:用 stage 内的 prev/next 按钮作为 focus target,而不是 document
+        // 避免页面其他区域的 ArrowRight 误触
+        // (在 stage 内的 prev/next 按钮聚焦时,全局 ArrowRight 不会干扰)
+        // 这里我们给 stage 一个属性,但不抢 focus。键盘支持只通过 click prev/next 触发。
+        // (若需键盘切换,可在 stage 内的 prev/next 上按 Enter/Space,它们本身是 button)
+
+        // 初始化
+        render();
+
+        // 监听 resize 重新计算 layout 并重渲染
+        var resizeTimer = null;
+        window.addEventListener('resize', function () {
+          if (resizeTimer) clearTimeout(resizeTimer);
+          resizeTimer = setTimeout(function () {
+            calcLayout();
+            render();
+          }, 100);
+        });
+
+        console.log('[stack] ready, total=' + total);
+      } catch (err) {
+        console.error('[stack] error', err);
+      }
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initStack);
+    } else {
+      initStack();
+    }
+  })();
+
+  // === Chapter 4b: 相框图片切换(3 张图 + 左右箭头 + 信息栏) ===
+  (function initPopupFrame() {
+    var frame = document.getElementById('popupFrame');
+    if (!frame) return;
+    var imgs = frame.querySelectorAll('.popup-frame__img');
+    var prev = frame.querySelector('.popup-frame__arrow--prev');
+    var next = frame.querySelector('.popup-frame__arrow--next');
+    var nameEl = document.getElementById('popupFrameName');
+    var tagEl = document.getElementById('popupFrameTag');
+    if (!imgs.length) return;
+
+    // 信息栏文案(和图片顺序对应)
+    var labels = [
+      { name: 'City Walk',     tag: '01 / 06' },
+      { name: '动感单车区',    tag: '02 / 06' },
+      { name: '哈啰骑行区',    tag: '03 / 06' },
+      { name: '扫码尝鲜区',    tag: '04 / 06' },
+      { name: '打卡拍照区',    tag: '05 / 06' },
+      { name: '哈啰骑行全景',  tag: '06 / 06' }
+    ];
+    var total = imgs.length;
+    var cur = 0;
+
+    function show(idx) {
+      cur = (idx + total) % total;
+      imgs.forEach(function (img, i) {
+        if (i === cur) img.classList.add('is-active');
+        else img.classList.remove('is-active');
+      });
+      if (nameEl) nameEl.textContent = labels[cur].name;
+      if (tagEl)  tagEl.textContent  = labels[cur].tag;
+    }
+
+    if (prev) prev.addEventListener('click', function () { show(cur - 1); });
+    if (next) next.addEventListener('click', function () { show(cur + 1); });
+  })();
+</script>
+</body>
+</html>

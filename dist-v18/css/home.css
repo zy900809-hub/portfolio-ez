@@ -1,0 +1,168 @@
+/* ============================================
+   Page: HOME / 首页
+   图1 严格复刻
+   ============================================ */
+
+.page-home {
+  min-height: 100vh;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: radial-gradient(ellipse at 50% 50%, #0e1a30 0%, #050b16 80%);
+  overflow: hidden;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+/* === Floating Decorative Blocks === */
+.floating-blocks {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.block {
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  border-radius: 4px;
+  background: linear-gradient(135deg, rgba(122, 255, 200, 0.85) 0%, rgba(30, 108, 255, 0.5) 100%);
+  filter: blur(0.4px);
+  opacity: 0.85;
+  box-shadow:
+    0 0 40px rgba(122, 255, 200, 0.35),
+    inset 0 0 30px rgba(255, 255, 255, 0.15);
+}
+
+.block-1 {
+  top: 22%;
+  left: 12%;
+  width: 90px; height: 90px;
+  transform: rotate(-12deg);
+  animation: float 8s ease-in-out infinite;
+}
+
+.block-2 {
+  top: 18%;
+  right: 18%;
+  width: 50px; height: 50px;
+  transform: rotate(8deg);
+  background: linear-gradient(135deg, rgba(122, 255, 200, 0.5) 0%, rgba(30, 108, 255, 0.3) 100%);
+  opacity: 0.4;
+  animation: float 9s ease-in-out infinite reverse;
+}
+
+.block-3 {
+  bottom: 18%;
+  right: 10%;
+  width: 110px; height: 110px;
+  transform: rotate(15deg);
+  background: linear-gradient(135deg, rgba(122, 255, 200, 0.85) 0%, rgba(30, 108, 255, 0.5) 100%);
+  animation: float 10s ease-in-out infinite;
+}
+
+.block-4 {
+  bottom: 28%;
+  left: 8%;
+  width: 40px; height: 40px;
+  transform: rotate(-25deg);
+  background: linear-gradient(135deg, rgba(122, 255, 200, 0.4) 0%, rgba(30, 108, 255, 0.2) 100%);
+  opacity: 0.5;
+  animation: float 7s ease-in-out infinite reverse;
+}
+
+@keyframes float {
+  0%, 100% { transform: rotate(-12deg) translate(0, 0); }
+  50%      { transform: rotate(-12deg) translate(10px, -14px); }
+}
+.block-2 { animation-name: float-2; }
+.block-3 { animation-name: float-3; }
+.block-4 { animation-name: float-4; }
+
+@keyframes float-2 { 0%,100% {transform: rotate(8deg) translate(0,0);} 50% {transform: rotate(8deg) translate(-12px, 10px);} }
+@keyframes float-3 { 0%,100% {transform: rotate(15deg) translate(0,0);} 50% {transform: rotate(15deg) translate(14px, -10px);} }
+@keyframes float-4 { 0%,100% {transform: rotate(-25deg) translate(0,0);} 50% {transform: rotate(-25deg) translate(-8px, -12px);} }
+
+/* === Home Title === */
+.page-home__inner {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1400px;
+  padding: 0 var(--pad-x);
+}
+
+.home-title {
+  font-family: var(--f-display);
+  font-weight: 900;
+  font-size: clamp(56px, 12vw, 200px);
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+  color: #fff;
+  text-transform: uppercase;
+  white-space: nowrap;
+  margin: 0;
+}
+
+.home-title .t-line {
+  display: block;
+  overflow: hidden;
+  padding: 0.05em 0;
+}
+
+.home-title .t-line > span {
+  display: block;
+  transform: translateY(0);
+  will-change: transform;
+}
+
+/* === Categories Strip (bottom) === */
+.page-home__categories {
+  position: absolute;
+  bottom: 36px;
+  left: 0; right: 0;
+  z-index: 3;
+  padding: 0 var(--pad-x);
+}
+
+.page-home__categories ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.page-home__categories li {
+  font-size: 14px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.85);
+  letter-spacing: 0.02em;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+}
+
+.page-home__categories .dot {
+  width: 6px;
+  height: 6px;
+  background: rgba(255,255,255,0.85);
+  border-radius: 50%;
+  margin-right: 8px;
+  display: inline-block;
+}
+
+/* Responsive overrides for home */
+@media (max-width: 768px) {
+  .home-title { font-size: clamp(40px, 14vw, 80px); }
+  .page-home__categories li { font-size: 12px; }
+  .block-1, .block-3 { width: 50px; height: 50px; }
+  .page-home__categories ul { justify-content: center; gap: 10px; }
+  .page-home__categories { bottom: 20px; }
+}

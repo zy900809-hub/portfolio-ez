@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>钟艺 · EZ | PERSONAL PORTFOLIO 2026</title>
+  <meta name="description" content="钟艺-EZ 个人作品集 · 视觉设计 / 包装设计 / 插画设计 / 商业设计" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Noto+Sans+SC:wght@300;400;500;700;900&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/main.css?v=17" />
+  <link rel="stylesheet" href="css/home.css?v=17" />
+  <link rel="stylesheet" href="css/about.css?v=17" />
+  <link rel="stylesheet" href="css/works.css?v=17" />
+  <link rel="stylesheet" href="css/thanks.css?v=17" />
+
+  <!-- Favicon (inline SVG) -->
+  <link rel="icon" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><polygon points='10,50 50,10 90,50 50,90' fill='%231e6cff'/></svg>" />
+
+  <!-- Critical inline styles to guarantee layout before external CSS loads -->
+  <style>
+    .works-chapter__grid--two {
+      display: flex !important;
+      flex-wrap: wrap;
+      gap: 32px;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+    .works-chapter__grid--two .proj--big { flex: 1 1 45%; min-width: 320px; }
+    .works-grid {
+      display: flex !important;
+      flex-wrap: wrap;
+      gap: 20px;
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+    .works-grid .g-item { flex: 1 1 calc(33.33% - 14px); min-width: 280px; }
+    .works-header {
+      display: flex !important;
+      flex-wrap: wrap;
+      gap: 60px;
+      align-items: flex-end;
+      max-width: 1400px;
+      margin: 0 auto 60px;
+    }
+    .works-header__title { flex: 1 1 400px; }
+    .works-header__meta { flex: 1 1 300px; }
+    .banner-card__content {
+      display: flex !important;
+      flex-wrap: wrap;
+      gap: 40px;
+      align-items: flex-end;
+    }
+    .banner-card__content > h3,
+    .banner-card__content > p,
+    .banner-card__content > .btn-light { flex: 1 1 50%; }
+    .banner-tag, .banner-logos { flex: 1 1 40%; }
+    @media (max-width: 1100px) {
+      .works-chapter__grid--two .proj--big { flex: 1 1 100%; }
+      .works-grid .g-item { flex: 1 1 calc(50% - 10px); }
+    }
+    @media (max-width: 900px) {
+      .works-grid .g-item { flex: 1 1 100%; }
+    }
+  </style>
+</head>
+<body>
+  <!-- ============ Loading Screen ============ -->
+  <div class="loader" id="loader">
+    <div class="loader-inner">
+      <div class="loader-mark">◆</div>
+      <div class="loader-text">LOADING</div>
+      <div class="loader-bar"><span></span></div>
+    </div>
+  </div>
+
+  <!-- ============ Custom Cursor ============ -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-dot" id="cursorDot"></div>
+
+  <!-- ============ Top Navigation (logo + 2026 + DESIGN) ============ -->
+  <header class="top-nav" id="topNav">
+    <a href="#home" class="nav-logo" aria-label="Home">
+      <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
+        <polygon points="2,12 12,2 22,12 12,22" fill="#1e6cff" />
+      </svg>
+    </a>
+  </header>
+
+  <!-- ============ Side Navigation (left side) ============ -->
+  <nav class="side-nav" id="sideNav" aria-label="Section navigation">
+    <a href="#about"  data-nav data-section="about">ABOUT</a>
+    <a href="#works"  data-nav data-section="works">WORKS</a>
+    <a href="#thanks" data-nav data-section="thanks">THANKS</a>
+  </nav>
+
+  <!-- ============ Page Indicator (right side) ============ -->
+  <aside class="page-indicator" id="pageIndicator">
+    <ul>
+      <li><a href="#home" data-nav-dot class="active" data-section="home"><span>01</span> HOME</a></li>
+      <li><a href="#about" data-nav-dot data-section="about"><span>02</span> ABOUT</a></li>
+      <li><a href="#works" data-nav-dot data-section="works"><span>03</span> WORKS</a></li>
+      <li><a href="#thanks" data-nav-dot data-section="thanks"><span>04</span> THANKS</a></li>
+    </ul>
+  </aside>
+
+  <main id="main">
+    <!-- ============================================ -->
+    <!-- SECTION 1: HOME / 首页                          -->
+    <!-- ============================================ -->
+    <section class="page page-home" id="home" data-theme="dark">
+      <div class="grid-bg" aria-hidden="true"></div>
+
+      <!-- floating decorative blocks -->
+      <div class="floating-blocks" aria-hidden="true">
+        <div class="block block-1"></div>
+        <div class="block block-2"></div>
+        <div class="block block-3"></div>
+        <div class="block block-4"></div>
+      </div>
+
+      <div class="page-home__inner">
+        <h1 class="home-title" data-split-text>
+          <span class="t-line"><span>PERSONAL</span></span>
+          <span class="t-line"><span>PORTFOLIO</span></span>
+        </h1>
+      </div>
+
+      <div class="page-home__categories">
+        <ul>
+          <li><span class="dot"></span>视觉设计</li>
+          <li><span class="dot"></span>包装设计</li>
+          <li><span class="dot"></span>插画设计</li>
+          <li><span class="dot"></span>商业设计</li>
+          <li><span class="dot"></span>作品整合</li>
+        </ul>
+      </div>
+
+      <div class="scroll-hint" aria-hidden="true">
+        <span>SCROLL</span>
+        <div class="line"></div>
+      </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- SECTION 2: ABOUT / 个人介绍（直接展示设计图）    -->
+    <!-- ============================================ -->
+    <section class="page page-about" id="about" data-theme="dark">
+      <div class="about-stage">
+        <img
+          src="assets/img/about-full.png"
+          alt="钟艺-EZ 个人介绍"
+          class="about-full-image"
+          draggable="false"
+        />
+      </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- SECTION 3: WORKS / 作品展示                    -->
+    <!-- ============================================ -->
+    <section class="page page-works" id="works" data-theme="light">
+      <div class="grid-bg" aria-hidden="true"></div>
+
+      <!-- === Works Header === -->
+      <div class="works-header">
+        <div class="works-header__title">
+          <h2 class="big-title">
+            <span class="t-line"><span>SELECTED</span></span>
+            <span class="t-line"><span>WORKS</span></span>
+            <span class="t-line"><span class="muted">2021 — 2026</span></span>
+          </h2>
+        </div>
+        <div class="works-header__meta">
+          <p class="lead">12 件精选作品 · 视觉 / 包装 / 插画 / 品牌</p>
+          <div class="filter-pills" id="filterPills">
+            <button class="pill active" data-filter="all">全部</button>
+            <button class="pill" data-filter="visual">视觉</button>
+            <button class="pill" data-filter="package">包装</button>
+            <button class="pill" data-filter="illust">插画</button>
+            <button class="pill" data-filter="brand">品牌</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- === Chapter 1: 维他VLT-Popup（叠图循环切换） === -->
+      <div class="works-chapter works-chapter--hero">
+        <div class="works-chapter__sticky">
+          <div class="chapter-tag"><span>01</span> VLT POPUP</div>
+          <h3 class="chapter-title">维他VLT-Popup</h3>
+          <p class="chapter-desc">6 张作品 · 循环轮播 · 卡片堆叠</p>
+        </div>
+
+        <div class="featured-stack" id="featuredStack" style="position: relative; width: 100%; max-width: 1480px; margin: 0 auto; padding: 0 clamp(20px, 5vw, 60px);">
+          <div class="featured-stack__stage" id="stackStage" style="position: relative; width: 100%; max-width: 1400px; margin: 0 auto; height: 560px; overflow: visible; outline: none;">
+
+            <!-- 6 张主卡:absolute 定位 + JS 控制 transform 形成 stack 错位 -->
+            <article class="stack-card" data-index="0" style="position: absolute; top: 0; left: 0; width: 360px; height: 500px; background: #fff; border-radius: 14px; overflow: hidden; box-shadow: 0 20px 44px rgba(0,0,0,0.2), 0 4px 12px rgba(0,0,0,0.08); border: 1px solid rgba(10,20,36,0.06); will-change: transform, opacity, z-index; z-index: 10;">
+              <div style="position: relative; width: 100%; height: 66%; background: #f3f3ef; overflow: hidden;">
+                <img src="assets/works/01-kv-main.png" alt="维他茶 KV" style="width: 100%; height: 100%; object-fit: cover; user-select: none; -webkit-user-drag: none; pointer-events: none;" draggable="false" />
+              </div>
+              <div style="padding: 18px 22px 22px;">
+                <div style="font-family: var(--f-mono); font-size: 10px; letter-spacing: 0.2em; color: rgba(10,20,36,0.45); text-transform: uppercase; margin-bottom: 4px;">01 / 06 · KV</div>
+                <h4 style="font-size: 16px; font-weight: 700; margin: 0 0 4px; color: var(--c-ink-dark); line-height: 1.3;">维他茶 mega KV</h4>
+                <p style="font-size: 12px; color: rgba(10,20,36,0.6); margin: 0; line-height: 1.5;">本「涩」就现在 · 0糖新上市</p>
+              </div>
+            </article>
+
+            <article class="stack-card" data-index="1" style="position: absolute; top: 0; left: 0; width: 360px; height: 500px; background: #fff; border-radius: 14px; overflow: hidden; box-shadow: 0 20px 44px rgba(0,0,0,0.2), 0 4px 12px rgba(0,0,0,0.08); border: 1px solid rgba(10,20,36,0.06); will-change: transform, opacity, z-index; z-index: 9;">
+              <div style="position: relative; width: 100%; height: 66%; background: #f3f3ef; overflow: hidden;">
+                <img src="assets/works/02-dp-side.png" alt="蓬车侧视" style="width: 100%; height: 100%; object-fit: cover; user-select: none; -webkit-user-drag: none; pointer-events: none;" draggable="false" />
+              </div>
+              <div style="padding: 18px 22px 22px;">
+                <div style="font-family: var(--f-mono); font-size: 10px; letter-spacing: 0.2em; color: rgba(10,20,36,0.45); text-transform: uppercase; margin-bottom: 4px;">02 / 06 · DP</div>
+                <h4 style="font-size: 16px; font-weight: 700; margin: 0 0 4px; color: var(--c-ink-dark); line-height: 1.3;">蓬车 DP · 侧视</h4>
+                <p style="font-size: 12px; color: rgba(10,20,36,0.6); margin: 0; line-height: 1.5;">街角快闪 · 概念稿</p>
+              </div>
+            </article>
+
+            <article class="stack-card" data-index="2" style="position: absolute; top: 0; left: 0; width: 360px; height: 500px; background: #fff; border-radius: 14px; overflow: hidden; box-shadow: 0 20px 44px rgba(0,0,0,0.2), 0 4px 12px rgba(0,0,0,0.08); border: 1px solid rgba(10,20,36,0.06); will-change: transform, opacity, z-index; z-index: 8;">
+              <div style="position: relative; width: 100%; height: 66%; background: #f3f3ef; overflow: hidden;">
+                <img src="assets/works/03-dp-back.png" alt="蓬车后视" style="width: 100%; height: 100%; object-fit: cover; user-select: none; -webkit-user-drag: none; pointer-events: none;" draggable="false" />
+              </div>
+              <div style="padding: 18px 22px 22px;">
+                <div style="font-family: var(--f-mono); font-size: 10px; letter-spacing: 0.2em; color: rgba(10,20,36,0.45); text-transform: uppercase; margin-bottom: 4px;">03 / 06 · DP</div>
+                <h4 style="font-size: 16px; font-weight: 700; margin: 0 0 4px; color: var(--c-ink-dark); line-height: 1.3;">蓬车 DP · 后视</h4>
+                <p style="font-size: 12px; color: rgba(10,20,36,0.6); margin: 0; line-height: 1.5;">操作台面 · 概念稿</p>
+              </div>
+            </article>
+
+            <article class="stack-card" data-index="3" style="position: absolute; top: 0; left: 0; width: 360px; height: 500px; background: #fff; border-radius: 14px; overflow: hidden; box-shadow: 0 20px 44px rgba(0,0,0,0.2), 0 4px 12px rgba(0,0,0,0.08); border: 1px solid rgba(10,20,36,0.06); will-change: transform, opacity, z-index; z-index: 7;">
+              <div style="position: relative; width: 100%; height: 66%; background: #f3f3ef; overflow: hidden;">
+                <img src="assets/works/04-truck-front.png" alt="蓬车主视终稿" style="width: 100%; height: 100%; object-fit: cover; user-select: none; -webkit-user-drag: none; pointer-events: none;" draggable="false" />
+              </div>
+              <div style="padding: 18px 22px 22px;">
+                <div style="font-family: var(--f-mono); font-size: 10px; letter-spacing: 0.2em; color: rgba(10,20,36,0.45); text-transform: uppercase; margin-bottom: 4px;">04 / 06 · DP</div>
+                <h4 style="font-size: 16px; font-weight: 700; margin: 0 0 4px; color: var(--c-ink-dark); line-height: 1.3;">蓬车 · 主视终稿</h4>
+                <p style="font-size: 12px; color: rgba(10,20,36,0.6); margin: 0; line-height: 1.5;">正面视觉 · 定稿</p>
+              </div>
+            </article>
+
+            <article class="stack-card" data-index="4" style="position: absolute; top: 0; left: 0; width: 360px; height: 500px; background: #fff; border-radius: 14px; overflow: hidden; box-shadow: 0 20px 44px rgba(0,0,0,0.2), 0 4px 12px rgba(0,0,0,0.08); border: 1px solid rgba(10,20,36,0.06); will-change: transform, opacity, z-index; z-index: 6;">
+              <div style="position: relative; width: 100%; height: 66%; background: #f3f3ef; overflow: hidden;">
+                <img src="assets/works/05-dp-final-side.png" alt="蓬车终稿侧视" style="width: 100%; height: 100%; object-fit: cover; user-select: none; -webkit-user-drag: none; pointer-events: none;" draggable="false" />
+              </div>
+              <div style="padding: 18px 22px 22px;">
+                <div style="font-family: var(--f-mono); font-size: 10px; letter-spacing: 0.2em; color: rgba(10,20,36,0.45); text-transform: uppercase; margin-bottom: 4px;">05 / 06 · DP</div>
+                <h4 style="font-size: 16px; font-weight: 700; margin: 0 0 4px; color: var(--c-ink-dark); line-height: 1.3;">蓬车终稿 · 侧视</h4>
+                <p style="font-size: 12px; color: rgba(10,20,36,0.6); margin: 0; line-height: 1.5;">侧面延展 · 定稿</p>
+              </div>
+            </article>
+
+            <article class="stack-card" data-index="5" style="position: absolute; top: 0; left: 0; width: 360px; height: 500px; background: #fff; border-radius: 14px; overflow: hidden; box-shadow: 0 20px 44px rgba(0,0,0,0.2), 0 4px 12px rgba(0,0,0,0.08); border: 1px solid rgba(10,20,36,0.06); will-change: transform, opacity, z-index; z-index: 5;">
+              <div style="position: relative; width: 100%; height: 66%; background: #f3f3ef; overflow: hidden;">
+                <img src="assets/works/06-dp-final-back.png" alt="蓬车终稿后视" style="width: 100%; height: 100%; object-fit: cover; user-select: none; -webkit-user-drag: none; pointer-events: none;" draggable="false" />
+              </div>
+              <div style="padding: 18px 22px 22px;">
+                <div style="font-family: var(--f-mono); font-size: 10px; letter-spacing: 0.2em; color: rgba(10,20,36,0.45); text-transform: uppercase; margin-bottom: 4px;">06 / 06 · DP</div>
+                <h4 style="font-size: 16px; font-weight: 700; margin: 0 0 4px; color: var(--c-ink-dark); line-height: 1.3;">蓬车终稿 · 后视</h4>
+                <p style="font-size: 12px; color: rgba(10,20,36,0.6); margin: 0; line-height: 1.5;">操作台 · 定稿</p>
+              </div>
+            </article>
+          </div>
+
+          <!-- 指示器 + 翻页 -->
+          <div class="stack-controls" style="display: flex; justify-content: center; align-items: center; gap: 24px; margin-top: 36px;">
+            <button id="stackPrev" aria-label="上一张" style="width: 44px; height: 44px; border-radius: 50%; background: #fff; border: 1px solid rgba(10,20,36,0.1); display: inline-flex; align-items: center; justify-content: center; color: #0a1424; box-shadow: 0 2px 8px rgba(0,0,0,0.06); cursor: pointer; transition: transform 0.2s ease, background 0.2s ease;">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 6L9 12l6 6"/></svg>
+            </button>
+            <div id="stackDots" style="display: flex; gap: 8px; align-items: center;">
+              <button class="stack-dot" data-index="0" aria-label="第 1 张" style="width: 28px; height: 6px; border-radius: 3px; background: #0a1424; border: 0; padding: 0; cursor: pointer; transition: width 0.35s ease, background 0.35s ease;"></button>
+              <button class="stack-dot" data-index="1" aria-label="第 2 张" style="width: 6px; height: 6px; border-radius: 50%; background: rgba(10,20,36,0.18); border: 0; padding: 0; cursor: pointer; transition: width 0.35s ease, background 0.35s ease;"></button>
+              <button class="stack-dot" data-index="2" aria-label="第 3 张" style="width: 6px; height: 6px; border-radius: 50%; background: rgba(10,20,36,0.18); border: 0; padding: 0; cursor: pointer; transition: width 0.35s ease, background 0.35s ease;"></button>
+              <button class="stack-dot" data-index="3" aria-label="第 4 张" style="width: 6px; height: 6px; border-radius: 50%; background: rgba(10,20,36,0.18); border: 0; padding: 0; cursor: pointer; transition: width 0.35s ease, background 0.35s ease;"></button>
+              <button class="stack-dot" data-index="4" aria-label="第 5 张" style="width: 6px; height: 6px; border-radius: 50%; background: rgba(10,20,36,0.18); border: 0; padding: 0; cursor: pointer; transition: width 0.35s ease, background 0.35s ease;"></button>
+              <button class="stack-dot" data-index="5" aria-label="第 6 张" style="width: 6px; height: 6px; border-radius: 50%; background: rgba(10,20,36,0.18); border: 0; padding: 0; cursor: pointer; transition: width 0.35s ease, background 0.35s ease;"></button>
+            </div>
+            <button id="stackNext" aria-label="下一张" style="width: 44px; height: 44px; border-radius: 50%; background: #0a1424; border: 1px solid #0a1424; display: inline-flex; align-items: center; justify-content: center; color: #ffffff; box-shadow: 0 4px 14px rgba(10,20,36,0.18); cursor: pointer; transition: transform 0.2s ease, background 0.2s ease;">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- === Chapter 2: 3D 浮动作品 === -->
+      <div class="works-chapter works-chapter--float">
+        <div class="works-chapter__sticky works-chapter__sticky--float">
+          <div class="chapter-tag"><span>02</span> FLOAT GALLERY</div>
+          <h3 class="chapter-title">视觉印象</h3>
+          <p class="chapter-desc">悬浮于视差之中，跟随鼠标移动产生微妙的层次感</p>
+        </div>
+
+        <div class="float-scene" id="floatScene">
+          <div class="float-card" data-depth="0.6" data-tilt>
+            <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=900&q=80" alt="p1" />
+          </div>
+          <div class="float-card float-card--center" data-depth="0.9" data-tilt>
+            <img src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=900&q=80" alt="p2" />
+          </div>
+          <div class="float-card" data-depth="0.4" data-tilt>
+            <img src="https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=900&q=80" alt="p3" />
+          </div>
+          <div class="float-card float-card--top" data-depth="0.8" data-tilt>
+            <img src="https://images.unsplash.com/photo-1561070791-2526d30994b8?w=900&q=80" alt="p4" />
+          </div>
+          <div class="float-card float-card--bottom" data-depth="0.5" data-tilt>
+            <img src="https://images.unsplash.com/photo-1635776062127-d379bfcba9f8?w=900&q=80" alt="p5" />
+          </div>
+          <div class="float-card" data-depth="0.7" data-tilt>
+            <img src="https://images.unsplash.com/photo-1558655146-d09347e92766?w=900&q=80" alt="p6" />
+          </div>
+
+          <div class="float-caption">
+            <span>2026 · 视觉设计</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- === Chapter 3: 3x2 网格 === -->
+      <div class="works-chapter works-chapter--grid">
+        <div class="works-chapter__head">
+          <div class="chapter-tag"><span>03</span> GALLERY</div>
+          <h3 class="chapter-title">作品合集</h3>
+        </div>
+        <div class="works-grid">
+          <article class="g-item" data-proj data-category="package">
+            <div class="g-item__media"><img src="https://images.unsplash.com/photo-1583317056060-a4d7077d34dd?w=900&q=80" alt="p1" /></div>
+            <div class="g-item__meta">
+              <span class="num">01</span>
+              <h5>LOOSE SKETCHES</h5>
+              <small>包装设计 / 2024</small>
+            </div>
+          </article>
+          <article class="g-item" data-proj data-category="visual">
+            <div class="g-item__media"><img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=900&q=80" alt="p2" /></div>
+            <div class="g-item__meta">
+              <span class="num">02</span>
+              <h5>WE BRING IMAGINATION</h5>
+              <small>视觉设计 / 2024</small>
+            </div>
+          </article>
+          <article class="g-item" data-proj data-category="brand">
+            <div class="g-item__media"><img src="https://images.unsplash.com/photo-1492288991661-058aa541ff43?w=900&q=80" alt="p3" /></div>
+            <div class="g-item__meta">
+              <span class="num">03</span>
+              <h5>SHAMK STYLE</h5>
+              <small>品牌设计 / 2023</small>
+            </div>
+          </article>
+          <article class="g-item" data-proj data-category="package">
+            <div class="g-item__media"><img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=900&q=80" alt="p4" /></div>
+            <div class="g-item__meta">
+              <span class="num">04</span>
+              <h5>URBAN TIME</h5>
+              <small>产品包装 / 2023</small>
+            </div>
+          </article>
+          <article class="g-item" data-proj data-category="illust">
+            <div class="g-item__media"><img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=900&q=80" alt="p5" /></div>
+            <div class="g-item__meta">
+              <span class="num">05</span>
+              <h5>SHAMK NEW TRENDS</h5>
+              <small>插画设计 / 2022</small>
+            </div>
+          </article>
+          <article class="g-item" data-proj data-category="brand">
+            <div class="g-item__media"><img src="https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=900&q=80" alt="p6" /></div>
+            <div class="g-item__meta">
+              <span class="num">06</span>
+              <h5>NOVAGLAM VINTAGE</h5>
+              <small>品牌设计 / 2022</small>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <!-- === Chapter 4: 彩色 banner（参考图6） === -->
+      <div class="works-chapter works-chapter--banner">
+        <div class="banner-card">
+          <div class="banner-card__bg"></div>
+          <div class="banner-card__content">
+            <div class="banner-tag">(01)</div>
+            <h3>打造能够促进转化和融资的<br/>品牌。</h3>
+            <p>我们帮您明确品牌定位、定义独特的品牌语调，并构建一套贯穿获客和产品线的视觉系统。每个迭代周期都会交付一个强大的品牌设计系统，确保视觉与社交媒体工具包、官网与落地页的呈现保持高度一致。</p>
+            <a href="#" class="btn-light">请参阅我们的案例研究 →</a>
+            <div class="banner-logos">
+              <div class="blogo"><span>IND</span></div>
+              <div class="blogo"><span>IMPORTANT HOUSE</span></div>
+              <div class="blogo"><span>Vio</span></div>
+              <div class="blogo"><span>W</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- === Chapter 5: 评价卡（参考图7） === -->
+      <div class="works-chapter works-chapter--reviews">
+        <div class="works-chapter__head">
+          <div class="chapter-tag"><span>04</span> TRUSTED</div>
+          <h3 class="chapter-title big-line">
+            <span>Trusted by</span>
+            <span class="muted">+12 clients</span>
+          </h3>
+        </div>
+
+        <div class="reviews-stage" id="reviewsStage">
+          <article class="rv-card rv-card--1" data-tilt>
+            <div class="rv-stars">★ ★ ★ ★ ★</div>
+            <h6>联系销售</h6>
+            <p>我们之前见 Notez-Nous 选择 Appart 来主导品牌重塑项目，我们选择他们的作品质量与品牌重塑完整度...</p>
+            <div class="rv-author">
+              <div class="rv-avatar"></div>
+              <div><strong>大卫·卡</strong><small>创始人</small></div>
+            </div>
+          </article>
+          <article class="rv-card rv-card--2" data-tilt>
+            <div class="rv-stars">★ ★ ★ ★ ★</div>
+            <h6>合作</h6>
+            <p>我曾与 Brand Apart 合作过多个项目，在开展品牌推广和 PowerPoint 演示工作时，我常欣赏他们的灵活、高效...</p>
+            <div class="rv-author">
+              <div class="rv-avatar"></div>
+              <div><strong>约安</strong><small>Brand 总监</small></div>
+            </div>
+          </article>
+          <article class="rv-card rv-card--3" data-tilt>
+            <div class="rv-stars">★ ★ ★ ★ ★</div>
+            <h6>信任</h6>
+            <p>在联系 Brand Appart 之前，我见过很多方案，但最后的对比让我们在工作效率、顺畅程度上是最终的... Amply Icream。</p>
+            <div class="rv-author">
+              <div class="rv-avatar"></div>
+              <div><strong>阿曼·西塔斯</strong><small>合伙人</small></div>
+            </div>
+          </article>
+          <article class="rv-card rv-card--4" data-tilt>
+            <div class="rv-stars">★ ★ ★ ★ ★</div>
+            <h6>信赖</h6>
+            <p>我们有一个自 2013 年以来就未曾更新的家族品牌。将它交付给外部机构确实需要勇气。最让我印象深刻的是，团队始终坚持自己的立场...</p>
+            <div class="rv-author">
+              <div class="rv-avatar"></div>
+              <div><strong>瑞菲尔·法比</strong><small>Storenvy 联合创始人</small></div>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <!-- === Chapter 6: 团队头像（参考图8） === -->
+      <div class="works-chapter works-chapter--team">
+        <div class="works-chapter__head">
+          <div class="chapter-tag"><span>05</span> SMALL TEAM</div>
+          <h3 class="chapter-title">合作团队</h3>
+        </div>
+
+        <div class="team-stage" id="teamStage">
+          <div class="team-bg-text">TEAM</div>
+          <div class="team-photos">
+            <div class="team-photo" data-depth="0.3"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&q=80" alt="" /></div>
+            <div class="team-photo" data-depth="0.7"><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&q=80" alt="" /></div>
+            <div class="team-photo" data-depth="0.5"><img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&q=80" alt="" /></div>
+            <div class="team-photo" data-depth="0.8"><img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&q=80" alt="" /></div>
+            <div class="team-photo" data-depth="0.4"><img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?w=400&q=80" alt="" /></div>
+            <div class="team-photo" data-depth="0.6"><img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&q=80" alt="" /></div>
+            <div class="team-photo" data-depth="0.5"><img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=400&q=80" alt="" /></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Works footer / counter -->
+      <div class="works-footer">
+        <div class="counter">
+          <div class="counter-num"><span id="projCount">12</span><small>/ 12</small></div>
+          <p>PROJECTS SHIPPED</p>
+        </div>
+        <a href="#thanks" class="link-arrow" data-nav>继续浏览 →</a>
+      </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!-- SECTION 4: THANKS / 结尾页                    -->
+    <!-- ============================================ -->
+    <section class="page page-thanks" id="thanks" data-theme="dark">
+      <div class="grid-bg" aria-hidden="true"></div>
+
+      <div class="floating-blocks" aria-hidden="true">
+        <div class="block block-1"></div>
+        <div class="block block-2"></div>
+        <div class="block block-3"></div>
+        <div class="block block-4"></div>
+      </div>
+
+      <div class="thanks-wrap">
+        <h2 class="thanks-title" data-split-text>
+          <span class="t-line"><span>THANKS</span></span>
+        </h2>
+        <p class="thanks-sub">FOR YOUR TIME</p>
+      </div>
+
+      <div class="thanks-footer">
+        <a href="#home" class="link-arrow" data-nav>回到首页 ↑</a>
+        <div class="contact-quick">
+          <a href="mailto:zhongyipy@163.com">zhongyipy@163.com</a>
+          <span>·</span>
+          <a href="tel:15920416950">159 2041 6950</a>
+        </div>
+        <p class="copyright">© 2026 钟艺-EZ · PERSONAL PORTFOLIO</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ Vendor JS ============ -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
+
+  <!-- App JS -->
+  <script src="js/main.js"></script>
+  <script src="js/home.js"></script>
+  <script src="js/about.js"></script>
+  <script src="js/works.js"></script>
+  <script src="js/thanks.js"></script>
+
+  <!-- ============ INLINE STACK CONTROLLER(6 张卡错位堆叠 + 循环) ============ -->
+  <script>
+  (function () {
+    function initStack() {
+      try {
+        var stage = document.getElementById('stackStage');
+        if (!stage) { console.warn('[stack] stage missing'); return; }
+        var cards = stage.querySelectorAll('.stack-card');
+        var total = cards.length;
+        if (total === 0) { console.warn('[stack] no .stack-card'); return; }
+
+        // === 错位参数(JS 动态算,根据 viewport 决定) ===
+        var STEP_Y = 6;         // 每张向下偏移(几乎水平)
+        var SCALE_STEP = 0.04;  // 每张缩小
+        var OPACITY_STEP = 0.10; // 每张变淡
+        var BASE_TOP = 16;      // 焦点卡片离 stage 顶部的距离
+        // STEP_X / BASE_LEFT / 卡片宽高 都按 viewport 算
+        var layout = null;
+        function calcLayout() {
+          var vw = window.innerWidth;
+          // 左右 padding
+          var sidePad = vw >= 1400 ? 60 : (vw >= 1024 ? 48 : (vw >= 768 ? 32 : 20));
+          var avail = vw - sidePad * 2;
+          // 6 张卡 + 5 步进 = 4.25 张卡宽(假设重叠 30%)
+          var cardW = Math.min(360, Math.max(160, Math.round(avail / 4.25)));
+          var stepX = Math.round((avail - cardW) / 5);
+          var cardH = Math.round(cardW * 1.4);
+          layout = { cardW: cardW, cardH: cardH, stepX: stepX, baseLeft: sidePad };
+        }
+
+        var current = 0;        // 当前焦点索引
+        var busy = false;       // 切换中防抖
+
+        // 应用 transition(确保渲染稳定)
+        for (var t = 0; t < total; t++) {
+          cards[t].style.transition = 'transform 0.6s cubic-bezier(0.22,1,0.36,1), opacity 0.5s ease, box-shadow 0.5s ease';
+        }
+
+        function render() {
+          if (!layout) calcLayout();
+          for (var i = 0; i < total; i++) {
+            // 关键: pos = (i - current + total) % total
+            // 当前焦点卡片 pos=0, 其他按距离递增
+            var pos = (i - current + total) % total;
+
+            var x = layout.baseLeft + pos * layout.stepX;
+            var y = BASE_TOP + pos * STEP_Y;
+            var s = 1 - pos * SCALE_STEP;
+            var o = 1 - pos * OPACITY_STEP;
+
+            var card = cards[i];
+            card.style.width = layout.cardW + 'px';
+            card.style.height = layout.cardH + 'px';
+            card.style.transform = 'translate(' + x + 'px, ' + y + 'px) scale(' + s + ')';
+            card.style.zIndex = String(total - pos);
+            card.style.opacity = String(o);
+
+            // 焦点卡片更明显的阴影
+            if (pos === 0) {
+              card.style.boxShadow = '0 24px 50px rgba(0,0,0,0.22), 0 6px 14px rgba(0,0,0,0.1)';
+            } else {
+              card.style.boxShadow = '0 14px 30px rgba(0,0,0,0.16), 0 3px 8px rgba(0,0,0,0.08)';
+            }
+          }
+
+          // 圆点 active 状态
+          var dots = document.querySelectorAll('#stackDots .stack-dot');
+          for (var j = 0; j < dots.length; j++) {
+            if (j === current) {
+              dots[j].style.width = '28px';
+              dots[j].style.borderRadius = '3px';
+              dots[j].style.background = '#0a1424';
+            } else {
+              dots[j].style.width = '6px';
+              dots[j].style.borderRadius = '50%';
+              dots[j].style.background = 'rgba(10,20,36,0.18)';
+            }
+          }
+        }
+
+        function go(target) {
+          // 循环 wrap-around: 支持负数
+          target = ((target % total) + total) % total;
+          if (target === current) return;
+          current = target;
+          render();
+        }
+
+        function next() { go(current + 1); }
+        function prev() { go(current - 1); }
+
+        // 按钮
+        var prevBtn = document.getElementById('stackPrev');
+        var nextBtn = document.getElementById('stackNext');
+        if (prevBtn) prevBtn.addEventListener('click', function (e) { e.stopPropagation(); prev(); });
+        if (nextBtn) nextBtn.addEventListener('click', function (e) { e.stopPropagation(); next(); });
+
+        // 圆点
+        var dotBtns = document.querySelectorAll('#stackDots .stack-dot');
+        for (var k = 0; k < dotBtns.length; k++) {
+          (function (idx) {
+            dotBtns[k].addEventListener('click', function (e) { e.stopPropagation(); go(idx); });
+          })(k);
+        }
+
+        // 点击非焦点的卡片:让它上位
+        for (var c = 0; c < total; c++) {
+          (function (idx) {
+            cards[idx].addEventListener('click', function () {
+              if (idx !== current) go(idx);
+            });
+          })(c);
+        }
+
+        // 键盘切换:用 stage 内的 prev/next 按钮作为 focus target,而不是 document
+        // 避免页面其他区域的 ArrowRight 误触
+        // (在 stage 内的 prev/next 按钮聚焦时,全局 ArrowRight 不会干扰)
+        // 这里我们给 stage 一个属性,但不抢 focus。键盘支持只通过 click prev/next 触发。
+        // (若需键盘切换,可在 stage 内的 prev/next 上按 Enter/Space,它们本身是 button)
+
+        // 初始化
+        render();
+
+        // 监听 resize 重新计算 layout 并重渲染
+        var resizeTimer = null;
+        window.addEventListener('resize', function () {
+          if (resizeTimer) clearTimeout(resizeTimer);
+          resizeTimer = setTimeout(function () {
+            calcLayout();
+            render();
+          }, 100);
+        });
+
+        console.log('[stack] ready, total=' + total);
+      } catch (err) {
+        console.error('[stack] error', err);
+      }
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initStack);
+    } else {
+      initStack();
+    }
+  })();
+</script>
+</body>
+</html>

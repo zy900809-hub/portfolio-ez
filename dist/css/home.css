@@ -1,0 +1,285 @@
+/* ============================================
+   Page: HOME / 首页
+   图1 严格复刻
+   ============================================ */
+
+.page-home {
+  position: relative;
+  min-height: 100vh;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: radial-gradient(ellipse at 50% 50%, #0e1a30 0%, #050b16 80%);
+  overflow: hidden;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+.home-bg-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.55;
+  mix-blend-mode: lighten;
+  filter: contrast(1.15) saturate(1.1);
+}
+.page-home__inner,
+.page-home__categories,
+.scroll-hint,
+.floating-blocks { position: relative; z-index: 2; }
+
+/* === Floating Decorative Blocks === */
+.floating-blocks {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.block {
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  border-radius: 4px;
+  background: linear-gradient(135deg, rgba(122, 255, 200, 0.85) 0%, rgba(30, 108, 255, 0.5) 100%);
+  filter: blur(0.4px);
+  opacity: 0.85;
+  box-shadow:
+    0 0 40px rgba(122, 255, 200, 0.35),
+    inset 0 0 30px rgba(255, 255, 255, 0.15);
+}
+
+.block-1 {
+  top: 22%;
+  left: 12%;
+  width: 90px; height: 90px;
+  transform: rotate(-12deg);
+  animation: float 8s ease-in-out infinite;
+}
+
+.block-2 {
+  top: 18%;
+  right: 18%;
+  width: 50px; height: 50px;
+  transform: rotate(8deg);
+  background: linear-gradient(135deg, rgba(122, 255, 200, 0.5) 0%, rgba(30, 108, 255, 0.3) 100%);
+  opacity: 0.4;
+  animation: float 9s ease-in-out infinite reverse;
+}
+
+.block-3 {
+  bottom: 18%;
+  right: 10%;
+  width: 110px; height: 110px;
+  transform: rotate(15deg);
+  background: linear-gradient(135deg, rgba(122, 255, 200, 0.85) 0%, rgba(30, 108, 255, 0.5) 100%);
+  animation: float 10s ease-in-out infinite;
+}
+
+.block-4 {
+  bottom: 28%;
+  left: 8%;
+  width: 40px; height: 40px;
+  transform: rotate(-25deg);
+  background: linear-gradient(135deg, rgba(122, 255, 200, 0.4) 0%, rgba(30, 108, 255, 0.2) 100%);
+  opacity: 0.5;
+  animation: float 7s ease-in-out infinite reverse;
+}
+
+@keyframes float {
+  0%, 100% { transform: rotate(-12deg) translate(0, 0) scale(1); }
+  50%      { transform: rotate(-12deg) translate(28px, -36px) scale(1.12); }
+}
+.block-2 { animation-name: float-2; }
+.block-3 { animation-name: float-3; }
+.block-4 { animation-name: float-4; }
+
+@keyframes float-2 { 0%,100% {transform: rotate(8deg)  translate(0,0)    scale(1);} 50% {transform: rotate(8deg)  translate(-32px, 28px) scale(1.15);} }
+@keyframes float-3 { 0%,100% {transform: rotate(15deg) translate(0,0)    scale(1);} 50% {transform: rotate(15deg) translate(36px, -28px) scale(1.10);} }
+@keyframes float-4 { 0%,100% {transform: rotate(-25deg) translate(0,0)   scale(1);} 50% {transform: rotate(-25deg) translate(-24px, -32px) scale(1.18);} }
+
+/* === Home Title === */
+.page-home__inner {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1400px;
+  padding: 0 var(--pad-x);
+}
+
+.home-title {
+  font-family: var(--f-display);
+  font-weight: 900;
+  font-size: clamp(56px, 12vw, 200px);
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+  color: #fff;
+  text-transform: uppercase;
+  white-space: nowrap;
+  margin: 0;
+  position: relative;
+}
+/* === 坏屏小方条 glitch === */
+.home-title::before,
+.home-title::after {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  white-space: pre;
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  font-weight: 900;
+  font-family: var(--f-display);
+  font-size: clamp(56px, 12vw, 200px);
+  text-align: center;
+  pointer-events: none;
+}
+.home-title::before {
+  content: attr(data-text);
+  color: #00f0ff;
+  opacity: 0;
+  animation: glitchBar 5.5s steps(1, end) infinite;
+  mix-blend-mode: screen;
+}
+.home-title::after {
+  content: attr(data-text);
+  color: #ff2a55;
+  opacity: 0;
+  animation: glitchBar2 5.5s steps(1, end) infinite;
+  mix-blend-mode: screen;
+}
+@keyframes glitchBar {
+  /* 青色: 主要切上半(PERSONAL 行) */
+  0%, 3.9%, 100% { opacity: 0; transform: translate(0, 0); clip-path: inset(0 0 0 0); }
+  4%   { opacity: 0.85; transform: translate(-3px, 0); clip-path: inset(0 0 75% 0); }
+  4.6% { opacity: 0.85; transform: translate(0, 0);   clip-path: inset(8% 0 67% 0); }
+  5.2% { opacity: 0.85; transform: translate(2px, 0);  clip-path: inset(20% 0 55% 0); }
+  5.8% { opacity: 0.85; transform: translate(0, 0);   clip-path: inset(35% 0 40% 0); }
+  6.5% { opacity: 0.85; transform: translate(-2px, 0); clip-path: inset(5% 0 70% 0); }
+  7.2% { opacity: 0.85; transform: translate(0, 0);   clip-path: inset(25% 0 50% 0); }
+  7.8% { opacity: 0.85; transform: translate(3px, 0);  clip-path: inset(40% 0 35% 0); }
+  8.5% { opacity: 0.85; transform: translate(0, 0);   clip-path: inset(12% 0 63% 0); }
+  9.2% { opacity: 0.85; transform: translate(-3px, 0); clip-path: inset(30% 0 45% 0); }
+  10%  { opacity: 0.85; transform: translate(0, 0);   clip-path: inset(45% 0 30% 0); }
+  10.8%{ opacity: 0.85; transform: translate(2px, 0);  clip-path: inset(0 0 75% 0); }
+  11.5%{ opacity: 0; }
+}
+@keyframes glitchBar2 {
+  /* 红色: 主要切下半(PORTFOLIO 行) */
+  0%, 3.9%, 100% { opacity: 0; transform: translate(0, 0); clip-path: inset(0 0 0 0); }
+  4.2% { opacity: 0.85; transform: translate(3px, 0);  clip-path: inset(55% 0 20% 0); }
+  4.8% { opacity: 0.85; transform: translate(0, 0);   clip-path: inset(65% 0 10% 0); }
+  5.4% { opacity: 0.85; transform: translate(-2px, 0); clip-path: inset(75% 0 0 0); }
+  6%   { opacity: 0.85; transform: translate(0, 0);   clip-path: inset(50% 0 25% 0); }
+  6.6% { opacity: 0.85; transform: translate(2px, 0);  clip-path: inset(80% 0 0 0); }
+  7.4% { opacity: 0.85; transform: translate(0, 0);   clip-path: inset(60% 0 15% 0); }
+  8%   { opacity: 0.85; transform: translate(-3px, 0); clip-path: inset(70% 0 5% 0); }
+  8.6% { opacity: 0.85; transform: translate(0, 0);   clip-path: inset(45% 0 30% 0); }
+  9.4% { opacity: 0.85; transform: translate(3px, 0);  clip-path: inset(55% 0 20% 0); }
+  10%  { opacity: 0.85; transform: translate(0, 0);   clip-path: inset(85% 0 0 0); }
+  10.8%{ opacity: 0.85; transform: translate(-2px, 0); clip-path: inset(65% 0 10% 0); }
+  11.5%{ opacity: 0; }
+}
+
+.home-title .t-line {
+  display: block;
+  overflow: hidden;
+  padding: 0.05em 0;
+}
+
+.home-title .t-line > span {
+  display: block;
+  transform: translateY(0);
+  will-change: transform;
+}
+
+/* === 首页入场: PERSONAL 字母掉下 + PORTFOLIO 满屏收缩 === */
+.home-title--dropin .t-line--1 { overflow: visible; padding: 0; }
+.home-title--dropin .t-line--1 .il {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(-200vh) scale(1.4);
+  animation: dropLetter 0.95s cubic-bezier(0.34, 1.45, 0.64, 1) forwards;
+  will-change: transform, opacity;
+}
+@keyframes dropLetter {
+  0%   { opacity: 0; transform: translateY(-200vh) scale(1.4); }
+  60%  { opacity: 1; transform: translateY(12px)   scale(0.96); }
+  78%  { transform: translateY(-5px)  scale(1.02); }
+  100% { opacity: 1; transform: translateY(0)      scale(1); }
+}
+.home-title--dropin .t-line--2 .il {
+  display: inline-block;
+  opacity: 0;
+  /* 左右两半从屏外两侧往中间冲入(更猛烈的视觉冲击) */
+  transform: translateX(var(--from-x, -200vw)) scale(8) translateY(-8vh);
+  filter: blur(40px);
+  animation: shrinkToPlace 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  will-change: transform, opacity, filter;
+}
+/* 第 1,3,5,7,9 个字母从左冲入; 2,4,6,8 从右冲入 */
+.home-title--dropin .t-line--2 .il:nth-child(odd)  { --from-x: -180vw; }
+.home-title--dropin .t-line--2 .il:nth-child(even) { --from-x:  180vw; }
+@keyframes shrinkToPlace {
+  0%   { opacity: 0; transform: translateX(var(--from-x)) scale(8) translateY(-8vh); filter: blur(40px); }
+  35%  { opacity: 1; }
+  100% { opacity: 1; transform: translateX(0) scale(1) translateY(0); filter: blur(0); }
+}
+
+/* === Categories Strip (bottom) === */
+.page-home__categories {
+  position: absolute;
+  bottom: 36px;
+  left: 0; right: 0;
+  z-index: 3;
+  padding: 0 var(--pad-x);
+}
+
+.page-home__categories ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.page-home__categories li {
+  font-size: 14px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.85);
+  letter-spacing: 0.02em;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+}
+
+.page-home__categories .dot {
+  width: 6px;
+  height: 6px;
+  background: rgba(255,255,255,0.85);
+  border-radius: 50%;
+  margin-right: 8px;
+  display: inline-block;
+}
+
+/* Responsive overrides for home */
+@media (max-width: 768px) {
+  .home-title { font-size: clamp(40px, 14vw, 80px); }
+  .page-home__categories li { font-size: 12px; }
+  .block-1, .block-3 { width: 50px; height: 50px; }
+  .page-home__categories ul { justify-content: center; gap: 10px; }
+  .page-home__categories { bottom: 20px; }
+}
