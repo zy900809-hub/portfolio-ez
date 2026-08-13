@@ -1488,7 +1488,8 @@
 .kinglong-tabs--sf {
   width: 460px;
   max-width: 100%;
-  margin: 0 auto;
+  margin: 0;
+  padding-left: var(--pad-x);
 }
 .kinglong-tabs--sf .kinglong-tabs__stage {
   aspect-ratio: 9 / 16;
