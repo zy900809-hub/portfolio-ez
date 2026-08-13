@@ -1484,6 +1484,26 @@
   font-size: 15px;
 }
 
+/* === 14 板块上方满屏插画 banner(独立 section,无 chapter 底色) === */
+.kinglong-illust-banner {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  left: 50%;
+  transform: translateX(-50%);
+  overflow: hidden;
+  background: #ffd93d;  /* 黄色背景兜底,跟插画主色调一致 */
+}
+.kinglong-illust-banner img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
 /* === 13 琪朗-详情页草图 18 张图瀑布流(无卡片,直接展示) === */
 .kinglong-masonry {
   column-count: 4;
