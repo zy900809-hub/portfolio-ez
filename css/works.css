@@ -1503,6 +1503,10 @@
   user-select: none;
   -webkit-user-drag: none;
 }
+/* Purcotton banner:蓝色天空兜底 */
+.kinglong-illust-banner--purcotton {
+  background: #8dd0e8;
+}
 
 /* === 13 琪朗-详情页草图 18 张图瀑布流(无卡片,直接展示) === */
 .kinglong-masonry {
