@@ -1484,6 +1484,55 @@
   font-size: 15px;
 }
 
+/* === 14 板块 顺丰插画 10 张 卡片式 左右切换 === */
+.kinglong-tabs--sf {
+  width: 460px;
+  max-width: 100%;
+  margin: 0 auto;
+}
+.kinglong-tabs--sf .kinglong-tabs__stage {
+  aspect-ratio: 9 / 16;
+  border-radius: 22px;
+  background: #0a1530;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.65), 0 0 0 1px rgba(255, 255, 255, 0.06) inset;
+  overflow: hidden;
+  position: relative;
+}
+.kinglong-tabs--sf .kinglong-tabs__slide {
+  border-radius: 22px;
+  overflow: hidden;
+}
+.kinglong-tabs--sf .kinglong-tabs__slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 22px;
+}
+.kinglong-tabs--sf .kinglong-tabs__nav--arrows {
+  margin-top: 28px;
+  gap: 24px;
+}
+.kinglong-tabs__middle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  min-width: 110px;
+}
+.kinglong-tabs__label {
+  font-family: inherit;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: #ffffff;
+}
+.kinglong-tabs--sf .kinglong-tabs__count {
+  min-width: auto;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.55);
+}
+
 /* === 14 板块上方满屏插画 banner(独立 section,无 chapter 底色) === */
 .kinglong-illust-banner {
   position: relative;
