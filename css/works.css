@@ -1399,7 +1399,7 @@
   border-color: #ffffff;
 }
 
-/* === 13 琪朗-详情页草图 15 张瀑布流(高度按原比例自然形成) === */
+/* === 13 琪朗-详情页草图 18 张图瀑布流(无卡片,直接展示) === */
 .kinglong-masonry {
   column-count: 4;
   column-gap: 16px;
@@ -1413,15 +1413,7 @@
   page-break-inside: avoid;
   display: block;
   margin: 0 0 16px;
-  background: #ffffff;
-  border-radius: 14px;
   overflow: hidden;
-  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.45);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.kinglong-masonry__item:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.55);
 }
 .kinglong-masonry__item img {
   display: block;
@@ -1434,7 +1426,6 @@
 .kinglong-masonry__item--wide,
 .kinglong-masonry__item--narrow {
   max-height: 720px;
-  overflow: hidden;
   display: flex;
   align-items: flex-start;
   justify-content: center;
@@ -1446,7 +1437,6 @@
   max-height: 720px;
   height: auto;
   object-fit: contain;
-  align-self: flex-start;
 }
 @media (max-width: 1100px) {
   .kinglong-masonry { column-count: 3; }
