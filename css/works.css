@@ -1542,16 +1542,16 @@
 
 /* 14 板块 顺丰 + 新世界 两组插画并排 */
 .kinglong-illust-row {
-  display: flex;
-  flex-wrap: nowrap;
+  display: grid;
+  grid-template-columns: 460px 460px;
   gap: 40px;
-  align-items: flex-start;
+  align-items: start;
   padding-left: var(--pad-x);
   transform: translateX(-10%);
   max-width: 100%;
 }
 .kinglong-illust-row > .kinglong-tabs {
-  flex: 0 0 auto;  /* 不收缩,不拉伸,按 460px 自身宽度 */
+  width: 460px !important;
   min-width: 0;
 }
 
