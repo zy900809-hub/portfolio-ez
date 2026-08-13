@@ -1432,6 +1432,19 @@
   border-radius: 18px;
 }
 
+/* 第 3 组 12 张琪朗海报:更宽,按钮 wrap 2 行 */
+.kinglong-tabs--poster-12 {
+  width: 760px;
+  max-width: 100%;
+}
+.kinglong-tabs__nav--wrap {
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 /* === 13 琪朗-详情页草图 18 张图瀑布流(无卡片,直接展示) === */
 .kinglong-masonry {
   column-count: 4;
