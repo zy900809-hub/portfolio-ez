@@ -1489,8 +1489,6 @@
   width: 460px;
   max-width: 100%;
   margin: 0;
-  padding-left: var(--pad-x);
-  transform: translateX(-10%);
 }
 .kinglong-tabs--sf .kinglong-tabs__stage {
   aspect-ratio: 9 / 16;
@@ -1536,10 +1534,25 @@
 }
 
 .kinglong-tabs--newworld {
-  margin-top: 80px;
+  margin-top: 0;
 }
 .kinglong-tabs--newworld .kinglong-tabs__stage {
   aspect-ratio: 887 / 1920;  /* 源图比例,比 9:16 更细长 */
+}
+
+/* 14 板块 顺丰 + 新世界 两组插画并排 */
+.kinglong-illust-row {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 40px;
+  align-items: flex-start;
+  padding-left: var(--pad-x);
+  transform: translateX(-10%);
+  max-width: 100%;
+}
+.kinglong-illust-row > .kinglong-tabs {
+  flex: 0 0 auto;  /* 不收缩,不拉伸,按 460px 自身宽度 */
+  min-width: 0;
 }
 
 /* === 14 板块上方满屏插画 banner(独立 section,无 chapter 底色) === */
