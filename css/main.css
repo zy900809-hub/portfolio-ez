@@ -36,6 +36,11 @@
   --pad-y: clamp(40px, 6vw, 100px);
   --section-gap: 0px;
 
+  /* Container widths — responsive via breakpoint overrides below */
+  --max-width: 1400px;       /* default desktop (1440+) */
+  --max-width-inner: 1280px; /* inner sub-container */
+  --gutter: 24px;            /* default horizontal gap between siblings */
+
   /* Motion */
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
   --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
@@ -499,4 +504,55 @@ ul, ol { list-style: none; }
   }
   .cursor, .cursor-dot { display: none; }
   body { cursor: auto; }
+}
+
+/* ============================================
+   Responsive Container Width Tokens
+   Re-defines --max-width / --max-width-inner / --gutter per breakpoint.
+   All sections that opt-in via max-width: var(--max-width) scale together.
+   ============================================ */
+
+/* 1600+ : 大屏 — 容器放大, 1440-1920 用 */
+@media (min-width: 1600px) {
+  :root {
+    --max-width: 1600px;
+    --max-width-inner: 1440px;
+    --gutter: 32px;
+  }
+}
+
+/* 1280 - 1440 : 主流笔记本 */
+@media (max-width: 1440px) {
+  :root {
+    --max-width: 1280px;
+    --max-width-inner: 1200px;
+    --gutter: 24px;
+  }
+}
+
+/* 1024 - 1280 : 小笔记本 / 横屏平板 */
+@media (max-width: 1280px) {
+  :root {
+    --max-width: 1100px;
+    --max-width-inner: 1024px;
+    --gutter: 20px;
+  }
+}
+
+/* 768 - 1024 : 平板竖屏 */
+@media (max-width: 1024px) {
+  :root {
+    --max-width: 920px;
+    --max-width-inner: 840px;
+    --gutter: 16px;
+  }
+}
+
+/* < 768 : 手机 */
+@media (max-width: 768px) {
+  :root {
+    --max-width: 100%;
+    --max-width-inner: 100%;
+    --gutter: 12px;
+  }
 }

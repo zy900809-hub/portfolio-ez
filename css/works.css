@@ -12,13 +12,26 @@
 
 /* === Works Header === */
 .works-header {
-  max-width: 1400px;
+  max-width: var(--max-width);
   margin: 0 auto 60px;
   padding: 0 var(--pad-x);
   display: grid;
   grid-template-columns: 1.4fr 1fr;
   gap: 60px;
   align-items: end;
+}
+
+/* Works header — tablet/mobile collapses to single column */
+@media (max-width: 1024px) {
+  .works-header {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}
+@media (max-width: 768px) {
+  .works-header {
+    margin-bottom: 40px;
+  }
 }
 
 .big-title {
@@ -87,7 +100,7 @@
 }
 
 .works-chapter__head {
-  max-width: 1400px;
+  max-width: var(--max-width);
   margin: 0 auto 48px;
   padding: 0 var(--pad-x);
   display: flex;
@@ -103,7 +116,7 @@
 .works-chapter__sticky {
   position: sticky;
   top: 100px;
-  max-width: 1400px;
+  max-width: var(--max-width);
   margin: 0 auto 60px;
   padding: 0 var(--pad-x);
   z-index: 5;
@@ -161,7 +174,7 @@
    Chapter 1: HERO 2-column big
    ============================================ */
 .works-chapter__grid--two {
-  max-width: 1400px;
+  max-width: var(--max-width);
   margin: 0 auto;
   padding: 0 var(--pad-x);
   display: grid;
@@ -261,7 +274,7 @@
   top: 0;
   margin: 0;
   padding: 80px var(--pad-x) 0;
-  max-width: 1400px;
+  max-width: var(--max-width);
   text-align: center;
   margin-left: auto;
   margin-right: auto;
@@ -273,7 +286,7 @@
   width: 100%;
   height: 90vh;
   margin: 0 auto;
-  max-width: 1400px;
+  max-width: var(--max-width);
   transform-style: preserve-3d;
 }
 
@@ -319,7 +332,7 @@
    Chapter 3: GALLERY 3x2
    ============================================ */
 .works-grid {
-  max-width: 1400px;
+  max-width: var(--max-width);
   margin: 0 auto;
   padding: 0 var(--pad-x);
   display: grid;
@@ -696,7 +709,7 @@
   padding: 0 0 40px;
 }
 .aiext-divider__title {
-  max-width: 1400px;
+  max-width: var(--max-width);
   margin: 0 auto 48px;
   padding: 0 var(--pad-x);
   text-align: left;
@@ -704,7 +717,7 @@
 
 /* 公园前装置:3 张横图(圆角,自适应当前板块宽度) */
 .gyq-grid {
-  max-width: 1400px;
+  max-width: var(--max-width);
   margin: 0 auto;
   padding: 0 var(--pad-x);
   display: grid;
@@ -1569,6 +1582,59 @@
   min-width: 0;
 }
 
+/* === 14 板块 响应式 === */
+
+/* 1024 - 1280 桌面:缩小鸟卡溢出 */
+@media (max-width: 1280px) {
+  .kinglong-tabs--bird {
+    width: calc(100% + 60px);
+    margin-left: -60px;
+  }
+  .kinglong-tabs--newworld {
+    width: calc(100% - 30px);
+    transform: translateX(-10%);
+  }
+  .kinglong-illust-row {
+    gap: 20px;
+  }
+}
+
+/* 768 - 1024 平板:3 列 → 2 列,鸟卡与 NW 偏移归零 */
+@media (max-width: 1024px) {
+  .kinglong-illust-row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+  }
+  .kinglong-tabs--bird,
+  .kinglong-tabs--sf {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+  }
+  .kinglong-tabs--newworld {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    transform: none;
+  }
+}
+
+/* < 768 手机:2 列 → 1 列 */
+@media (max-width: 768px) {
+  .kinglong-illust-row {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .kinglong-tabs--bird,
+  .kinglong-tabs--sf,
+  .kinglong-tabs--newworld {
+    width: 100%;
+    max-width: 420px;
+    margin: 0 auto;
+    transform: none;
+  }
+}
+
 /* === 14 板块上方满屏插画 banner(独立 section,无 chapter 底色) === */
 .kinglong-illust-banner {
   position: relative;
@@ -1598,7 +1664,7 @@
   column-count: 4;
   column-gap: 16px;
   padding: 0 24px;
-  max-width: 1400px;
+  max-width: var(--max-width);
   margin: 0 auto;
 }
 .kinglong-masonry__item {
@@ -1632,11 +1698,14 @@
   height: auto;
   object-fit: contain;
 }
-@media (max-width: 1100px) {
-  .kinglong-masonry { column-count: 3; }
+@media (max-width: 1024px) {
+  .kinglong-masonry { column-count: 3; column-gap: 12px; }
 }
-@media (max-width: 760px) {
-  .kinglong-masonry { column-count: 2; }
+@media (max-width: 768px) {
+  .kinglong-masonry { column-count: 2; padding: 0 var(--pad-x); }
+}
+@media (max-width: 480px) {
+  .kinglong-masonry { column-count: 1; }
 }
 /* 11 可比克板块 team-stage 撑高(给右边两张 3:2 上下排版留位置) */
 .works-chapter--copico .team-stage {
@@ -2716,7 +2785,7 @@
 
 /* === Works footer === */
 .works-footer {
-  max-width: 1400px;
+  max-width: var(--max-width);
   margin: 0 auto;
   padding: 80px var(--pad-x) 60px;
   display: flex;
@@ -3135,4 +3204,67 @@
 }
 @media (max-width: 600px) {
   .featured-stack__stage .stack-card { width: 180px; height: 260px; }
+}
+
+/* ============================================
+   Global Fixed-Element Responsive Scaling
+   缩放所有固定像素的浮动图 / 海报 / 卡片,
+   让中屏(1024-1280)、平板(768-1024)、手机(<768)显示合理.
+   ============================================ */
+
+/* 1024 - 1280 桌面:浮动图 / 海报等比例缩小 */
+@media (max-width: 1280px) {
+  .cny-doll--1 img,
+  .cny-doll--2 img { width: 540px; }
+  .q3-pack--1 img,
+  .q3-pack--2 img { width: 230px; }
+  .q3-pack--3 img,
+  .q3-pack--4 img { width: 520px; }
+  .aiext-lemon--1 { width: 110px; }
+  .aiext-lemon--2 { width: 140px; }
+  .gyq-card img { max-height: 320px; }
+}
+
+/* 768 - 1024 平板:进一步缩小 */
+@media (max-width: 1024px) {
+  .cny-doll--1 img,
+  .cny-doll--2 img { width: 420px; }
+  .q3-pack--1,
+  .q3-pack--2 { top: 4%; left: 2%; }
+  .q3-pack--1 img,
+  .q3-pack--2 img { width: 180px; }
+  .q3-pack--3,
+  .q3-pack--4 { right: -2%; }
+  .q3-pack--3 img,
+  .q3-pack--4 img { width: 400px; }
+  .aiext-lemon--1 { width: 80px; }
+  .aiext-lemon--2 { width: 100px; }
+  .gyq-card img { max-height: 280px; }
+  .kinglong-tabs--poster,
+  .kinglong-tabs--poster-12 { width: 320px; }
+  .works-chapter__sticky { top: 80px; }
+  .works-chapter { padding: 60px 0; }
+}
+
+/* < 768 手机:全面收缩 */
+@media (max-width: 768px) {
+  .cny-doll--1,
+  .cny-doll--2 { position: relative; top: auto; left: auto; right: auto; transform: none; margin: 24px auto; display: block; }
+  .cny-doll--1 img,
+  .cny-doll--2 img { width: 100%; max-width: 320px; }
+  .q3-pack { position: relative; top: auto; left: auto; right: auto; transform: none; margin: 16px auto; }
+  .q3-pack--1 img,
+  .q3-pack--2 img,
+  .q3-pack--3 img,
+  .q3-pack--4 img { width: 100%; max-width: 320px; }
+  .aiext-lemon { display: none; }  /* 手机不显示装饰浮片 */
+  .gyq-card img { max-height: 220px; }
+  .kinglong-tabs--poster,
+  .kinglong-tabs--poster-12 { width: 100%; max-width: 360px; margin: 0 auto; }
+  .works-chapter { padding: 48px 0; }
+  .works-chapter__sticky { position: relative; top: 0; margin-bottom: 32px; }
+  .float-card:nth-child(2),
+  .float-card:nth-child(4) { width: 240px; height: 160px; }
+  .float-card:nth-child(4) { width: 200px; height: 140px; }
+  .featured-stack { padding: 0 var(--pad-x); }
 }
