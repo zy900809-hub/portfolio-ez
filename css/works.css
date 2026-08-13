@@ -1430,6 +1430,24 @@
   user-select: none;
   -webkit-user-drag: none;
 }
+/* 整屏/超细草图(11, 15-18 整屏 + 12-14 超细)按 max-height 自动缩小,不再超长 */
+.kinglong-masonry__item--wide,
+.kinglong-masonry__item--narrow {
+  max-height: 720px;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+.kinglong-masonry__item--wide img,
+.kinglong-masonry__item--narrow img {
+  width: auto;
+  max-width: 100%;
+  max-height: 720px;
+  height: auto;
+  object-fit: contain;
+  align-self: flex-start;
+}
 @media (max-width: 1100px) {
   .kinglong-masonry { column-count: 3; }
 }
