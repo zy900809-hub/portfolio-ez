@@ -1315,6 +1315,21 @@
 .works-chapter--copico .chapter-tag span {
   color: #ffffff;
 }
+
+/* 13 琪朗-详情页设计(深蓝黑底 #030a1f + 网格 + 反白) */
+.works-chapter--kinglong {
+  background-color: #030a1f;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+  background-size: 32px 32px;
+  background-position: 0 0;
+}
+.works-chapter--kinglong .chapter-title,
+.works-chapter--kinglong .chapter-tag,
+.works-chapter--kinglong .chapter-tag span {
+  color: #ffffff;
+}
 /* 11 可比克板块 team-stage 撑高(给右边两张 3:2 上下排版留位置) */
 .works-chapter--copico .team-stage {
   min-height: 610px;
