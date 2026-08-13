@@ -43,6 +43,98 @@
   will-change: transform;
 }
 
+/* === 结尾 THANKS 坏屏小方条 glitch(复用首页 home-title 效果) === */
+.thanks-title::before,
+.thanks-title::after {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  white-space: pre;
+  line-height: 0.88;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+  font-weight: 900;
+  font-family: var(--f-display);
+  font-size: clamp(80px, 22vw, 320px);
+  text-align: center;
+  pointer-events: none;
+}
+.thanks-title::before {
+  content: attr(data-text);
+  color: #00f0ff;
+  opacity: 0;
+  animation: glitchBar 2.4s steps(1, end) infinite;
+  mix-blend-mode: screen;
+}
+.thanks-title::after {
+  content: attr(data-text);
+  color: #ff2a55;
+  opacity: 0;
+  animation: glitchBar2 2.4s steps(1, end) infinite;
+  mix-blend-mode: screen;
+}
+.thanks-title { position: relative; }
+
+@keyframes glitchBar {
+  0%, 3.5%, 31%, 100% { opacity: 0; transform: translate(0,0) scaleX(1); clip-path: inset(0 0 0 0); }
+  4%   { opacity: 1; transform: translate(-3px, 0) scaleX(1.02); clip-path: inset(0 0 78% 0); }
+  5.5% { opacity: 1; transform: translate(0, 0)   scaleX(0.99); clip-path: inset(6% 0 70% 0); }
+  7%   { opacity: 1; transform: translate(2px, 0) scaleX(1.02); clip-path: inset(18% 0 56% 0); }
+  8.5% { opacity: 1; transform: translate(0, 0)   scaleX(1);    clip-path: inset(32% 0 42% 0); }
+  10%  { opacity: 1; transform: translate(-2px, 0) scaleX(1.01); clip-path: inset(4% 0 72% 0); }
+  12%  { opacity: 1; transform: translate(0, 0)   scaleX(0.99); clip-path: inset(26% 0 48% 0); }
+  14%  { opacity: 1; transform: translate(3px, 0) scaleX(1.02); clip-path: inset(40% 0 34% 0); }
+  16%  { opacity: 1; transform: translate(0, 0)   scaleX(1);    clip-path: inset(14% 0 60% 0); }
+  18%  { opacity: 1; transform: translate(-2px, 0) scaleX(1.01); clip-path: inset(30% 0 44% 0); }
+  20%  { opacity: 1; transform: translate(0, 0)   scaleX(0.99); clip-path: inset(46% 0 28% 0); }
+  22%  { opacity: 1; transform: translate(2px, 0) scaleX(1.02); clip-path: inset(8% 0 68% 0); }
+  24%  { opacity: 1; transform: translate(-2px, 0) scaleX(1.01); clip-path: inset(36% 0 38% 0); }
+  26%  { opacity: 1; transform: translate(0, 0)   scaleX(1);    clip-path: inset(2% 0 74% 0); }
+  28%  { opacity: 1; transform: translate(2px, 0) scaleX(1.02); clip-path: inset(22% 0 52% 0); }
+  30%  { opacity: 0; }
+}
+@keyframes glitchBar2 {
+  0%, 3.5%, 73%, 100% { opacity: 0; transform: translate(0,0) scaleX(1); clip-path: inset(0 0 0 0); }
+  4.5% { opacity: 1; transform: translate(3px, 0) scaleX(1.02); clip-path: inset(58% 0 18% 0); }
+  6%   { opacity: 1; transform: translate(0, 0)   scaleX(0.99); clip-path: inset(68% 0 8% 0); }
+  7.5% { opacity: 1; transform: translate(-2px, 0) scaleX(1.01); clip-path: inset(78% 0 0 0); }
+  9%   { opacity: 1; transform: translate(0, 0)   scaleX(1);    clip-path: inset(50% 0 26% 0); }
+  11%  { opacity: 1; transform: translate(2px, 0) scaleX(1.02); clip-path: inset(82% 0 0 0); }
+  13%  { opacity: 1; transform: translate(-3px, 0) scaleX(1.01); clip-path: inset(62% 0 14% 0); }
+  15%  { opacity: 1; transform: translate(0, 0)   scaleX(0.99); clip-path: inset(72% 0 4% 0); }
+  17%  { opacity: 1; transform: translate(2px, 0) scaleX(1.02); clip-path: inset(88% 0 0 0); }
+  19%  { opacity: 1; transform: translate(-2px, 0) scaleX(1.01); clip-path: inset(46% 0 30% 0); }
+  21%  { opacity: 1; transform: translate(0, 0)   scaleX(1);    clip-path: inset(56% 0 20% 0); }
+  23%  { opacity: 1; transform: translate(3px, 0) scaleX(1.02); clip-path: inset(92% 0 0 0); }
+  25%  { opacity: 1; transform: translate(0, 0)   scaleX(0.99); clip-path: inset(66% 0 10% 0); }
+  27%  { opacity: 1; transform: translate(-2px, 0) scaleX(1.01); clip-path: inset(78% 0 0 0); }
+  29%  { opacity: 1; transform: translate(0, 0)   scaleX(1);    clip-path: inset(54% 0 22% 0); }
+  31%  { opacity: 1; transform: translate(2px, 0) scaleX(1.01); clip-path: inset(70% 0 6% 0); }
+  33%  { opacity: 1; transform: translate(0, 0)   scaleX(0.99); clip-path: inset(60% 0 16% 0); }
+  35%  { opacity: 1; transform: translate(-3px, 0) scaleX(1.02); clip-path: inset(84% 0 0 0); }
+  37%  { opacity: 1; transform: translate(0, 0)   scaleX(1);    clip-path: inset(50% 0 26% 0); }
+  39%  { opacity: 1; transform: translate(2px, 0) scaleX(1.02); clip-path: inset(74% 0 2% 0); }
+  41%  { opacity: 1; transform: translate(-2px, 0) scaleX(1.01); clip-path: inset(64% 0 12% 0); }
+  43%  { opacity: 1; transform: translate(0, 0)   scaleX(1);    clip-path: inset(90% 0 0 0); }
+  45%  { opacity: 1; transform: translate(2px, 0) scaleX(1.02); clip-path: inset(58% 0 18% 0); }
+  47%  { opacity: 1; transform: translate(-2px, 0) scaleX(1.01); clip-path: inset(80% 0 0 0); }
+  49%  { opacity: 1; transform: translate(0, 0)   scaleX(0.99); clip-path: inset(52% 0 24% 0); }
+  51%  { opacity: 1; transform: translate(3px, 0) scaleX(1.02); clip-path: inset(68% 0 8% 0); }
+  53%  { opacity: 1; transform: translate(0, 0)   scaleX(1);    clip-path: inset(86% 0 0 0); }
+  55%  { opacity: 1; transform: translate(-2px, 0) scaleX(1.01); clip-path: inset(62% 0 14% 0); }
+  57%  { opacity: 1; transform: translate(0, 0)   scaleX(0.99); clip-path: inset(72% 0 4% 0); }
+  59%  { opacity: 1; transform: translate(2px, 0) scaleX(1.01); clip-path: inset(56% 0 20% 0); }
+  61%  { opacity: 1; transform: translate(0, 0)   scaleX(1);    clip-path: inset(78% 0 0 0); }
+  63%  { opacity: 1; transform: translate(-3px, 0) scaleX(1.02); clip-path: inset(48% 0 28% 0); }
+  65%  { opacity: 1; transform: translate(0, 0)   scaleX(0.99); clip-path: inset(84% 0 0 0); }
+  67%  { opacity: 1; transform: translate(2px, 0) scaleX(1.02); clip-path: inset(70% 0 6% 0); }
+  69%  { opacity: 1; transform: translate(0, 0)   scaleX(1);    clip-path: inset(60% 0 16% 0); }
+  71%  { opacity: 1; transform: translate(-2px, 0) scaleX(1.01); clip-path: inset(76% 0 0 0); }
+  73%  { opacity: 0; }
+}
+
 .thanks-sub {
   font-family: var(--f-mono);
   font-size: 13px;
