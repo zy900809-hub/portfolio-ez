@@ -473,8 +473,8 @@
 })();
 
 /* ============================================
-   13 KINGLONG — 琪朗详情页 3 张按钮切换
-   - 简单 fade 切换,无 carousel
+   13 KINGLONG — 琪朗详情页 按钮切换
+   - 简单 fade 切换,支持数字按钮 + 左右切换按钮
    ============================================ */
 (function initKinglongTabs() {
   const groups = document.querySelectorAll('[data-kinglong-tabs]');
@@ -482,13 +482,30 @@
   groups.forEach((root) => {
     const slides = root.querySelectorAll('.kinglong-tabs__slide');
     const btns = root.querySelectorAll('.kinglong-tabs__btn');
+    const prevBtn = root.querySelector('.kinglong-tabs__btn--prev');
+    const nextBtn = root.querySelector('.kinglong-tabs__btn--next');
+    let idx = 0;
+    const total = slides.length;
     function goTo(n) {
-      slides.forEach((s, i) => s.classList.toggle('is-active', i === n));
-      btns.forEach((b, i) => {
-        b.classList.toggle('is-active', i === n);
-        b.setAttribute('aria-selected', i === n ? 'true' : 'false');
+      idx = (n + total) % total;
+      slides.forEach((s, i) => s.classList.toggle('is-active', i === idx));
+      btns.forEach((b) => {
+        const target = b.dataset.target;
+        if (target === undefined) return;
+        const i = parseInt(target, 10);
+        b.classList.toggle('is-active', i === idx);
+        b.setAttribute('aria-selected', i === idx ? 'true' : 'false');
       });
+      // 计数器(左右切换器)
+      const cur = root.querySelector('.kinglong-tabs__cur');
+      if (cur) cur.textContent = String(idx + 1).padStart(2, '0');
+      root.dispatchEvent(new CustomEvent('kinglong:change', { detail: { idx } }));
     }
-    btns.forEach((b, i) => b.addEventListener('click', () => goTo(i)));
+    btns.forEach((b) => {
+      if (b.dataset.target === undefined) return;
+      b.addEventListener('click', () => goTo(parseInt(b.dataset.target, 10)));
+    });
+    prevBtn?.addEventListener('click', () => goTo(idx - 1));
+    nextBtn?.addEventListener('click', () => goTo(idx + 1));
   });
 })();
