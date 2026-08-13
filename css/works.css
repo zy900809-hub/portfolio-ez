@@ -1400,10 +1400,17 @@
 }
 
 /* 14 琪朗-详情页海报:卡片形式,靠左,海报比例 1:1.78 */
+.kinglong-posters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 28px;
+  padding: 0 24px;
+}
 .kinglong-tabs--poster {
-  width: 420px;
+  width: 380px;
   max-width: 100%;
-  margin: 0 auto 0 0;  /* 靠左 */
+  margin: 0;
   padding: 0;
 }
 .kinglong-tabs--poster .kinglong-tabs__stage {
