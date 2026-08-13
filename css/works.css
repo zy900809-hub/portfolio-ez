@@ -1399,6 +1399,32 @@
   border-color: #ffffff;
 }
 
+/* 14 琪朗-详情页海报:卡片形式,靠左,海报比例 1:1.78 */
+.kinglong-tabs--poster {
+  width: 420px;
+  max-width: 100%;
+  margin: 0 auto 0 0;  /* 靠左 */
+  padding: 0;
+}
+.kinglong-tabs--poster .kinglong-tabs__stage {
+  aspect-ratio: 1 / 1.78;
+  border-radius: 18px;
+  background: #0a1530;
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.55);
+  overflow: hidden;
+}
+.kinglong-tabs--poster .kinglong-tabs__slide {
+  border-radius: 18px;
+  overflow: hidden;
+}
+.kinglong-tabs--poster .kinglong-tabs__slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 18px;
+}
+
 /* === 13 琪朗-详情页草图 18 张图瀑布流(无卡片,直接展示) === */
 .kinglong-masonry {
   column-count: 4;
