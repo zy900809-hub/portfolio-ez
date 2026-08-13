@@ -225,7 +225,6 @@ ul, ol { list-style: none; }
   display: flex;
   flex-direction: column;
   gap: 14px;
-  mix-blend-mode: difference;
 }
 
 .side-nav a {
@@ -235,7 +234,7 @@ ul, ol { list-style: none; }
   justify-content: center;
   width: 42px;
   height: 42px;
-  color: #fff;
+  color: #ffffff;
   opacity: 0.55;
   transition: opacity .25s var(--ease-soft), transform .25s var(--ease-soft), background .25s var(--ease-soft);
   border-radius: 12px;

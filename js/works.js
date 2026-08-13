@@ -381,3 +381,93 @@
     if (e.key === 'ArrowRight') goTo(idx + 1);
   });
 })();
+
+/* ============================================
+   06-粒上皇礼盒系列轮播(6 张,按钮 + 指示点)
+   ============================================ */
+(function initLrheCarousel() {
+  const carousels = document.querySelectorAll('.lrhe-carousel');
+  if (!carousels.length) return;
+  carousels.forEach((carousel) => {
+    const cards = carousel.querySelectorAll('.lrhe-card');
+    const dots = carousel.querySelectorAll('.lrhe-dot');
+    const prevBtn = carousel.querySelector('.lrhe-btn--prev');
+    const nextBtn = carousel.querySelector('.lrhe-btn--next');
+    let idx = 0;
+    const total = cards.length;
+
+    function goTo(n) {
+      idx = (n + total) % total;
+      cards.forEach((c, i) => c.classList.toggle('lrhe-card--active', i === idx));
+      dots.forEach((d, i) => d.classList.toggle('lrhe-dot--active', i === idx));
+    }
+    prevBtn?.addEventListener('click', (e) => { e.stopPropagation(); goTo(idx - 1); });
+    nextBtn?.addEventListener('click', (e) => { e.stopPropagation(); goTo(idx + 1); });
+    dots.forEach((d, i) => d.addEventListener('click', (e) => { e.stopPropagation(); goTo(i); }));
+    carousel.tabIndex = 0;
+    carousel.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowLeft')  goTo(idx - 1);
+      if (e.key === 'ArrowRight') goTo(idx + 1);
+    });
+  });
+})();
+
+/* ============================================
+   07-冰魔粒倒计时横板轮播(3 张,按钮 + 指示点)
+   ============================================ */
+(function initDjCarousel() {
+  const carousels = document.querySelectorAll('.dj-carousel');
+  if (!carousels.length) return;
+  carousels.forEach((carousel) => {
+    const slides = carousel.querySelectorAll('.dj-slide');
+    const dots = carousel.querySelectorAll('.dj-dot');
+    const prevBtn = carousel.querySelector('.dj-btn--prev');
+    const nextBtn = carousel.querySelector('.dj-btn--next');
+    let idx = 0;
+    const total = slides.length;
+
+    function goTo(n) {
+      idx = (n + total) % total;
+      slides.forEach((s, i) => s.classList.toggle('dj-slide--active', i === idx));
+      dots.forEach((d, i) => d.classList.toggle('dj-dot--active', i === idx));
+    }
+    prevBtn?.addEventListener('click', (e) => { e.stopPropagation(); goTo(idx - 1); });
+    nextBtn?.addEventListener('click', (e) => { e.stopPropagation(); goTo(idx + 1); });
+    dots.forEach((d, i) => d.addEventListener('click', (e) => { e.stopPropagation(); goTo(i); }));
+    carousel.tabIndex = 0;
+    carousel.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowLeft')  goTo(idx - 1);
+      if (e.key === 'ArrowRight') goTo(idx + 1);
+    });
+  });
+})();
+
+/* ============================================
+   11-可比克礼盒提案轮播(6 张,按钮 + 指示点)
+   ============================================ */
+(function initCopicoCarousel() {
+  const carousels = document.querySelectorAll('.copico-carousel');
+  if (!carousels.length) return;
+  carousels.forEach((carousel) => {
+    const cards = carousel.querySelectorAll('.copico-card');
+    const dots = carousel.querySelectorAll('.copico-dot');
+    const prevBtn = carousel.querySelector('.copico-btn--prev');
+    const nextBtn = carousel.querySelector('.copico-btn--next');
+    let idx = 0;
+    const total = cards.length;
+
+    function goTo(n) {
+      idx = (n + total) % total;
+      cards.forEach((c, i) => c.classList.toggle('copico-card--active', i === idx));
+      dots.forEach((d, i) => d.classList.toggle('copico-dot--active', i === idx));
+    }
+    prevBtn?.addEventListener('click', (e) => { e.stopPropagation(); goTo(idx - 1); });
+    nextBtn?.addEventListener('click', (e) => { e.stopPropagation(); goTo(idx + 1); });
+    dots.forEach((d, i) => d.addEventListener('click', (e) => { e.stopPropagation(); goTo(i); }));
+    carousel.tabIndex = 0;
+    carousel.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowLeft')  goTo(idx - 1);
+      if (e.key === 'ArrowRight') goTo(idx + 1);
+    });
+  });
+})();

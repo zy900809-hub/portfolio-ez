@@ -786,9 +786,9 @@
   object-fit: contain;
 }
 .cny-doll--1 {
-  top: 56%;
+  top: 8%;
   left: -7%;
-  transform: translateY(-50%) rotate(-3deg);
+  transform: translateY(0) rotate(-3deg);
   animation: cnyDollFloat1 6s ease-in-out infinite;
 }
 .cny-doll--2 {
@@ -1231,6 +1231,1065 @@
 .works-chapter--team {
   background: var(--c-bg-light-2);
   padding: 100px 0 120px;
+}
+
+/* === Chapter 6 MINIKING 故宫联名礼盒(独立深红底) === */
+.works-chapter--miniking {
+  background-color: #841d0a;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 32px 32px;
+  background-position: 0 0;
+  padding: 100px 0 120px;
+}
+
+/* 06 板块标题反白 */
+.works-chapter--miniking .chapter-title,
+.works-chapter--miniking .chapter-tag,
+.works-chapter--miniking .chapter-tag span {
+  color: #ffffff;
+}
+
+/* 06 MINIKING 内部 team-stage 拉宽(给左右两张大卡片留位置) */
+.works-chapter--miniking .team-stage {
+  max-width: 1440px;
+}
+
+/* 08 美心-美心卷KV(深灰底 #282828 + 网格 + 反白,覆盖 miniking 的红色) */
+.works-chapter--mx {
+  background-color: #282828;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 32px 32px;
+  background-position: 0 0;
+}
+.works-chapter--mx .chapter-title,
+.works-chapter--mx .chapter-tag,
+.works-chapter--mx .chapter-tag span {
+  color: #ffffff;
+}
+
+/* 09 UR-天猫二楼(宝蓝底 #002fa8 + 网格 + 反白) */
+.works-chapter--ur {
+  background-color: #002fa8;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 32px 32px;
+  background-position: 0 0;
+}
+.works-chapter--ur .chapter-title,
+.works-chapter--ur .chapter-tag,
+.works-chapter--ur .chapter-tag span {
+  color: #ffffff;
+}
+
+/* 10 罗曼诺-KV&周边&快闪(墨绿底 #065729 + 网格 + 反白) */
+.works-chapter--romano {
+  background-color: #065729;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 32px 32px;
+  background-position: 0 0;
+}
+.works-chapter--romano .chapter-title,
+.works-chapter--romano .chapter-tag,
+.works-chapter--romano .chapter-tag span {
+  color: #ffffff;
+}
+
+/* 11 可比克-CNY礼盒提案(深酒红底 #831111 + 网格 + 反白) */
+.works-chapter--copico {
+  background-color: #831111;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 32px 32px;
+  background-position: 0 0;
+}
+.works-chapter--copico .chapter-title,
+.works-chapter--copico .chapter-tag,
+.works-chapter--copico .chapter-tag span {
+  color: #ffffff;
+}
+/* 11 可比克板块 team-stage 撑高(给右边两张 3:2 上下排版留位置) */
+.works-chapter--copico .team-stage {
+  min-height: 610px;
+}
+
+/* 12 复方阿胶浆-地铁包站(在 copico 深酒红基础上再覆一层 #e5423d 红底) */
+.works-chapter--ejiao {
+  background-color: #e5423d;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 32px 32px;
+  background-position: 0 0;
+}
+.works-chapter--ejiao .chapter-title,
+.works-chapter--ejiao .chapter-tag,
+.works-chapter--ejiao .chapter-tag span {
+  color: #ffffff;
+}
+
+/* 08 美心卷 KV 卡片(横+竖 2 张,圆角,浮动) */
+.mx-kv {
+  position: absolute;
+  margin: 0;
+  border-radius: 22px;
+  overflow: hidden;
+  background: #ffffff;
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.36);
+  transform-origin: center center;
+}
+.mx-kv img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 22px;
+}
+.mx-kv--1 {
+  top: 14%;
+  left: 4%;
+  width: 960px;
+  aspect-ratio: 16 / 9;
+  z-index: 1;
+  transform: rotate(-2deg);
+  animation: mxKvFloat1 6.2s ease-in-out infinite;
+}
+.mx-kv--2 {
+  top: 8%;
+  right: 1%;
+  width: 360px;
+  aspect-ratio: 9 / 16;
+  z-index: 2;
+  transform: rotate(2deg);
+  animation: mxKvFloat2 6.6s ease-in-out infinite;
+}
+@keyframes mxKvFloat1 {
+  0%, 100% { transform: translateY(0)    rotate(-2deg); }
+  50%      { transform: translateY(-16px) rotate(-0.8deg); }
+}
+@keyframes mxKvFloat2 {
+  0%, 100% { transform: translateY(0)    rotate(2deg); }
+  50%      { transform: translateY(-20px) rotate(0.8deg); }
+}
+
+/* 08b 美心卷-包店&装置 2 张 GIF 卡片(左右,圆角,浮动) */
+.bd-card {
+  position: absolute;
+  margin: 0;
+  border-radius: 22px;
+  overflow: hidden;
+  background: #ffffff;
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.36);
+  transform-origin: center center;
+}
+.bd-card img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 22px;
+}
+.bd-card--bd {
+  top: 14%;
+  left: -1%;
+  width: 820px;
+  aspect-ratio: 16 / 9;
+  z-index: 1;
+  transform: rotate(-2deg);
+  animation: bdFloat1 6.2s ease-in-out infinite;
+}
+.bd-card--zz {
+  top: 18%;
+  right: -1%;
+  width: 570px;
+  z-index: 2;
+  transform: rotate(2deg);
+  animation: bdFloat2 6.6s ease-in-out infinite;
+  background: #ffffff;
+  height: auto;
+}
+.bd-card--zz img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  border-radius: 22px;
+}
+@keyframes bdFloat1 {
+  0%, 100% { transform: translateY(0)    rotate(-2deg); }
+  50%      { transform: translateY(-16px) rotate(-0.8deg); }
+}
+@keyframes bdFloat2 {
+  0%, 100% { transform: translateY(0)    rotate(2deg); }
+  50%      { transform: translateY(-20px) rotate(0.8deg); }
+}
+
+/* 09 UR-天猫二楼 2 张竖图卡片(并排左边,圆角,浮动) */
+.urtm-card {
+  position: absolute;
+  margin: 0;
+  border-radius: 22px;
+  overflow: hidden;
+  background: #ffffff;
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.36);
+  transform-origin: center center;
+}
+.urtm-card img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 22px;
+}
+.urtm-card--1 {
+  top: 8%;
+  left: 2%;
+  width: 320px;
+  aspect-ratio: 9 / 16;
+  z-index: 1;
+  transform: rotate(-3deg);
+  animation: urtmFloat1 6.2s ease-in-out infinite;
+}
+.urtm-card--2 {
+  top: 12%;
+  left: 25%;
+  width: 320px;
+  aspect-ratio: 9 / 16;
+  z-index: 2;
+  transform: rotate(2deg);
+  animation: urtmFloat2 6.6s ease-in-out infinite;
+}
+.urtm-card--3 {
+  top: 4%;
+  left: 60%;
+  width: 300px;
+  aspect-ratio: 887 / 1920;
+  z-index: 3;
+  transform: translateX(-50%) rotate(0deg);
+  animation: urtmFloat3 5.6s ease-in-out infinite;
+}
+@keyframes urtmFloat1 {
+  0%, 100% { transform: translateY(0)    rotate(-3deg); }
+  50%      { transform: translateY(-18px) rotate(-1.4deg); }
+}
+@keyframes urtmFloat2 {
+  0%, 100% { transform: translateY(0)    rotate(2deg); }
+  50%      { transform: translateY(-22px) rotate(0.8deg); }
+}
+@keyframes urtmFloat3 {
+  0%, 100% { transform: translateX(-50%) translateY(0)    rotate(0deg); }
+  50%      { transform: translateX(-50%) translateY(-24px) rotate(0deg); }
+}
+
+/* 09 右上+右下 4 张(2×2 网格,圆角,上下浮动) */
+.urgq-card {
+  position: absolute;
+  margin: 0;
+  border-radius: 18px;
+  overflow: hidden;
+  background: #ffffff;
+  box-shadow: 0 18px 36px rgba(0, 0, 0, 0.32);
+  transform-origin: center center;
+}
+.urgq-card img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 18px;
+}
+.urgq-card--1 { top: 0%;  right: 17%; width: 140px; aspect-ratio: 9 / 19.5; z-index: 1; transform: rotate(-2.5deg); animation: urgqFloat1 5.8s ease-in-out infinite; }
+.urgq-card--2 { top: 4%; right: 4%;  width: 140px; aspect-ratio: 9 / 19.5; z-index: 2; transform: rotate( 1.8deg); animation: urgqFloat2 6.2s ease-in-out infinite; }
+.urgq-card--3 { top: 52%; right: 17%; width: 140px; aspect-ratio: 9 / 19.5; z-index: 1; transform: rotate( 1.5deg); animation: urgqFloat3 6.4s ease-in-out infinite; }
+.urgq-card--4 { top: 56%; right: 4%;  width: 140px; aspect-ratio: 9 / 19.5; z-index: 2; transform: rotate(-2deg);  animation: urgqFloat4 5.9s ease-in-out infinite; }
+
+@keyframes urgqFloat1 { 0%, 100% { transform: translateY(0)    rotate(-2.5deg); } 50% { transform: translateY(-10px) rotate(-1.0deg); } }
+@keyframes urgqFloat2 { 0%, 100% { transform: translateY(0)    rotate( 1.8deg); } 50% { transform: translateY(-12px) rotate( 0.6deg); } }
+@keyframes urgqFloat3 { 0%, 100% { transform: translateY(0)    rotate( 1.5deg); } 50% { transform: translateY(-11px) rotate( 0.4deg); } }
+@keyframes urgqFloat4 { 0%, 100% { transform: translateY(0)    rotate(-2deg);  } 50% { transform: translateY(-13px) rotate(-0.8deg); } }
+
+/* 09b UR-天猫礼盒 5 张横图(上 3 + 下 2,居中布局,圆角,浮动) */
+.urlh-card {
+  position: absolute;
+  margin: 0;
+  border-radius: 18px;
+  overflow: hidden;
+  background: #ffffff;
+  box-shadow: 0 18px 36px rgba(0, 0, 0, 0.30);
+  transform-origin: center center;
+}
+.urlh-card img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 18px;
+}
+.urlh-card--1 { top: 8%;  left: 2%;  width: 440px; aspect-ratio: 16 / 9; z-index: 1; transform: rotate(0deg); animation: urlhFloat1 5.8s ease-in-out infinite; }
+.urlh-card--2 { top: 8%;  left: 33%; width: 440px; aspect-ratio: 16 / 9; z-index: 2; transform: rotate(0deg); animation: urlhFloat2 6.2s ease-in-out infinite; }
+.urlh-card--3 { top: 8%;  left: 64%; width: 440px; aspect-ratio: 16 / 9; z-index: 1; transform: rotate(0deg); animation: urlhFloat3 6.4s ease-in-out infinite; }
+/* 下 2 张: card--4 对齐 card--1, card--5 对齐 card--2, card--6 对齐 card--3 */
+.urlh-card--4 { top: 51%; left: 2%;  width: 440px; aspect-ratio: 16 / 9; z-index: 1; transform: rotate(0deg); animation: urlhFloat4 5.9s ease-in-out infinite; }
+.urlh-card--5 { top: 51%; left: 33%; width: 440px; aspect-ratio: 16 / 9; z-index: 2; transform: rotate(0deg); animation: urlhFloat5 6.1s ease-in-out infinite; }
+.urlh-card--6 { top: 51%; left: 64%; width: 440px; aspect-ratio: 5 / 4;  z-index: 1; transform: rotate(0deg); animation: urlhFloat6 6.3s ease-in-out infinite; }
+
+@keyframes urlhFloat1 { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+@keyframes urlhFloat2 { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-12px); } }
+@keyframes urlhFloat3 { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-11px); } }
+@keyframes urlhFloat4 { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-12px); } }
+@keyframes urlhFloat5 { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+@keyframes urlhFloat6 { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-12px); } }
+
+/* 10 罗曼诺 KV 2 张横图(平排,卡片,圆角,无动效) */
+.rom-card {
+  position: absolute;
+  top: -2%;
+  margin: 0;
+  border-radius: 22px;
+  overflow: hidden;
+  background: #ffffff;
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.32);
+  transform: rotate(0deg);
+}
+.rom-card img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 22px;
+}
+.rom-card--1 {
+  left: 4%;
+  width: 740px;
+}
+.rom-card--2 {
+  right: 1%;
+  width: 620px;
+}
+
+/* 10 罗曼诺长条横幅(跟 rom-card 同样 figure 包裹 + 同样的 4%/1% 边距,左右完美对齐) */
+.romano-banner {
+  position: absolute;
+  top: 65%;
+  left: 4%;
+  right: 1%;
+  margin: 0;
+  border-radius: 22px;
+  overflow: hidden;
+  background: #ffffff;
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.32);
+}
+.romano-banner img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 22px;
+}
+
+/* 11 可比克-礼盒提案轮播(6 张,左边,按钮切换,圆角卡片,上下漂浮) */
+.copico-carousel {
+  position: absolute;
+  top: 8%;
+  left: 4%;
+  width: 960px;
+  aspect-ratio: 16 / 9;
+  border-radius: 22px;
+  overflow: hidden;
+  background: #ffffff;
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.32);
+  z-index: 1;
+  animation: copicoCarouselFloat 6.2s ease-in-out infinite;
+}
+.copico-track {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.copico-card {
+  position: absolute;
+  inset: 0;
+  margin: 0;
+  border-radius: 22px;
+  overflow: hidden;
+  background: #ffffff;
+  opacity: 0;
+  scale: 0.97;
+  z-index: 1;
+  transition: opacity 0.55s ease, scale 0.55s ease;
+}
+.copico-card--active {
+  opacity: 1;
+  scale: 1;
+  z-index: 2;
+}
+.copico-card img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 22px;
+}
+.copico-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.92);
+  color: #831111;
+  cursor: pointer;
+  z-index: 4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.22);
+  transition: transform .25s ease, background .25s ease;
+}
+.copico-btn:hover {
+  background: #ffffff;
+  transform: translateY(-50%) scale(1.08);
+}
+.copico-btn--prev { left: 12px; }
+.copico-btn--next { right: 12px; }
+.copico-dots {
+  position: absolute;
+  bottom: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  z-index: 4;
+  padding: 6px 12px;
+  background: rgba(0, 0, 0, 0.35);
+  border-radius: 999px;
+  backdrop-filter: blur(6px);
+}
+.copico-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.55);
+  cursor: pointer;
+  padding: 0;
+  transition: background .25s ease, width .25s ease;
+}
+.copico-dot--active {
+  background: #ffffff;
+  width: 22px;
+  border-radius: 4px;
+}
+@keyframes copicoCarouselFloat {
+  0%, 100% { transform: translateY(0)    rotate(0deg); }
+  50%      { transform: translateY(-14px) rotate(0.4deg); }
+}
+
+/* 11 可比克-右边两张陈列场景图(上下排版,卡片,错峰上下浮动) */
+.copico-side-card {
+  position: absolute;
+  margin: 0;
+  border-radius: 22px;
+  overflow: hidden;
+  background: #ffffff;
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.32);
+}
+.copico-side-card img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 22px;
+}
+.copico-side-card--1 {
+  top: 8%;
+  right: 1%;
+  width: 380px;
+  aspect-ratio: 3 / 2;
+  z-index: 1;
+  transform: rotate(0deg);
+  animation: copicoSideFloat1 6.2s ease-in-out infinite;
+}
+.copico-side-card--2 {
+  top: 55%;
+  right: 1%;
+  width: 380px;
+  aspect-ratio: 3 / 2;
+  z-index: 2;
+  transform: rotate(0deg);
+  animation: copicoSideFloat2 5.8s ease-in-out infinite;
+}
+@keyframes copicoSideFloat1 {
+  0%, 100% { transform: translateY(0)    rotate(0deg); }
+  50%      { transform: translateY(-14px) rotate(0.4deg); }
+}
+@keyframes copicoSideFloat2 {
+  0%, 100% { transform: translateY(0)    rotate(-0.4deg); }
+  50%      { transform: translateY(-10px) rotate(0.3deg); }
+}
+
+/* 12 复方阿胶浆-地铁包站(2×2 网格 4 张,圆角卡片,错峰浮动) */
+.ejiao-grid {
+  position: absolute;
+  top: 4%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: grid;
+  grid-template-columns: repeat(2, 720px);
+  grid-template-rows: repeat(2, 405px);
+  gap: 22px 22px;
+  z-index: 1;
+}
+.ejiao-card {
+  position: relative;
+  margin: 0;
+  border-radius: 18px;
+  overflow: hidden;
+  background: #ffffff;
+  box-shadow: 0 18px 36px rgba(0, 0, 0, 0.32);
+}
+.ejiao-card img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 18px;
+}
+.ejiao-card--1 { animation: ejiaoFloat1 5.8s ease-in-out infinite; }
+.ejiao-card--2 { animation: ejiaoFloat2 6.2s ease-in-out infinite; }
+.ejiao-card--3 { animation: ejiaoFloat3 6.4s ease-in-out infinite; }
+.ejiao-card--4 { animation: ejiaoFloat4 5.9s ease-in-out infinite; }
+
+/* 12 复方阿胶浆-地铁包站 长条横图(卡皮巴拉 7 格,圆角,浮动) */
+.ejiao-strip {
+  position: absolute;
+  top: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1410px;
+  margin: 0;
+  border-radius: 18px;
+  overflow: hidden;
+  background: #ffffff;
+  box-shadow: 0 18px 36px rgba(0, 0, 0, 0.32);
+  z-index: 2;
+}
+.ejiao-strip img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 18px;
+}
+.ejiao-strip--1 { animation: ejiaoStripFloat 6.1s ease-in-out infinite; }
+@keyframes ejiaoStripFloat {
+  0%, 100% { transform: translateX(-50%) translateY(0)    rotate(0.2deg); }
+  50%      { transform: translateX(-50%) translateY(-10px) rotate(-0.3deg); }
+}
+
+/* 12 复方阿胶浆-地铁包站 三张现场实景(并排,圆角,错峰浮动) */
+.ejiao-trio {
+  position: absolute;
+  top: 340px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 24px;
+  z-index: 2;
+}
+.ejiao-trio__card {
+  position: relative;
+  margin: 0;
+  width: 460px;
+  height: 308px;
+  border-radius: 18px;
+  overflow: hidden;
+  background: #ffffff;
+  box-shadow: 0 18px 36px rgba(0, 0, 0, 0.32);
+}
+.ejiao-trio__card img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 18px;
+}
+.ejiao-trio__card--1 { animation: ejiaoFloat1 5.7s ease-in-out infinite; }
+.ejiao-trio__card--2 { animation: ejiaoFloat2 6.3s ease-in-out infinite; }
+.ejiao-trio__card--3 { animation: ejiaoFloat3 6.0s ease-in-out infinite; }
+
+/* 12b 复方阿胶浆-病毒视频(竖屏,无卡片,直接放,左边) */
+.ejiao-video {
+  position: absolute;
+  top: 0px;
+  left: 4%;
+  width: 560px;
+  height: auto;
+  display: block;
+  z-index: 2;
+  border-radius: 0;
+  box-shadow: none;
+  background: transparent;
+}
+.ejiao-video--1 { animation: ejiaoFloat1 6.0s ease-in-out infinite; }
+
+/* 12b 病毒视频分镜(3 行 × 5 列,右边,圆角,错峰浮动) */
+.ejiao-frames {
+  position: absolute;
+  top: 20px;
+  right: 0%;
+  display: grid;
+  grid-template-columns: repeat(5, 150px);
+  grid-template-rows: repeat(3, 225px);
+  gap: 12px 12px;
+  z-index: 2;
+}
+.ejiao-frame {
+  position: relative;
+  margin: 0;
+  border-radius: 14px;
+  overflow: hidden;
+  background: #ffffff;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.28);
+}
+.ejiao-frame img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 14px;
+}
+.ejiao-frame--1  { animation: ejiaoFloat1 5.6s ease-in-out infinite; }
+.ejiao-frame--2  { animation: ejiaoFloat2 6.0s ease-in-out infinite; }
+.ejiao-frame--3  { animation: ejiaoFloat3 6.4s ease-in-out infinite; }
+.ejiao-frame--4  { animation: ejiaoFloat1 5.9s ease-in-out infinite; }
+.ejiao-frame--5  { animation: ejiaoFloat2 6.3s ease-in-out infinite; }
+.ejiao-frame--6  { animation: ejiaoFloat3 5.8s ease-in-out infinite; }
+.ejiao-frame--7  { animation: ejiaoFloat1 6.5s ease-in-out infinite; }
+.ejiao-frame--8  { animation: ejiaoFloat2 5.7s ease-in-out infinite; }
+.ejiao-frame--9  { animation: ejiaoFloat3 6.1s ease-in-out infinite; }
+.ejiao-frame--10 { animation: ejiaoFloat1 6.2s ease-in-out infinite; }
+.ejiao-frame--11 { animation: ejiaoFloat2 5.9s ease-in-out infinite; }
+.ejiao-frame--12 { animation: ejiaoFloat3 6.3s ease-in-out infinite; }
+.ejiao-frame--13 { animation: ejiaoFloat1 5.8s ease-in-out infinite; }
+.ejiao-frame--14 { animation: ejiaoFloat2 6.4s ease-in-out infinite; }
+.ejiao-frame--15 { animation: ejiaoFloat3 6.0s ease-in-out infinite; }
+@keyframes ejiaoFloat1 {
+  0%, 100% { transform: translateY(0)    rotate(0.3deg); }
+  50%      { transform: translateY(-12px) rotate(-0.4deg); }
+}
+@keyframes ejiaoFloat2 {
+  0%, 100% { transform: translateY(0)    rotate(-0.4deg); }
+  50%      { transform: translateY(-10px) rotate(0.5deg); }
+}
+@keyframes ejiaoFloat3 {
+  0%, 100% { transform: translateY(0)    rotate(0.4deg); }
+  50%      { transform: translateY(-14px) rotate(-0.3deg); }
+}
+@keyframes ejiaoFloat4 {
+  0%, 100% { transform: translateY(0)    rotate(-0.3deg); }
+  50%      { transform: translateY(-9px)  rotate(0.4deg); }
+}
+
+/* 07 冰魔粒倒计时海报(竖图卡片,左,圆角,浮动) */
+.dj-card {
+  position: absolute;
+  top: 8%;
+  left: 6%;
+  z-index: 2;
+  margin: 0;
+  border-radius: 22px;
+  overflow: hidden;
+  background: #ffffff;
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.32);
+  transform: rotate(-3deg);
+  animation: djCardFloat 6.2s ease-in-out infinite;
+}
+.dj-card img {
+  display: block;
+  height: 600px;
+  width: auto;
+  border-radius: 22px;
+}
+@keyframes djCardFloat {
+  0%, 100% { transform: translateY(0)    rotate(-3deg); }
+  50%      { transform: translateY(-18px) rotate(-1.5deg); }
+}
+
+/* 07 倒计时横板轮播(3 张,右,按钮切换,圆角,浮动) */
+.dj-carousel {
+  position: absolute;
+  top: 18%;
+  right: 4%;
+  width: 920px;
+  aspect-ratio: 16 / 9;
+  border-radius: 22px;
+  overflow: hidden;
+  background: #ffffff;
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.32);
+  z-index: 1;
+  animation: djCarouselFloat 6.4s ease-in-out infinite;
+}
+.dj-track {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.dj-slide {
+  position: absolute;
+  inset: 0;
+  margin: 0;
+  border-radius: 22px;
+  overflow: hidden;
+  background: #ffffff;
+  opacity: 0;
+  scale: 0.97;
+  z-index: 1;
+  transition: opacity 0.55s ease, scale 0.55s ease;
+}
+.dj-slide--active {
+  opacity: 1;
+  scale: 1;
+  z-index: 2;
+}
+.dj-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 22px;
+}
+.dj-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.92);
+  color: #841d0a;
+  cursor: pointer;
+  z-index: 4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.22);
+  transition: transform .25s ease, background .25s ease;
+}
+.dj-btn:hover {
+  background: #ffffff;
+  transform: translateY(-50%) scale(1.08);
+}
+.dj-btn--prev { left: 12px; }
+.dj-btn--next { right: 12px; }
+.dj-dots {
+  position: absolute;
+  bottom: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  z-index: 4;
+  padding: 6px 12px;
+  background: rgba(0, 0, 0, 0.35);
+  border-radius: 999px;
+  backdrop-filter: blur(6px);
+}
+.dj-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.55);
+  cursor: pointer;
+  padding: 0;
+  transition: background .25s ease, width .25s ease;
+}
+.dj-dot--active {
+  background: #ffffff;
+  width: 22px;
+  border-radius: 4px;
+}
+@keyframes djCarouselFloat {
+  0%, 100% { transform: translateY(0)    rotate(0deg); }
+  50%      { transform: translateY(-14px) rotate(0.4deg); }
+}
+
+/* 07b 冰魔粒-音乐节小程序 H5 卡片(竖图,左,圆角,浮动,600px 高) */
+.h5-card {
+  position: absolute;
+  top: 6%;
+  left: 6%;
+  z-index: 2;
+  margin: 0;
+  border-radius: 22px;
+  overflow: hidden;
+  background: #ffffff;
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.32);
+  transform: rotate(-3deg);
+  animation: h5CardFloat 6.2s ease-in-out infinite;
+}
+.h5-card img {
+  display: block;
+  height: 600px;
+  width: auto;
+  border-radius: 22px;
+}
+@keyframes h5CardFloat {
+  0%, 100% { transform: translateY(0)    rotate(-3deg); }
+  50%      { transform: translateY(-18px) rotate(-1.5deg); }
+}
+
+/* 07b H5 截图网格(10 张,右,2 行 5 列,圆角,每张错峰浮动 + 微旋转) */
+.h5-grid {
+  position: absolute;
+  top: 6%;
+  right: 3%;
+  display: grid;
+  grid-template-columns: repeat(5, 170px);
+  grid-template-rows: repeat(2, auto);
+  gap: 12px 12px;
+  padding-right: 36px;
+  z-index: 1;
+}
+.h5-tile {
+  margin: 0;
+  border-radius: 18px;
+  overflow: hidden;
+  background: #ffffff;
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.28);
+  aspect-ratio: 9 / 16;
+  transform-origin: center center;
+}
+.h5-tile img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 18px;
+}
+
+/* 10 张卡片错峰浮动 + 不同旋转角度 */
+.h5-tile--1  { animation: h5Float1 5.6s ease-in-out infinite;  transform: rotate(-2.5deg); }
+.h5-tile--2  { animation: h5Float2 6.0s ease-in-out infinite;  transform: rotate( 1.8deg); }
+.h5-tile--3  { animation: h5Float3 5.8s ease-in-out infinite;  transform: rotate(-1.2deg); }
+.h5-tile--4  { animation: h5Float4 6.2s ease-in-out infinite;  transform: rotate( 2.4deg); }
+.h5-tile--5  { animation: h5Float5 5.7s ease-in-out infinite;  transform: rotate(-2.0deg); }
+.h5-tile--6  { animation: h5Float6 6.4s ease-in-out infinite;  transform: rotate( 1.5deg); }
+.h5-tile--7  { animation: h5Float7 5.9s ease-in-out infinite;  transform: rotate(-2.8deg); }
+.h5-tile--8  { animation: h5Float8 6.1s ease-in-out infinite;  transform: rotate( 1.0deg); }
+.h5-tile--9  { animation: h5Float9 5.8s ease-in-out infinite;  transform: rotate(-1.6deg); }
+.h5-tile--10 { animation: h5Float10 6.3s ease-in-out infinite; transform: rotate( 2.2deg); }
+
+@keyframes h5Float1  { 0%, 100% { transform: translateY(0)    rotate(-2.5deg); } 50% { transform: translateY(-10px) rotate(-1.0deg); } }
+@keyframes h5Float2  { 0%, 100% { transform: translateY(0)    rotate( 1.8deg); } 50% { transform: translateY(-12px) rotate( 0.8deg); } }
+@keyframes h5Float3  { 0%, 100% { transform: translateY(0)    rotate(-1.2deg); } 50% { transform: translateY(-8px)  rotate(-0.4deg); } }
+@keyframes h5Float4  { 0%, 100% { transform: translateY(0)    rotate( 2.4deg); } 50% { transform: translateY(-14px) rotate( 1.0deg); } }
+@keyframes h5Float5  { 0%, 100% { transform: translateY(0)    rotate(-2.0deg); } 50% { transform: translateY(-10px) rotate(-0.8deg); } }
+@keyframes h5Float6  { 0%, 100% { transform: translateY(0)    rotate( 1.5deg); } 50% { transform: translateY(-12px) rotate( 0.4deg); } }
+@keyframes h5Float7  { 0%, 100% { transform: translateY(0)    rotate(-2.8deg); } 50% { transform: translateY(-9px)  rotate(-1.2deg); } }
+@keyframes h5Float8  { 0%, 100% { transform: translateY(0)    rotate( 1.0deg); } 50% { transform: translateY(-13px) rotate( 0.2deg); } }
+@keyframes h5Float9  { 0%, 100% { transform: translateY(0)    rotate(-1.6deg); } 50% { transform: translateY(-11px) rotate(-0.6deg); } }
+@keyframes h5Float10 { 0%, 100% { transform: translateY(0)    rotate( 2.2deg); } 50% { transform: translateY(-10px) rotate( 1.0deg); } }
+
+/* 07c 维他奶&粒上皇联名礼盒(8 张 GIF,2 行 4 列,无卡片,直接图悬浮) */
+.lh-grid {
+  position: absolute;
+  top: 11%;
+  left: 2%;
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  grid-template-rows: repeat(3, auto);
+  gap: 18px 10px;
+  z-index: 1;
+  padding: 12px 24px;
+}
+.lh-tile {
+  margin: 0;
+  background: transparent;
+  max-width: 180px;
+  transform-origin: center center;
+  filter: drop-shadow(0 12px 24px rgba(0, 0, 0, 0.28));
+}
+.lh-tile img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* 8 张错峰浮动 + 不同旋转 */
+.lh-tile--1 { animation: lhFloat1 5.6s ease-in-out infinite; transform: rotate(-2.5deg); }
+.lh-tile--2 { animation: lhFloat2 6.0s ease-in-out infinite; transform: rotate( 1.8deg); }
+.lh-tile--3 { animation: lhFloat3 5.8s ease-in-out infinite; transform: rotate(-1.2deg); }
+.lh-tile--4 { animation: lhFloat4 6.2s ease-in-out infinite; transform: rotate( 2.4deg); }
+.lh-tile--5 { animation: lhFloat5 5.7s ease-in-out infinite; transform: rotate(-2.0deg); }
+.lh-tile--6 { animation: lhFloat6 6.4s ease-in-out infinite; transform: rotate( 1.5deg); }
+.lh-tile--7 { animation: lhFloat7 5.9s ease-in-out infinite; transform: rotate(-2.8deg); }
+.lh-tile--8 { animation: lhFloat8 6.1s ease-in-out infinite; transform: rotate( 1.0deg); max-width: 220px; }
+
+@keyframes lhFloat1 { 0%, 100% { transform: translateY(0)    rotate(-2.5deg); } 50% { transform: translateY(-10px) rotate(-1.0deg); } }
+@keyframes lhFloat2 { 0%, 100% { transform: translateY(0)    rotate( 1.8deg); } 50% { transform: translateY(-12px) rotate( 0.8deg); } }
+@keyframes lhFloat3 { 0%, 100% { transform: translateY(0)    rotate(-1.2deg); } 50% { transform: translateY(-8px)  rotate(-0.4deg); } }
+@keyframes lhFloat4 { 0%, 100% { transform: translateY(0)    rotate( 2.4deg); } 50% { transform: translateY(-14px) rotate( 1.0deg); } }
+@keyframes lhFloat5 { 0%, 100% { transform: translateY(0)    rotate(-2.0deg); } 50% { transform: translateY(-10px) rotate(-0.8deg); } }
+@keyframes lhFloat6 { 0%, 100% { transform: translateY(0)    rotate( 1.5deg); } 50% { transform: translateY(-12px) rotate( 0.4deg); } }
+@keyframes lhFloat7 { 0%, 100% { transform: translateY(0)    rotate(-2.8deg); } 50% { transform: translateY(-9px)  rotate(-1.2deg); } }
+@keyframes lhFloat8 { 0%, 100% { transform: translateY(0)    rotate( 1.0deg); } 50% { transform: translateY(-13px) rotate( 0.2deg); } }
+
+/* 07c 右边额外 4 张:2 行 2 列,无卡片,浮动 */
+.lh-grid--right {
+  left: auto;
+  right: 2%;
+  top: 18%;
+  grid-template-columns: repeat(2, auto);
+  grid-template-rows: repeat(2, auto);
+  gap: 22px 18px;
+  padding: 12px 24px;
+}
+.lh-grid--right .lh-tile {
+  max-width: 240px;
+}
+.lh-tile--r1 { animation: lhRFloat1 5.8s ease-in-out infinite; transform: rotate(-2.2deg); }
+.lh-tile--r2 { animation: lhRFloat2 6.2s ease-in-out infinite; transform: rotate( 1.6deg); }
+.lh-tile--r3 { animation: lhRFloat3 5.9s ease-in-out infinite; transform: rotate(-1.4deg); }
+.lh-tile--r4 { animation: lhRFloat4 6.4s ease-in-out infinite; transform: rotate( 2.6deg); }
+
+@keyframes lhRFloat1 { 0%, 100% { transform: translateY(0)    rotate(-2.2deg); } 50% { transform: translateY(-11px) rotate(-0.8deg); } }
+@keyframes lhRFloat2 { 0%, 100% { transform: translateY(0)    rotate( 1.6deg); } 50% { transform: translateY(-13px) rotate( 0.4deg); } }
+@keyframes lhRFloat3 { 0%, 100% { transform: translateY(0)    rotate(-1.4deg); } 50% { transform: translateY(-9px)  rotate(-0.2deg); } }
+@keyframes lhRFloat4 { 0%, 100% { transform: translateY(0)    rotate( 2.6deg); } 50% { transform: translateY(-14px) rotate( 1.2deg); } }
+
+/* 06 MINIKING 礼盒1(左上,标题下方,别压标题,浮动) */
+.cny-doll--lrhe1 {
+  top: 6%;
+  left: 4%;
+  z-index: 2;
+  transform: translateY(0) rotate(-3deg);
+  animation: cnyDollFloat1 6s ease-in-out infinite;
+  filter: drop-shadow(0 22px 44px rgba(0, 0, 0, 0.32));
+  border-radius: 22px;
+  overflow: hidden;
+  background: #ffffff;
+}
+.cny-doll--lrhe1 img {
+  width: 640px;
+  display: block;
+  border-radius: 22px;
+}
+@keyframes cnyDollFloat1 {
+  0%, 100% { transform: translateY(0)    rotate(-3deg); }
+  50%      { transform: translateY(-18px) rotate(-1.5deg); }
+}
+
+/* 06 礼盒系列轮播(6 张,右下,按钮切换,圆角卡片) */
+.lrhe-carousel {
+  position: absolute;
+  top: 18%;
+  right: 2%;
+  width: 720px;
+  aspect-ratio: 16 / 9;
+  border-radius: 22px;
+  overflow: hidden;
+  background: #ffffff;
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.28);
+  z-index: 1;
+  animation: lrheCarouselFloat 6.2s ease-in-out infinite;
+}
+.lrhe-track {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.lrhe-card {
+  position: absolute;
+  inset: 0;
+  margin: 0;
+  border-radius: 22px;
+  overflow: hidden;
+  background: #ffffff;
+  opacity: 0;
+  scale: 0.97;
+  z-index: 1;
+  transition: opacity 0.55s ease, scale 0.55s ease;
+}
+.lrhe-card--active {
+  opacity: 1;
+  scale: 1;
+  z-index: 2;
+}
+.lrhe-card img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 22px;
+}
+.lrhe-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.92);
+  color: #841d0a;
+  cursor: pointer;
+  z-index: 4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.22);
+  transition: transform .25s ease, background .25s ease;
+}
+.lrhe-btn:hover {
+  background: #ffffff;
+  transform: translateY(-50%) scale(1.08);
+}
+.lrhe-btn--prev { left: 12px; }
+.lrhe-btn--next { right: 12px; }
+.lrhe-dots {
+  position: absolute;
+  bottom: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  z-index: 4;
+  padding: 6px 12px;
+  background: rgba(0, 0, 0, 0.35);
+  border-radius: 999px;
+  backdrop-filter: blur(6px);
+}
+.lrhe-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.55);
+  cursor: pointer;
+  padding: 0;
+  transition: background .25s ease, width .25s ease;
+}
+.lrhe-dot--active {
+  background: #ffffff;
+  width: 22px;
+  border-radius: 4px;
+}
+
+@keyframes lrheCarouselFloat {
+  0%, 100% { transform: translateY(0)    rotate(0deg); }
+  50%      { transform: translateY(-14px) rotate(0.4deg); }
 }
 
 .team-stage {

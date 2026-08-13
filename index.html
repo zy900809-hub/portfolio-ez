@@ -812,28 +812,21 @@
       <div class="works-chapter works-chapter--float" style="position: relative;">
         <div class="works-chapter__sticky works-chapter__sticky--float" id="chapter2Header" style="width: 100vw; max-width: none; left: calc(50% - 50vw); margin: 0; box-sizing: border-box; text-align: left; padding-left: 0; padding-right: 0;">
           <div class="chapter-tag"><span>02</span> VLT-AISONG</div>
-          <h3 class="chapter-title">维他VLT-AISONG</h3>
+          <h3 class="chapter-title" style="color:#ffffff;text-shadow:0 2px 6px rgba(0,0,0,0.35);">维他VLT-AISONG</h3>
         </div>
 
-        <!-- Chapter 2: 柠檬 GIF 漂浮动效 + 音波波纹扩散 -->
+        <!-- Chapter 2: 音波波纹扩散(柠檬 GIF 已去掉) -->
         <div class="chapter2-floats" aria-hidden="true">
-          <img src="assets/img/lemon-drift.gif" alt="" class="chapter2-floats__gif" />
           <img src="assets/img/soundwave.png" alt="" class="chapter2-floats__sound chapter2-floats__sound--1" />
           <img src="assets/img/soundwave.png" alt="" class="chapter2-floats__sound chapter2-floats__sound--2" />
           <img src="assets/img/soundwave.png" alt="" class="chapter2-floats__sound chapter2-floats__sound--3" />
         </div>
 
-        <!-- Chapter 2: 2 块柠檬片漂浮装饰(避开 9 张卡片和手机图) -->
-        <div class="aisong-lemon-float" style="top: 9%; right: 5%; width: 90px; transform: rotate(-18deg); --delay: 0s;" aria-hidden="true">
-          <div class="aisong-lemon-float__anim" style="animation-delay: 0s;">
-            <img class="aisong-lemon-float__img" src="assets/img/aisong-lemon-1.png" alt="" />
-          </div>
-        </div>
-        <div class="aisong-lemon-float" style="top: 80%; left: 4%; width: 160px; transform: rotate(15deg); --delay: 0.4s;" aria-hidden="true">
-          <div class="aisong-lemon-float__anim" style="animation-delay: 0.4s;">
-            <img class="aisong-lemon-float__img" src="assets/img/aisong-lemon-2.png" alt="" />
-          </div>
-        </div>
+        <!-- Chapter 2: 左边大手机图(纯图,无卡片,860px 宽,不压标题) -->
+        <figure class="aisong-phone" aria-hidden="true" style="position: absolute; top: 280px; left: 14%; width: 440px; margin: 0; z-index: 3; animation: aisongFloat 5.5s ease-in-out infinite;">
+          <img src="assets/works/aisong/02-aisong-phone.gif" alt="VLT 本涩就现在 REMIX 空间 启动页" style="display: block; width: 100%; height: auto; border-radius: 0;" />
+        </figure>
+
         <div class="aisong-cards" aria-hidden="true">
           <!-- Chapter 2: 9 张 AISONG 卡片漂浮动效(右侧分散布局,行间有少量重叠感) -->
           <div class="aisong-card-wrap" style="top: 8%; left: 50%; width: 150px; transform: rotate(-4deg); --delay: 0s;">
@@ -869,7 +862,7 @@
       <!-- === Chapter 2b: 礼盒&周边(无 chapter tag,大标题改名) === -->
       <div class="works-chapter works-chapter--float" style="position: relative; min-height: 130vh;">
         <div class="works-chapter__sticky works-chapter__sticky--float" id="chapter2bHeader" style="width: 100vw; max-width: none; left: calc(50% - 50vw); margin: 0; box-sizing: border-box; text-align: left; padding-left: 0; padding-right: 0;">
-          <h3 class="chapter-title">维他VLT-礼盒&周边</h3>
+          <h3 class="chapter-title" style="color:#ffffff;text-shadow:0 2px 6px rgba(0,0,0,0.35);">维他VLT-礼盒&周边</h3>
         </div>
 
         <!-- 字体元素(左对齐大标题,漂浮) -->
@@ -946,13 +939,7 @@
           <img src="assets/works/popup/04b-popup-1.png" alt="VLT 快闪店 - 线稿" />
         </div>
 
-        <!-- 2 片柠檬漂浮装饰 -->
-        <div class="popup-lemon popup-lemon--1" aria-hidden="true">
-          <img src="assets/img/popup-lemon-1.png" alt="" />
-        </div>
-        <div class="popup-lemon popup-lemon--2" aria-hidden="true">
-          <img src="assets/img/popup-lemon-2.png" alt="" />
-        </div>
+        <!-- 2 片柠檬已删除 -->
 
         <div class="popup-frame" id="popupFrame" aria-label="VLT 快闪店图片切换">
           <div class="popup-frame__inner">
@@ -1253,13 +1240,455 @@
       </div>
 
       <!-- === Chapter 6 复制 4:06 MINIKING-毛绒公仔(从 05 复制,挪到 Q4 下方) === -->
-      <div class="works-chapter works-chapter--team">
+      <div class="works-chapter works-chapter--team works-chapter--miniking">
         <div class="works-chapter__head">
           <div class="chapter-tag"><span>06</span> MINIKING</div>
           <h3 class="chapter-title">粒上皇-故宫联名礼盒</h3>
         </div>
 
-        <div class="team-stage" id="teamStage5"></div>
+        <div class="team-stage" id="teamStage5">
+          <figure class="cny-doll cny-doll--lrhe1">
+            <img src="assets/works/cny-06/lrhe1.webp" alt="粒上皇故宫联名礼盒" />
+          </figure>
+
+          <!-- 06 礼盒系列轮播(6 张,左下,按钮切换) -->
+          <div class="lrhe-carousel">
+            <div class="lrhe-track">
+              <figure class="lrhe-card lrhe-card--active">
+                <img src="assets/works/cny-06/lrhe2.webp" alt="粒上皇礼盒 2" />
+              </figure>
+              <figure class="lrhe-card">
+                <img src="assets/works/cny-06/lrhe3.webp" alt="粒上皇礼盒 3" />
+              </figure>
+              <figure class="lrhe-card">
+                <img src="assets/works/cny-06/lrhe4.webp" alt="粒上皇礼盒 4" />
+              </figure>
+              <figure class="lrhe-card">
+                <img src="assets/works/cny-06/lrhe5.webp" alt="粒上皇礼盒 5" />
+              </figure>
+              <figure class="lrhe-card">
+                <img src="assets/works/cny-06/lrhe6.webp" alt="粒上皇礼盒 6" />
+              </figure>
+              <figure class="lrhe-card">
+                <img src="assets/works/cny-06/lrhe7.webp" alt="粒上皇礼盒 7" />
+              </figure>
+            </div>
+
+            <button class="lrhe-btn lrhe-btn--prev" type="button" aria-label="上一张">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="15 18 9 12 15 6"/>
+              </svg>
+            </button>
+            <button class="lrhe-btn lrhe-btn--next" type="button" aria-label="下一张">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="9 18 15 12 9 6"/>
+              </svg>
+            </button>
+
+            <div class="lrhe-dots">
+              <button class="lrhe-dot lrhe-dot--active" type="button" aria-label="第 1 张"></button>
+              <button class="lrhe-dot" type="button" aria-label="第 2 张"></button>
+              <button class="lrhe-dot" type="button" aria-label="第 3 张"></button>
+              <button class="lrhe-dot" type="button" aria-label="第 4 张"></button>
+              <button class="lrhe-dot" type="button" aria-label="第 5 张"></button>
+              <button class="lrhe-dot" type="button" aria-label="第 6 张"></button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- === 满屏海报 2(放在 06 板块之下,独立一屏) === -->
+      <div class="works-chapter works-chapter--banner">
+        <figure class="full-banner"><img src="assets/works/cny-06/banner28.webp" alt="满屏海报 28" /></figure>
+      </div>
+
+      <!-- === 满屏海报 3(冰魔栗音乐节 KV,GIF 动图) === -->
+      <div class="works-chapter works-chapter--banner">
+        <figure class="full-banner"><img src="assets/works/cny-06/bmvk215.gif" alt="冰魔栗音乐节 KV" /></figure>
+      </div>
+
+      <!-- === Chapter 7 复制(从 06 复制,挪到 KV GIF 之下) === -->
+      <div class="works-chapter works-chapter--team works-chapter--miniking">
+        <div class="works-chapter__head">
+          <div class="chapter-tag"><span>07</span> MINIKING</div>
+          <h3 class="chapter-title">冰魔粒-音乐节倒计时海报</h3>
+        </div>
+
+        <div class="team-stage" id="teamStage6">
+          <figure class="dj-card">
+            <img src="assets/works/cny-06/daojishi1.webp" alt="冰魔粒音乐节倒计时海报" />
+          </figure>
+
+          <!-- 07 倒计时横板轮播(3 张,右,按钮切换) -->
+          <div class="dj-carousel">
+            <div class="dj-track">
+              <figure class="dj-slide dj-slide--active">
+                <img src="assets/works/cny-06/dj2.webp" alt="倒计时横板 1" />
+              </figure>
+              <figure class="dj-slide">
+                <img src="assets/works/cny-06/dj4.webp" alt="倒计时横板 2" />
+              </figure>
+              <figure class="dj-slide">
+                <img src="assets/works/cny-06/dj3.webp" alt="倒计时横板 3" />
+              </figure>
+            </div>
+
+            <button class="dj-btn dj-btn--prev" type="button" aria-label="上一张">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="15 18 9 12 15 6"/>
+              </svg>
+            </button>
+            <button class="dj-btn dj-btn--next" type="button" aria-label="下一张">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="9 18 15 12 9 6"/>
+              </svg>
+            </button>
+
+            <div class="dj-dots">
+              <button class="dj-dot dj-dot--active" type="button" aria-label="第 1 张"></button>
+              <button class="dj-dot" type="button" aria-label="第 2 张"></button>
+              <button class="dj-dot" type="button" aria-label="第 3 张"></button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- === Chapter 7b 复制(从 07 复制,去掉 tag,改标题,清空图) === -->
+      <div class="works-chapter works-chapter--team works-chapter--miniking">
+        <div class="works-chapter__head">
+          <h3 class="chapter-title">冰魔粒-音乐节小程序</h3>
+        </div>
+
+        <div class="team-stage" id="teamStage7">
+          <figure class="h5-card">
+            <img src="assets/works/cny-06/h5-1.webp" alt="冰魔粒音乐节小程序 H5 1" />
+          </figure>
+
+          <!-- 07b 小程序 H5 截图网格(10 张,右,2 行 5 列,圆角,浮动) -->
+          <div class="h5-grid">
+            <figure class="h5-tile h5-tile--1"><img src="assets/works/cny-06/h5-2.webp" alt="H5 2" /></figure>
+            <figure class="h5-tile h5-tile--2"><img src="assets/works/cny-06/h5-3.webp" alt="H5 3" /></figure>
+            <figure class="h5-tile h5-tile--3"><img src="assets/works/cny-06/h5-4.webp" alt="H5 4" /></figure>
+            <figure class="h5-tile h5-tile--4"><img src="assets/works/cny-06/h5-5.webp" alt="H5 5" /></figure>
+            <figure class="h5-tile h5-tile--5"><img src="assets/works/cny-06/h5-6.webp" alt="H5 6" /></figure>
+            <figure class="h5-tile h5-tile--6"><img src="assets/works/cny-06/h5-7.webp" alt="H5 7" /></figure>
+            <figure class="h5-tile h5-tile--7"><img src="assets/works/cny-06/h5-8.webp" alt="H5 8" /></figure>
+            <figure class="h5-tile h5-tile--8"><img src="assets/works/cny-06/h5-9.webp" alt="H5 9" /></figure>
+            <figure class="h5-tile h5-tile--9"><img src="assets/works/cny-06/h5-10.webp" alt="H5 10" /></figure>
+            <figure class="h5-tile h5-tile--10"><img src="assets/works/cny-06/h5-11.webp" alt="H5 11" /></figure>
+          </div>
+        </div>
+      </div>
+
+      <!-- === Chapter 7c 复制(从 07b 复制,改标题,清空图) === -->
+      <div class="works-chapter works-chapter--team works-chapter--miniking">
+        <div class="works-chapter__head">
+          <h3 class="chapter-title">维他奶&粒上皇联名礼盒</h3>
+        </div>
+
+        <div class="team-stage" id="teamStage8">
+          <div class="lh-grid">
+            <figure class="lh-tile lh-tile--1"><img src="assets/works/cny-06/lh-bag1.gif" alt="联名包装袋 1" /></figure>
+            <figure class="lh-tile lh-tile--2"><img src="assets/works/cny-06/lh-bag2.gif" alt="联名包装袋 2" /></figure>
+            <figure class="lh-tile lh-tile--3"><img src="assets/works/cny-06/lh-bag3.gif" alt="联名包装袋 3" /></figure>
+            <figure class="lh-tile lh-tile--4"><img src="assets/works/cny-06/lh-bag4.gif" alt="联名包装袋 4" /></figure>
+            <figure class="lh-tile lh-tile--5"><img src="assets/works/cny-06/lh-box1.gif" alt="联名盒 1" /></figure>
+            <figure class="lh-tile lh-tile--6"><img src="assets/works/cny-06/lh-box2.gif" alt="联名盒 2" /></figure>
+            <figure class="lh-tile lh-tile--7"><img src="assets/works/cny-06/lh-box3.gif" alt="联名盒 3" /></figure>
+            <figure class="lh-tile lh-tile--8"><img src="assets/works/cny-06/lh-box4.gif" alt="联名盒 4" /></figure>
+          </div>
+
+          <!-- 07c 右边额外 4 张(联名盒6/7/8 + 9,2 行 2 列,无卡片,浮动) -->
+          <div class="lh-grid lh-grid--right">
+            <figure class="lh-tile lh-tile--r1"><img src="assets/works/cny-06/lh-box6.gif" alt="联名盒 6" /></figure>
+            <figure class="lh-tile lh-tile--r2"><img src="assets/works/cny-06/lh-box7.gif" alt="联名盒 7" /></figure>
+            <figure class="lh-tile lh-tile--r3"><img src="assets/works/cny-06/lh-box8.gif" alt="联名盒 8" /></figure>
+            <figure class="lh-tile lh-tile--r4"><img src="assets/works/cny-06/lh-9.gif" alt="联名礼盒 9" /></figure>
+          </div>
+        </div>
+      </div>
+
+      <!-- === 满屏海报 4(美心卷 KV,在 08 板块之上) === -->
+      <div class="works-chapter works-chapter--banner">
+        <figure class="full-banner"><img src="assets/works/cny-06/mxroll-kv.webp" alt="美心-美心卷 KV 主视觉" /></figure>
+      </div>
+
+      <!-- === Chapter 8 复制(从 07 复制,改 tag 08 MX ROOOOLL,改标题美心-美心卷KV,清空图,深灰底) === -->
+      <div class="works-chapter works-chapter--team works-chapter--miniking works-chapter--mx">
+        <div class="works-chapter__head">
+          <div class="chapter-tag"><span>08</span> MX ROOOOLL</div>
+          <h3 class="chapter-title">美心-美心卷KV</h3>
+        </div>
+
+        <div class="team-stage" id="teamStage9">
+          <figure class="mx-kv mx-kv--1">
+            <img src="assets/works/cny-06/mx-kv1.gif" alt="美心卷 KV 横版" />
+          </figure>
+          <figure class="mx-kv mx-kv--2">
+            <img src="assets/works/cny-06/mx-kv2.gif" alt="美心卷 KV 竖版" />
+          </figure>
+        </div>
+      </div>
+
+      <!-- === Chapter 8b 复制(从 08 复制,去掉 tag,改标题美心卷-包店&装置) === -->
+      <div class="works-chapter works-chapter--team works-chapter--miniking works-chapter--mx">
+        <div class="works-chapter__head">
+          <h3 class="chapter-title">美心卷-包店&装置</h3>
+        </div>
+
+        <div class="team-stage" id="teamStage10">
+          <figure class="bd-card bd-card--bd">
+            <img src="assets/works/cny-06/mx-bd.gif" alt="美心卷包店" />
+          </figure>
+          <figure class="bd-card bd-card--zz">
+            <img src="assets/works/cny-06/mx-zz.gif" alt="美心卷装置" />
+          </figure>
+        </div>
+      </div>
+
+      <!-- === 满屏海报 5(UR 品牌营销 KV,在 09 板块之上) === -->
+      <div class="works-chapter works-chapter--banner">
+        <figure class="full-banner"><img src="assets/works/cny-06/ur-banner.webp" alt="UR 刘雨昕品牌营销 KV" /></figure>
+      </div>
+
+      <!-- === Chapter 9 复制(从 08 复制,改 tag 09 UR,改标题 UR-天猫二楼,改宝蓝底) === -->
+      <div class="works-chapter works-chapter--team works-chapter--miniking works-chapter--ur">
+        <div class="works-chapter__head">
+          <div class="chapter-tag"><span>09</span> UR</div>
+          <h3 class="chapter-title">UR-天猫二楼</h3>
+        </div>
+
+        <div class="team-stage" id="teamStage11">
+          <figure class="urtm-card urtm-card--1">
+            <img src="assets/works/cny-06/ur-tm1.webp" alt="UR 天猫二楼活动页" />
+          </figure>
+          <figure class="urtm-card urtm-card--2">
+            <img src="assets/works/cny-06/ur-tm2.webp" alt="UR 我自由我 KV" />
+          </figure>
+          <figure class="urtm-card urtm-card--3">
+            <img src="assets/works/cny-06/ur-home.webp" alt="UR 我自由我首页" />
+          </figure>
+
+          <!-- 09 右上 2 张 + 右下 2 张(2×2 网格,圆角,上下浮动) -->
+          <figure class="urgq-card urgq-card--1"><img src="assets/works/cny-06/ur-gq1.gif" alt="UR 首页" /></figure>
+          <figure class="urgq-card urgq-card--2"><img src="assets/works/cny-06/ur-gq2.gif" alt="UR 明星超模页" /></figure>
+          <figure class="urgq-card urgq-card--3"><img src="assets/works/cny-06/ur-gq3.gif" alt="UR 抽奖页" /></figure>
+          <figure class="urgq-card urgq-card--4"><img src="assets/works/cny-06/ur-gq4.png" alt="UR 礼盒页" /></figure>
+        </div>
+      </div>
+
+      <!-- === Chapter 9b 复制(从 09 复制,去掉 tag,改标题 UR-天猫礼盒) === -->
+      <div class="works-chapter works-chapter--team works-chapter--miniking works-chapter--ur">
+        <div class="works-chapter__head">
+          <h3 class="chapter-title">UR-天猫礼盒</h3>
+        </div>
+
+        <div class="team-stage" id="teamStage12">
+          <!-- 上 3 张横图 -->
+          <figure class="urlh-card urlh-card--1"><img src="assets/works/cny-06/ur-lh1.webp" alt="UR 礼盒 1" /></figure>
+          <figure class="urlh-card urlh-card--2"><img src="assets/works/cny-06/ur-lh2.webp" alt="UR 礼盒 2" /></figure>
+          <figure class="urlh-card urlh-card--3"><img src="assets/works/cny-06/ur-lh3.webp" alt="UR 礼盒 3" /></figure>
+          <!-- 下 2 张横图(居中) -->
+          <figure class="urlh-card urlh-card--4"><img src="assets/works/cny-06/ur-lh4.webp" alt="UR 礼盒 4" /></figure>
+          <figure class="urlh-card urlh-card--5"><img src="assets/works/cny-06/ur-lh5.webp" alt="UR 礼盒 5" /></figure>
+          <figure class="urlh-card urlh-card--6"><img src="assets/works/cny-06/ur-lh6.gif" alt="UR 礼盒效果图" /></figure>
+        </div>
+      </div>
+
+      <!-- === 满屏海报 6(罗曼诺 KV 主视觉,在 10 板块之上) === -->
+      <div class="works-chapter works-chapter--banner">
+        <figure class="full-banner"><img src="assets/works/cny-06/romano-kv.webp" alt="罗曼诺 KV 主视觉" /></figure>
+      </div>
+
+      <!-- === Chapter 10 复制(从 09 复制,改 tag 10 ROMANO,改标题罗曼诺-KV&周边&快闪,改墨绿底) === -->
+      <div class="works-chapter works-chapter--team works-chapter--miniking works-chapter--romano">
+        <div class="works-chapter__head">
+          <div class="chapter-tag"><span>10</span> ROMANO</div>
+          <h3 class="chapter-title">罗曼诺-KV&周边&快闪</h3>
+        </div>
+
+        <div class="team-stage" id="teamStage13">
+          <figure class="rom-card rom-card--1">
+            <img src="assets/works/cny-06/romano-ys.webp" alt="罗曼诺意式沙龙 KV" />
+          </figure>
+          <figure class="rom-card rom-card--2">
+            <img src="assets/works/cny-06/romano-lh.webp" alt="罗曼诺礼盒" />
+          </figure>
+          <figure class="romano-banner">
+            <img src="assets/works/cny-06/romano-banner.png" alt="罗曼诺横幅" />
+          </figure>
+        </div>
+      </div>
+
+      <!-- === 满屏海报 9(可比克 CNY 主视觉,在 11 板块之上) === -->
+      <div class="works-chapter works-chapter--banner">
+        <figure class="full-banner"><img src="assets/works/cny-06/copico-kv.webp" alt="可比克 CNY 主视觉" /></figure>
+      </div>
+
+      <!-- === Chapter 11 复制(从 10 复制,改 tag 11 COPICO,改标题可比克-CNY礼盒提案,改深酒红底) === -->
+      <div class="works-chapter works-chapter--team works-chapter--miniking works-chapter--copico">
+        <div class="works-chapter__head">
+          <div class="chapter-tag"><span>11</span> COPICO</div>
+          <h3 class="chapter-title">可比克-CNY礼盒提案</h3>
+        </div>
+
+        <div class="team-stage" id="teamStage15">
+          <!-- 11 可比克礼盒提案轮播(6 张,左边,按钮切换) -->
+          <div class="copico-carousel">
+            <div class="copico-track">
+              <figure class="copico-card copico-card--active">
+                <img src="assets/works/cny-06/copico-1.webp" alt="可比克礼盒 1" />
+              </figure>
+              <figure class="copico-card">
+                <img src="assets/works/cny-06/copico-2.webp" alt="可比克礼盒 2" />
+              </figure>
+              <figure class="copico-card">
+                <img src="assets/works/cny-06/copico-3.webp" alt="可比克礼盒 3" />
+              </figure>
+              <figure class="copico-card">
+                <img src="assets/works/cny-06/copico-4.webp" alt="可比克礼盒 4" />
+              </figure>
+              <figure class="copico-card">
+                <img src="assets/works/cny-06/copico-6.webp" alt="可比克礼盒 6" />
+              </figure>
+              <figure class="copico-card">
+                <img src="assets/works/cny-06/copico-7.webp" alt="可比克礼盒 7" />
+              </figure>
+            </div>
+
+            <button class="copico-btn copico-btn--prev" type="button" aria-label="上一张">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="15 18 9 12 15 6"/>
+              </svg>
+            </button>
+            <button class="copico-btn copico-btn--next" type="button" aria-label="下一张">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="9 18 15 12 9 6"/>
+              </svg>
+            </button>
+
+            <div class="copico-dots">
+              <button class="copico-dot copico-dot--active" type="button" aria-label="第 1 张"></button>
+              <button class="copico-dot" type="button" aria-label="第 2 张"></button>
+              <button class="copico-dot" type="button" aria-label="第 3 张"></button>
+              <button class="copico-dot" type="button" aria-label="第 4 张"></button>
+              <button class="copico-dot" type="button" aria-label="第 6 张"></button>
+              <button class="copico-dot" type="button" aria-label="第 7 张"></button>
+            </div>
+          </div>
+
+          <!-- 11 右边两张陈列场景图(上下排版) -->
+          <figure class="copico-side-card copico-side-card--1">
+            <img src="assets/works/cny-06/copico-8.webp" alt="可比克陈列场景 1" />
+          </figure>
+          <figure class="copico-side-card copico-side-card--2">
+            <img src="assets/works/cny-06/copico-9.webp" alt="可比克陈列场景 2" />
+          </figure>
+        </div>
+      </div>
+
+      <!-- === 满屏海报 10(东阿阿胶 复方阿胶浆 KV,在 12 板块之上) === -->
+      <div class="works-chapter works-chapter--banner works-chapter--ejiao">
+        <figure class="full-banner"><img src="assets/works/cny-06/ejiao-kv.webp" alt="东阿阿胶 复方阿胶浆 KV" /></figure>
+      </div>
+
+      <!-- === 满屏海报 11(东阿阿胶 复方阿胶浆 KV 红底,在 12 板块之上) === -->
+      <div class="works-chapter works-chapter--banner works-chapter--ejiao">
+        <figure class="full-banner"><img src="assets/works/cny-06/ejiao-kv-2.webp" alt="东阿阿胶 复方阿胶浆 KV 红底" /></figure>
+      </div>
+
+      <!-- === Chapter 12 复制(从 11 复制,改 tag 12 COPICO,改标题复方阿胶浆-地铁包站,改 #e5423d 红底) === -->
+      <div class="works-chapter works-chapter--team works-chapter--miniking works-chapter--copico works-chapter--ejiao">
+        <div class="works-chapter__head">
+          <div class="chapter-tag"><span>12</span> COPICO</div>
+          <h3 class="chapter-title">复方阿胶浆-地铁包站</h3>
+        </div>
+
+        <div class="team-stage" id="teamStage16" style="min-height: 870px;">
+          <!-- 12 复方阿胶浆-地铁包站 2×2 网格(4 张) -->
+          <div class="ejiao-grid">
+            <figure class="ejiao-card ejiao-card--1">
+              <img src="assets/works/cny-06/ejiao-metro-1.webp" alt="复方阿胶浆地铁包站 1" />
+            </figure>
+            <figure class="ejiao-card ejiao-card--2">
+              <img src="assets/works/cny-06/ejiao-metro-2.webp" alt="复方阿胶浆地铁包站 2" />
+            </figure>
+            <figure class="ejiao-card ejiao-card--3">
+              <img src="assets/works/cny-06/ejiao-metro-3.webp" alt="复方阿胶浆地铁包站 3" />
+            </figure>
+            <figure class="ejiao-card ejiao-card--4">
+              <img src="assets/works/cny-06/ejiao-metro-4.webp" alt="复方阿胶浆地铁包站 4" />
+            </figure>
+          </div>
+        </div>
+      </div>
+
+      <!-- === Chapter 12 复制(去 tag 版,改成复方阿胶浆-地铁包站,#e5423d 红底) === -->
+      <div class="works-chapter works-chapter--team works-chapter--miniking works-chapter--copico works-chapter--ejiao">
+        <div class="works-chapter__head">
+          <h3 class="chapter-title">复方阿胶浆-地铁包站</h3>
+        </div>
+
+        <div class="team-stage" id="teamStage17" style="min-height: 670px;">
+          <!-- 12 复方阿胶浆-地铁包站 长条横图(1920×361,卡皮巴拉 7 格,圆角,浮动) -->
+          <figure class="ejiao-strip ejiao-strip--1">
+            <img src="assets/works/cny-06/ejiao-metro-5.webp" alt="复方阿胶浆 虚成卡皮巴拉 试试复方阿胶浆" />
+          </figure>
+
+          <!-- 12 复方阿胶浆-地铁包站 三张现场实景(并排,圆角,错峰浮动) -->
+          <div class="ejiao-trio">
+            <figure class="ejiao-trio__card ejiao-trio__card--1">
+              <img src="assets/works/cny-06/ejiao-metro-6.webp" alt="复方阿胶浆地铁包站灯箱 1" />
+            </figure>
+            <figure class="ejiao-trio__card ejiao-trio__card--2">
+              <img src="assets/works/cny-06/ejiao-metro-7.webp" alt="复方阿胶浆地铁包站灯箱 2" />
+            </figure>
+            <figure class="ejiao-trio__card ejiao-trio__card--3">
+              <img src="assets/works/cny-06/ejiao-metro-8.webp" alt="复方阿胶浆地铁包站柱体" />
+            </figure>
+          </div>
+        </div>
+      </div>
+
+      <!-- === Chapter 12b 复制(从 teamStage17 复制,改标题 复方阿胶浆-病毒视频,#e5423d 红底) === -->
+      <div class="works-chapter works-chapter--team works-chapter--miniking works-chapter--copico works-chapter--ejiao">
+        <div class="works-chapter__head" style="margin-top: -40px;">
+          <h3 class="chapter-title">复方阿胶浆-病毒视频</h3>
+        </div>
+
+        <div class="team-stage" id="teamStage18" style="min-height: 760px;">
+          <!-- 12b 病毒视频(竖屏,无卡片,直接放) -->
+          <video class="ejiao-video ejiao-video--1" src="assets/works/cny-06/video/ejiao-virus.mp4" autoplay muted loop playsinline></video>
+
+          <!-- 12b 病毒视频分镜(3×5 网格,圆角,错峰浮动) -->
+          <div class="ejiao-frames">
+            <figure class="ejiao-frame ejiao-frame--1"><img src="assets/works/cny-06/ejiao-frame-01.webp" alt="分镜 1" /></figure>
+            <figure class="ejiao-frame ejiao-frame--2"><img src="assets/works/cny-06/ejiao-frame-02.webp" alt="分镜 2" /></figure>
+            <figure class="ejiao-frame ejiao-frame--3"><img src="assets/works/cny-06/ejiao-frame-03.webp" alt="分镜 3" /></figure>
+            <figure class="ejiao-frame ejiao-frame--4"><img src="assets/works/cny-06/ejiao-frame-04.webp" alt="分镜 4" /></figure>
+            <figure class="ejiao-frame ejiao-frame--5"><img src="assets/works/cny-06/ejiao-frame-05.webp" alt="分镜 5" /></figure>
+            <figure class="ejiao-frame ejiao-frame--6"><img src="assets/works/cny-06/ejiao-frame-06.webp" alt="分镜 6" /></figure>
+            <figure class="ejiao-frame ejiao-frame--7"><img src="assets/works/cny-06/ejiao-frame-07.webp" alt="分镜 7" /></figure>
+            <figure class="ejiao-frame ejiao-frame--8"><img src="assets/works/cny-06/ejiao-frame-08.webp" alt="分镜 8" /></figure>
+            <figure class="ejiao-frame ejiao-frame--9"><img src="assets/works/cny-06/ejiao-frame-09.webp" alt="分镜 9" /></figure>
+            <figure class="ejiao-frame ejiao-frame--10"><img src="assets/works/cny-06/ejiao-frame-10.webp" alt="分镜 10" /></figure>
+            <figure class="ejiao-frame ejiao-frame--11"><img src="assets/works/cny-06/ejiao-frame-11.webp" alt="分镜 11" /></figure>
+            <figure class="ejiao-frame ejiao-frame--12"><img src="assets/works/cny-06/ejiao-frame-12.webp" alt="分镜 12" /></figure>
+            <figure class="ejiao-frame ejiao-frame--13"><img src="assets/works/cny-06/ejiao-frame-13.webp" alt="分镜 13" /></figure>
+            <figure class="ejiao-frame ejiao-frame--14"><img src="assets/works/cny-06/ejiao-frame-14.webp" alt="分镜 14" /></figure>
+            <figure class="ejiao-frame ejiao-frame--15"><img src="assets/works/cny-06/ejiao-frame-15.webp" alt="分镜 15" /></figure>
+          </div>
+        </div>
+      </div>
+
+      <!-- === Chapter 13 复制(原 12 改编号,保持可比克-CNY礼盒提案,深酒红底) === -->
+      <div class="works-chapter works-chapter--team works-chapter--miniking works-chapter--copico">
+        <div class="works-chapter__head">
+          <div class="chapter-tag"><span>13</span> COPICO</div>
+          <h3 class="chapter-title">可比克-CNY礼盒提案</h3>
+        </div>
+
+        <div class="team-stage" id="teamStage14"></div>
       </div>
 
       <!-- Works footer / counter -->
