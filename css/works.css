@@ -1535,6 +1535,13 @@
   color: rgba(255, 255, 255, 0.55);
 }
 
+.kinglong-tabs--newworld {
+  margin-top: 80px;
+}
+.kinglong-tabs--newworld .kinglong-tabs__stage {
+  aspect-ratio: 887 / 1920;  /* 源图比例,比 9:16 更细长 */
+}
+
 /* === 14 板块上方满屏插画 banner(独立 section,无 chapter 底色) === */
 .kinglong-illust-banner {
   position: relative;
