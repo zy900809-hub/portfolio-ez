@@ -471,3 +471,24 @@
     });
   });
 })();
+
+/* ============================================
+   13 KINGLONG — 琪朗详情页 3 张按钮切换
+   - 简单 fade 切换,无 carousel
+   ============================================ */
+(function initKinglongTabs() {
+  const groups = document.querySelectorAll('[data-kinglong-tabs]');
+  if (!groups.length) return;
+  groups.forEach((root) => {
+    const slides = root.querySelectorAll('.kinglong-tabs__slide');
+    const btns = root.querySelectorAll('.kinglong-tabs__btn');
+    function goTo(n) {
+      slides.forEach((s, i) => s.classList.toggle('is-active', i === n));
+      btns.forEach((b, i) => {
+        b.classList.toggle('is-active', i === n);
+        b.setAttribute('aria-selected', i === n ? 'true' : 'false');
+      });
+    }
+    btns.forEach((b, i) => b.addEventListener('click', () => goTo(i)));
+  });
+})();

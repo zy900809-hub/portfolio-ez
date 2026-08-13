@@ -1330,6 +1330,74 @@
 .works-chapter--kinglong .chapter-tag span {
   color: #ffffff;
 }
+
+/* === 13 琪朗-详情页设计 切换器(3 张 16:9 详情页 + 底部按钮) === */
+.kinglong-tabs {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+.kinglong-tabs__stage {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 18px;
+  overflow: hidden;
+  background: #0a1530;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+}
+.kinglong-tabs__slide {
+  position: absolute;
+  inset: 0;
+  margin: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.45s ease, visibility 0.45s ease;
+}
+.kinglong-tabs__slide.is-active {
+  opacity: 1;
+  visibility: visible;
+}
+.kinglong-tabs__slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+.kinglong-tabs__nav {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 28px;
+}
+.kinglong-tabs__btn {
+  appearance: none;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: transparent;
+  color: rgba(255, 255, 255, 0.65);
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  padding: 8px 18px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
+}
+.kinglong-tabs__btn:hover {
+  border-color: rgba(255, 255, 255, 0.5);
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+.kinglong-tabs__btn.is-active {
+  background: #ffffff;
+  color: #030a1f;
+  border-color: #ffffff;
+}
 /* 11 可比克板块 team-stage 撑高(给右边两张 3:2 上下排版留位置) */
 .works-chapter--copico .team-stage {
   min-height: 610px;
